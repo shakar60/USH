@@ -2,7 +2,7 @@
 ------------------------------------------------------------------
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() 
 
-local Window = OrionLib:MakeWindow({Name = " ⭐️ USH -- Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
+local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
 --WebHook
 
@@ -23,37 +23,12 @@ Duration = 5;
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "⭐️ USH Loaded ⭐️"; 
-Text = "Made by shakar#6955 Helped By karvine"; 
+Text = "Made by sh4kar60-shakar60 Helped By karvine"; 
 Duration = 5; 
 })
 
-game.StarterGui:SetCore("SendNotification", {
-Title = "Join discord"; 
-Text = "https://discord.gg/FM6ffNz7"; 
-Duration = 10; 
-})
 ------------------------------------------------------------------
---Notifacation 3
-
-local NotificationBindable = Instance.new("BindableFunction")
-
-function NotificationBindable.OnInvoke(buttonPressed)
-if buttonPressed == "Yeah" then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AnthonyIsntHere/anthonysrepository/main/scripts/AntiChatLogger.lua"))()
-elseif buttonPressed == "Nah im good" then
--- Do something when the Nah im good button is pressed
-end
-end
-
-game.StarterGui:SetCore("SendNotification", {
-Title = "Do You Want Anti Ban Script?",
-Text = "Loads Anti Ban Script",
-Button1 = "Yeah",
-Button2 = "Nah im good",
-Callback = NotificationBindable
-})
-------------------------------------------------------------------
--- Tabs 
+--Tabs 
 
 local TabHome = Window:MakeTab({
 Name = "Home",
@@ -92,7 +67,7 @@ PremiumOnly = false
 })
 
 local TabDH = Window:MakeTab({
-Name = "DH Hubs + More Here",
+Name = "DH Hubs",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
@@ -121,20 +96,28 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+local TabSC = Window:MakeTab({
+Name = "Showcasers",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
 local TabCredits = Window:MakeTab({
 Name = "Credits",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
--- Paragraph
+
 ------------------------------------------------------------------
+--Paragraph
 
 TabHome:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
-TabHome:AddParagraph("Join Discord For More Info","Or Dm shakar60")
-TabHome:AddParagraph("Created By shakar60 On Discord","Shakar's Discord")
+TabHome:AddParagraph("Join Discord For More Info","Or Dm shakar60-sh4kar60")
+TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
 TabHome:AddParagraph("Helped By karvine On Discord","karvine's Discord")
-TabHome:AddParagraph("https://discord.gg/FM6ffNz7","Discord Server")
+TabHome:AddParagraph("https://discord.gg/2kekGMX5sQ","Discord Server")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
+
 ------------------------------------------------------------------
 --Credits
 
@@ -142,9 +125,15 @@ TabCredits:AddParagraph("Credits To Everyone Who Make Scripts","Credits")
 TabCredits:AddParagraph("Credits To Everyone Who Showcase My Script Hub","Credits")
 TabCredits:AddParagraph("Credits To shakar60 On Discord For Making This Hub","Credits")
 TabCredits:AddParagraph("Credits To karvine On Discord For Helping Me Make This Hub","Credits")
-  
+TabCredits:AddParagraph("Please Credit Me When Showcasing Script Hub","Credits")
+
 ------------------------------------------------------------------
-  
+--Showcasers
+
+TabSC:AddParagraph("Join shakars discord server!","join my discord then make an ticket say im an showcaser and show proof to be in showcasers tab.")
+
+------------------------------------------------------------------
+
 --Sliders And Text Boxes
 
 local TabPlayerSection = TabPlayer:AddSection({
@@ -274,7 +263,7 @@ workspace.Gravity = Value
 print(Value)
 end 
 })
-
+------------------------------------------------------------------
 --Button & Scripts
 
 local TabAdminSection = TabAdmin:AddSection({
@@ -348,7 +337,7 @@ Name = "Fake Lag",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/VM3b0Thg'))()
 print("Script Executed")
-end --loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/Protected%20-%202023-05-28T225112.055.lua.txt'),true))()
+end
 })
 
 Tab2:AddButton({
@@ -417,18 +406,6 @@ Name = "Rizz Script"
 
 Tab2:AddButton({
 Name = "Rizz Script",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/pPMRh5YJ"))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "PackGod Script"
-})
-
-Tab6:AddButton({
-Name = "PackGod Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/pPMRh5YJ"))()
 print("Script Executed")
@@ -1153,11 +1130,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = " "
+Name = "Dino Animation"
 })
 
 Tab2:AddButton({
-Name = "Dino Animations",
+Name = "Dino Animation",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_K2n31uc6t2wY5A8786eR4K15sgbUF0vdQ80a0LzgvLRkSNYd89H1AS3124gMR6SM.lua.txt'),true))()
 print("Script Executed")
@@ -1322,12 +1299,20 @@ print("Script Executed")
 end 
 })
 
+local TabAdminSection = TabAdmin:AddSection({
+Name = "Fates Admin Cmd"
+})
+
 TabAdmin:AddButton({
 Name = "Fates Admin Cmd",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
 print("Script Executed")
 end 
+})
+
+local TabAdminSection = TabAdmin:AddSection({
+Name = "Rwvis Admin Cmd"
 })
 
 TabAdmin:AddButton({
@@ -1566,7 +1551,7 @@ local TabALSection = TabAL:AddSection({
 Name = "Red Dot Lock Script"
 })
 
-Tab6:AddButton({
+TabAL:AddButton({
 Name = "Red Dot Lock Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/reddot1/main/reddot1", true))()
@@ -2077,5 +2062,4 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frontlines./
 print("Script Executed")
 end 
 })
-
 OrionLib:Init()
