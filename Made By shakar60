@@ -2052,4 +2052,29 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frontlines./
 print("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Best Silent Aim"
+})
+
+TabAL:AddButton({
+Name = "Silent Aim (Q To silent aim)",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/B1ufXMph",true))()
+print("Script Executed")
+end 
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Green Camlock (Op)"
+})
+
+TabAL:AddButton({
+Name = "Green Camlock (Q To Camlock)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH.P/main/rotected",true))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
