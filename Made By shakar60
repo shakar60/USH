@@ -1421,13 +1421,13 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Kirbs Ware Anti Lock"
+Name = "Synx Anti Lock"
 })
 
 TabDH:AddButton({
-Name = "Kirbs Ware Anti Lock",
+Name = "Synx Anti Lock (X To Toggle)",
 Callback = function()
-loadstring(game:HttpGet('https://github.com/Kirbsware/script/raw/main/Mobile'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ChaseSYNX/Scripts/main/DesyncAA'))()
 print("Script Executed")
 end 
 })
