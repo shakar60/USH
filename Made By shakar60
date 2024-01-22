@@ -1421,13 +1421,13 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Synx Anti Lock"
+Name = "Sky Anti Lock"
 })
 
 TabDH:AddButton({
-Name = "Synx Anti Lock (X To Toggle)",
+Name = "Sky Anti Lock (Z To Toggle)",
 Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ChaseSYNX/Scripts/main/DesyncAA'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
 print("Script Executed")
 end 
 })
