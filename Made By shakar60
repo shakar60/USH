@@ -2087,4 +2087,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/streamable-s
 print("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Thusky Lock"
+})
+
+TabAL:AddButton({
+Name = "Thusky Lock",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/thusky-/main/lock",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
