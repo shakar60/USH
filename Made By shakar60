@@ -2099,4 +2099,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/thusky-/main
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Arsenal Script Hub"
+})
+
+Tab3:AddButton({
+Name = "Arsenal Op Scripthub",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/B6fhpKJg"))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
