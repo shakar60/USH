@@ -2111,4 +2111,16 @@ loadstring(game:HttpGet("https://pastebin.com/raw/B6fhpKJg"))()
 print("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Legit Silent aim"
+})
+
+TabAL:AddButton({
+Name = "Legit Silent Aim",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/legit-silent/main/aim",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
