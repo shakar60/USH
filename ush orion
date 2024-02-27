@@ -1035,25 +1035,26 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Hub V1"
+Name = "BF Fai Fao"
 })
 
 TabBF:AddButton({
-Name = "BF Hub V1",
+Name = "BF Fai Fao (Op)",
 Callback = function()
-loadstring(game:HttpGet("https://gist.githubusercontent.com/lxnnydev/1325a6ec942d0bb837bafe0ee25fcc5c/raw/c9ab9f038142427ba1739f099e78bb0b0588fa40/bf_script.lua",true))()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/PNguyen0199/Script/main/Fai-Fao-Ver2.lua")()
 print("Script Executed")
 end 
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Hub V2"
+Name = "BF vector hub"
 })
 
 TabBF:AddButton({
-Name = "BF Hub V2",
+Name = "BF vector hub",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MkoriCraft/UPDBF2xSwitch/main/Protected%20(3).lua",true))()
+_G.Mode = "Eng" 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/VectorHub/main/Loader.lua"))()
 print("Script Executed")
 end 
 })
@@ -2077,7 +2078,7 @@ end
 })
 
 local TabALSection = TabAL:AddSection({
-Name = "Streamable Silentaim"
+Name = "Streamable Silent aim"
 })
 
 TabAL:AddButton({
