@@ -1,4 +1,4 @@
-------------------------------------------------------------------
+g------------------------------------------------------------------
 --Window & Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() 
 
@@ -1030,6 +1030,18 @@ TabBF:AddButton({
 Name = "BF Chest Farm V2",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Chest_onoff"))()
+print("Script Executed")
+end 
+})
+
+local TabBFSection = TabBF:AddSection({
+Name = "BF Script Hub Delta"
+})
+
+TabBF:AddButton({
+Name = "BF Script Hub Delta",
+Callback = function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/lxnnydev/1325a6ec942d0bb837bafe0ee25fcc5c/raw/c9ab9f038142427ba1739f099e78bb0b0588fa40/bf_script.lua",true))()
 print("Script Executed")
 end 
 })
