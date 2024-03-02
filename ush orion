@@ -2136,4 +2136,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/legit-silent
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "WestBound Script Hub"
+})
+
+Tab3:AddButton({
+Name = "WestBound Script Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Drrushh/Drrushh/main/Kdom",true))();
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "WestBound Script V2"
+})
+
+Tab3:AddButton({
+Name = "WestBound Script V2",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/westyourballz"))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
