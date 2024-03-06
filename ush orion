@@ -4,6 +4,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
+
 --1st Notify
 
 local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
@@ -1568,12 +1569,20 @@ local Tab6Section = Tab6:AddSection({
 Name = "Boombox Scripts"
 })
 
+local Tab6Section = Tab6:AddSection({
+Name = "Salmons Skidded Boombox Hub"
+})
+
 Tab6:AddButton({
-Name = "DHRP Boombox Script",
+Name = "Salmons Skidded Boombox Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Dollhouse/main/Roleplay",true))()
 print("Script Executed")
 end 
+})
+
+local Tab6Section = Tab6:AddSection({
+Name = "PineApple Boombox Ui Script"
 })
 
 Tab6:AddButton({
@@ -1584,13 +1593,8 @@ print("Script Executed")
 end 
 })
 
-
-Tab6:AddButton({
-Name = "Boombox Script Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Dollhouse/main/Roleplay",true))()
-print("Script Executed")
-end 
+local Tab6Section = Tab6:AddSection({
+Name = "CowBells Boombox Script Hub V2"
 })
 
 Tab6:AddButton({
