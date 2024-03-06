@@ -4,11 +4,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
---WebHook
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/w3bh00k/main/s",true))()
-
-------------------------------------------------------------------
 --1st Notify
 
 local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
@@ -296,14 +291,6 @@ end
 })
 
 Tab2:AddButton({
-Name = "Touch Fling",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
-print("Script Executed")
-end 
-})
-
-Tab2:AddButton({
 Name = "Fling Gui",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
@@ -361,18 +348,6 @@ Tab6:AddButton({
 Name = "Keyboard Script V3",
 Callback = function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Vhub"
-})
-
-Tab3:AddButton({
-Name = "Vhub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/2642/Created/VHub"))()
 print("Script Executed")
 end 
 })
@@ -554,18 +529,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Chiezzy Hub"
-})
-
-Tab3:AddButton({
-Name = "Chiezzy Hub",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/zAuR0JUT"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Race Car Hub"
 })
 
@@ -578,18 +541,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "VcskV Hub"
-})
-
-Tab3:AddButton({
-Name = "VcskV Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/VcskV/main/Hub/main.lua", true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Babft Script Hubs"
 })
 
@@ -597,22 +548,6 @@ Tab3:AddButton({
 Name = "Babft Exe",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/XRoLLu/UWU/main/BUILD%20A%20BOAT%20FOR%20TREASURE.lua'))()
-print("Script Executed")
-end 
-})
-
-Tab3:AddButton({
-Name = "Asta Hub",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/0YezNNRh",true))()
-print("Script Executed")
-end 
-})
-
-Tab3:AddButton({
-Name = "Boat Blitz",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/boat-blitz/main/script",true))()
 print("Script Executed")
 end 
 })
@@ -678,7 +613,7 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Fe Parkour"
+Name = "Fe Parkour Script"
 })
 
 Tab6:AddButton({
@@ -726,7 +661,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Ragdoll Engine Script Hubs"
+Name = "Ragdoll Engine Script Hub"
 })
 
 Tab3:AddButton({
@@ -777,18 +712,6 @@ Tab3:AddButton({
 Name = "Bido Skins Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BidoSkinsYT/BidoSkinsYT/main/Bido%20Skins%20V1.7"))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Fe Bird"
-})
-
-Tab6:AddButton({
-Name = "Fe Bird",
-Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/Fe%20Bird%20R6%20and%20R15'),true))()
 print("Script Executed")
 end 
 })
@@ -1258,7 +1181,7 @@ Name = "ApeiroPhobia Script"
 })
 
 Tab6:AddButton({
-Name = "ApeiroPhobia Scripr",
+Name = "ApeiroPhobia Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/apeirophobia/main/script",true))()
 print("Script Executed")
@@ -1314,7 +1237,7 @@ end
 })
 
 local TabAdminSection = TabAdmin:AddSection({
-Name = "Rwvis Admin Cmd"
+Name = "Revis Admin Cmd"
 })
 
 TabAdmin:AddButton({
@@ -1381,18 +1304,6 @@ TabDH:AddButton({
 Name = "Speed Tool",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/EX6qHypK", true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "BH"
-})
-
-Tab3:AddButton({
-Name = "British Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/RedCoat8102/Britishhub/main/Protected_2739214986728285.lua.txt"))()
 print("Script Executed")
 end 
 })
@@ -1562,18 +1473,6 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Chat Bypass"
-})
-
-Tab6:AddButton({
-Name = "Chat Bypass",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Chat/main/Bypass",true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
 Name = "Chat Spammer"
 })
 
@@ -1685,14 +1584,19 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "GigaChad Hub"
+
+Tab6:AddButton({
+Name = "Boombox Script Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Dollhouse/main/Roleplay",true))()
+print("Script Executed")
+end 
 })
 
-Tab3:AddButton({
-Name = "GigaChad Hub",
+Tab6:AddButton({
+Name = "CowBells Boombox Script Hub V2",
 Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/OWJBWKQLAISH/GigaChad-Hub/main/Version%20V3.5'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/boomboxv/main/v",true))()
 print("Script Executed")
 end 
 })
@@ -1789,30 +1693,6 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "Game Script Hub V3"
-})
-
-Tab3:AddButton({
-Name = "Game Script Hub V3",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Game-Hub/main/loader"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Multi Scriper X V2"
-})
-
-Tab3:AddButton({
-Name = "Multi Scripter X V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Multi-Scripter-X/main/loader"))()
-print("Script Executed")
-end 
-})
-
 local TabALSection = TabAL:AddSection({
 Name = "Silent Aim Gui [ Bad ]"
 })
@@ -1861,18 +1741,6 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "White Room Script Gui"
-})
-
-Tab3:AddButton({
-Name = "White Room Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NFMS-1/WRUI/main/1", true))()
-print("Script Executed")
-end 
-})
-
 local TabALSection = TabAL:AddSection({
 Name = "ImperialW Lock"
 })
@@ -1910,7 +1778,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fe Zombie Scripr"
+Name = "Fe Zombie Script"
 })
 
 Tab2:AddButton({
@@ -2010,7 +1878,7 @@ Name = "Funky Friday Script Gui"
 })
 
 Tab3:AddButton({
-Name = "Funky Friday Script Guu",
+Name = "Funky Friday Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ShowerHead-FluxTeam/scripts/main/funky-friday-autoplay"))()
 print("Script Executed")
@@ -2022,7 +1890,7 @@ Name = "The Best Strongest Battle Ground Script Gui"
 })
 
 Tab3:AddButton({
-Name = "The Best Strongest Battle Ground Script Gui Key: [ BestTheStrongest5412Roblox ]",
+Name = "Strongest Battle Ground Key: [ BestTheStrongest5412Roblox ]",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Strongest/main/Battlegrounds77"))()
 print("Script Executed")
@@ -2144,7 +2012,7 @@ Name = "WestBound Script Hub"
 Tab3:AddButton({
 Name = "WestBound Script Hub",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Drrushh/Drrushh/main/Kdom",true))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/westyourballz"))()
 print("Script Executed")
 end 
 })
@@ -2156,7 +2024,7 @@ Name = "WestBound Script V2"
 Tab3:AddButton({
 Name = "WestBound Script V2",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/westyourballz"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Drrushh/Drrushh/main/Kdom",true))();
 print("Script Executed")
 end 
 })
