@@ -4,25 +4,13 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
-
---1st Notify
-
-local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
-local Notify = AkaliNotif.Notify;
-Notify({
-Description = "⭐️ Universal Shakars Hub Loaded ⭐️";
-Title = "⭐️ USH Loaded ⭐️";
-Duration = 5;
-});
-------------------------------------------------------------------
---2nd Notify
+--1St Notify
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "⭐️ USH Loaded ⭐️"; 
-Text = "Made by sh4kar60 Helped By karvine"; 
+Text = "Made by sh4kar60 On Discord"; 
 Duration = 5; 
 })
-
 ------------------------------------------------------------------
 --Tabs 
 
@@ -103,18 +91,16 @@ PremiumOnly = false
 TabHome:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
 TabHome:AddParagraph("Join Discord For More Info","Or Dm sh4kar60")
 TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
-TabHome:AddParagraph("Helped By karvine On Discord","karvine's Discord")
+TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
 TabHome:AddParagraph(".gg/7A8TrUgEZX","Discord Server")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 
 ------------------------------------------------------------------
 --Credits
-
-TabCredits:AddParagraph("Credits To Everyone Who Make Scripts","Credits")
+TabCredits:AddParagraph("Made By sh4kar60 On Discord","Owner")
+TabCredits:AddParagraph("Credits To Everyone Who Make The Scripts","Credits")
 TabCredits:AddParagraph("Credits To Everyone Who Showcase My Script Hub","Credits")
-TabCredits:AddParagraph("Credits To sh4kar60 On Discord For Making This Hub","Credits")
-TabCredits:AddParagraph("Credits To karvine On Discord For Helping Me Make This Hub","Credits")
-TabCredits:AddParagraph("Please Credit Me When Showcasing Script Hub","Credits")
+TabCredits:AddParagraph("Please Credit Me (sh4kar60) When Showcasing Script Hub","Credits")
 
 ------------------------------------------------------------------
 
@@ -1357,18 +1343,6 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Keybind Maker"
-})
-
-Tab6:AddButton({
-Name = "Keybind Maker",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/Ujm4HWxh/raw'),true))()
-print("Script Executed")
-end 
-})
-
 local TabDHSection = TabDH:AddSection({
 Name = "NukerMode"
 })
@@ -2032,4 +2006,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Drrushh/Drrushh/main/
 print("Script Executed")
 end 
 })
+
+
+local Tab6Section = Tab6:AddSection({
+Name = "Blox Burg FastFood Worker Only [The Thing Customer Ask For Burger]"
+})
+
+Tab6:AddButton({
+Name = "Blox Burg Autofarm",
+Callback = function()
+G.time = 4 -- how long to auto farm before getting kicked (in hours)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ZackDaQuack/blox/main/minimum_wage.lua', true))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
