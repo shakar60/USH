@@ -2021,4 +2021,16 @@ print("Script Executed")
 end 
 })
 
+local Tab3Section = Tab3:AddSection({
+Name = "Trip Hub Script"
+})
+
+Tab3:AddButton({
+Name = "Trip Hub",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Free%20Loader.lua'))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
