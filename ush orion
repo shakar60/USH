@@ -2009,13 +2009,15 @@ end
 
 
 local Tab6Section = Tab6:AddSection({
-Name = "Blox Burg FastFood Worker Only [The Thing Customer Ask For Burger]"
+Name = "Blox Burg Cashier Autofarm"
 })
 
 Tab6:AddButton({
-Name = "Blox Burg Autofarm",
+Name = "Blox Burg Cashier Autofarm",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/bloxburg/main/script",true))()
+_G.time = 4 -- how long to auto farm before getting kicked (in hours)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ZackDaQuack/blox/main/minimum_wage.lua', true))()
 print("Script Executed")
 end 
 })
