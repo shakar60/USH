@@ -2015,8 +2015,7 @@ Name = "Blox Burg FastFood Worker Only [The Thing Customer Ask For Burger]"
 Tab6:AddButton({
 Name = "Blox Burg Autofarm",
 Callback = function()
-G.time = 4 -- how long to auto farm before getting kicked (in hours)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ZackDaQuack/blox/main/minimum_wage.lua', true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/bloxburg/main/script",true))()
 print("Script Executed")
 end 
 })
@@ -2032,5 +2031,4 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/Trip-Hub/ma
 print("Script Executed")
 end 
 })
-
 OrionLib:Init()
