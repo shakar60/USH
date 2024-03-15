@@ -241,7 +241,7 @@ print(Value)
 end 
 })
 ------------------------------------------------------------------
---Button & Scripts
+--Scripts
 
 local TabAdminSection = TabAdmin:AddSection({
 Name = "Infinite Yield"
@@ -364,7 +364,7 @@ Name = "Rizz Script"
 Tab2:AddButton({
 Name = "Rizz Script",
 Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/pPMRh5YJ"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mikhailramlal/Rizzer/main/main"))()
 print("Script Executed")
 end 
 })
@@ -2049,6 +2049,67 @@ TabAL:AddButton({
 Name = "Spaces Camlock",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/camlock/main/s",true))()
+print("Script Executed")
+end 
+})
+
+
+local Tab6Section = Tab6:AddSection({
+Name = "Mightys Autoclicker"
+})
+
+Tab6:AddButton({
+Name = "Mightys Autoclicker",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Autoclicker/main/Working",true))()
+print("Script Executed")
+end 
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "Detazy Hub"
+})
+
+TabDH:AddButton({
+Name = "Detazy Hub",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/I4MMO/Detazy/main/Main', true))()
+print("Script Executed")
+end 
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "Ballis Hub"
+})
+
+TabDH:AddButton({
+Name = "Ballis Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/DHHScript"))()
+print("Script Executed")
+end 
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "Agent Hub"
+})
+
+TabDH:AddButton({
+Name = "Agent Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mrhackerman35297/AgentCC/main/Launch.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab6Section = Tab6:AddSection({
+Name = "Cursor Script"
+})
+
+Tab6:AddButton({
+Name = "Cursor Script",
+Callback = function()
+loadstring(game:HttpGet(('https://pastefy.app/58d8d52G/raw'),true))()
 print("Script Executed")
 end 
 })
