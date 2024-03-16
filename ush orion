@@ -57,7 +57,7 @@ PremiumOnly = false
 })
 
 local TabDH = Window:MakeTab({
-Name = "DH Hubs",
+Name = "DH Based Scripts/Hubs",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
@@ -100,7 +100,6 @@ TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord
 TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
 TabHome:AddParagraph(".gg/7A8TrUgEZX","Discord Server")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
-
 ------------------------------------------------------------------
 --Credits
 TabCredits:AddParagraph("Made By sh4kar60 On Discord","Owner")
@@ -109,7 +108,6 @@ TabCredits:AddParagraph("Credits To Everyone Who Showcase My Script Hub","Credit
 TabCredits:AddParagraph("Please Credit Me (sh4kar60) When Showcasing Script Hub","Credits")
 
 ------------------------------------------------------------------
-
 
 --Sliders And Text Boxes
 
@@ -1786,11 +1784,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fe Anti Chat Ban"
+Name = "Anti Chat Ban"
 })
 
 Tab2:AddButton({
-Name = "Fe Anti Chat Ban",
+Name = "Anti Chat Ban",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/Wqxzdi1q'))()
 print("Script Executed")
@@ -2137,5 +2135,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Plenum-
 print("Script Executed")
 end 
 })
+
+
+local Tab6Section = Tab6:AddSection({
+Name = "Fe Xray Script"
+})
+
+Tab6:AddButton({
+Name = "Fe Xray Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/xray/main/script",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
 --[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
+
