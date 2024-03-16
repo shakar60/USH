@@ -91,15 +91,58 @@ Name = "Credits",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
-------------------------------------------------------------------
---Paragraph
 
+------------------------------------------------------------------
+--Paragraphs
+
+local UserInputService = game:GetService("UserInputService")
+
+local function detectDevice()
+    if UserInputService.TouchEnabled then
+        if UserInputService.MouseEnabled then
+            return "Computer"
+        else
+            local isTablet = UserInputService:GetLastInputType() == Enum.UserInputType.Touch
+            if isTablet then
+                return "Tablet"
+            else
+                return "Mobile"
+            end
+        end
+    else
+        return "Computer"
+    end
+end
+
+TabHome:AddParagraph("Device", "Device: " .. detectDevice())
+
+TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
+TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
+TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
+TabHome:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+
+local Players = game:GetService("Players")
+
+local function updateMapName()
+  local placeId = game.PlaceId
+  local placeInfo = game.MarketplaceService:GetProductInfo(placeId)
+  local mapName = placeInfo.Name or "Unknown Map"
+  TabHome:AddParagraph("Map", "Map: " .. mapName)
+end
+
+Players.PlayerAdded:Connect(updateMapName)
+updateMapName()
+
+local mapID = game.PlaceId
+
+TabHome:AddParagraph("Map ID", "Map ID: " .. mapID)
 TabHome:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
 TabHome:AddParagraph("Join Discord For More Info","Or Dm sh4kar60")
 TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
 TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
 TabHome:AddParagraph(".gg/7A8TrUgEZX","Discord Server")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
+
 ------------------------------------------------------------------
 --Credits
 TabCredits:AddParagraph("Made By sh4kar60 On Discord","Owner")
@@ -2150,4 +2193,5 @@ end
 })
 OrionLib:Init()
 --[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
+
 
