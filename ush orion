@@ -117,8 +117,8 @@ local function detectDevice()
                 elseif screenWidth >= 768 and screenWidth < 1024 then
                     return "iPad"
                 else
-                    -- If the screen width doesn't match typical mobile or tablet sizes, consider it a hybrid device
-                    return "Hybrid"
+                    -- If the screen width doesn't match typical mobile, tablet, or iPad sizes, consider it as "Other"
+                    return "Other"
                 end
             end
         end
