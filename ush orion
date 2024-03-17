@@ -95,43 +95,6 @@ PremiumOnly = false
 ------------------------------------------------------------------
 --Paragraphs
 
-local UserInputService = game:GetService("UserInputService")
-
-local function detectDevice()
-    -- Check if touch input is enabled
-    if UserInputService.TouchEnabled then
-        -- Check if there's a mouse or keyboard input available
-        if UserInputService.MouseEnabled or UserInputService.KeyboardEnabled then
-            return "Computer"
-        else
-            -- Get the screen resolution
-            local screenResolution = UserInputService:GetScreenResolution()
-            local screenWidth = screenResolution.X
-            
-            -- Set a threshold for Tablet
-            local tabletThreshold = 1024
-            
-            -- Set a threshold for mobile devices
-            local mobileThreshold = 768
-            
-            -- Check if the screen width exceeds the Tablet threshold
-            if screenWidth > tabletThreshold then
-                return "Tablet"
-            elseif screenWidth > mobileThreshold then
-                return "Mobile"
-            else
-                return "Unknown"
-            end
-        end
-    else
-        return "Computer"
-    end
-end
-
--- Assuming TabHome:AddParagraph is a function to add a paragraph to a GUI
--- You need to ensure that it's properly implemented in your GUI framework
-TabHome:AddParagraph("Device", "Device: " .. detectDevice())
-
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
