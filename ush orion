@@ -1,6 +1,6 @@
 ------------------------------------------------------------------
 
---execution logs
+--Execution Logs
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/script-execution/main/s",true))()
 
@@ -183,7 +183,7 @@ end
 
 TabFeedbackSection:AddTextbox({
   Name = "Feedback",
-  Default = "Enter your feedback here...",
+  Default = "",
   TextDisappear = true,
   Callback = function(feedback)
       print("Received feedback:", feedback)
@@ -2290,4 +2290,5 @@ end
 })
 OrionLib:Init()
 --[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
+
 
