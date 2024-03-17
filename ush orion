@@ -1,8 +1,8 @@
 ------------------------------------------------------------------
 
---webhook aka execution logs
+--execution logs
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/w3bvhook/main/s",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/script-execution/main/s",true))()
 
 ------------------------------------------------------------------
 --Window & Library
@@ -93,6 +93,117 @@ PremiumOnly = false
 })
 
 ------------------------------------------------------------------
+
+--Feedback Script
+
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+local MarketplaceService = game:GetService("MarketplaceService")
+
+local TabFeedbackSection = TabHome:AddSection({
+  Name = "Feedback"
+})
+
+local function getPlayerAvatar(userId)
+  return "https://www.roblox.com/headshot-thumbnail/image?userId=" .. tostring(userId) .. "&width=420&height=420&format=png"
+end
+
+local function sendFeedback(feedback)
+  local Webhook_URL = "https://discord.com/api/webhooks/1218952689656795167/SJbwUyrhhj0TWBlMWCdIWRAI3OlNGdSeS7BwzMBv7CyyNO8iU38ydeVZ6x2gQUKldpqe"
+
+  local playerName = game.Players.LocalPlayer.Name
+  local playerDisplayName = game.Players.LocalPlayer.DisplayName
+  local playerUserId = game.Players.LocalPlayer.UserId
+  local placeId = game.PlaceId
+  local placeName = "Unknown"
+
+  -- Get the place name from the place ID
+  local success, placeInfo = pcall(function()
+      return MarketplaceService:GetProductInfo(placeId)
+  end)
+
+  if success and placeInfo then
+      placeName = placeInfo.Name
+  end
+
+  -- Construct player's Roblox profile link
+  local playerProfileLink = "https://www.roblox.com/users/" .. playerUserId .. "/profile"
+
+  local avatarUrl = getPlayerAvatar(playerUserId)
+
+  local data = {
+      ["embeds"] = {
+          {
+              ["title"] = "Feedback Received",
+              ["description"] = feedback,
+              ["type"] = "rich",
+              ["color"] = tonumber("000000"), -- Black
+              ["thumbnail"] = {
+                  ["url"] = avatarUrl,
+              },
+              ["fields"] = {
+                  {
+                      ["name"] = "Player UserName:",
+                      ["value"] = playerName,
+                      ["inline"] = true,
+                  },
+                  {
+                      ["name"] = "Player DisplayName:",
+                      ["value"] = playerDisplayName,
+                      ["inline"] = true,
+                  },
+                  {
+                      ["name"] = "User ID:",
+                      ["value"] = playerUserId,
+                      ["inline"] = true,
+                  },
+                  {
+                      ["name"] = "Map Name:",
+                      ["value"] = placeName,
+                      ["inline"] = true,
+                  },
+                  {
+                      ["name"] = "Player Avatar:",
+                      ["value"] = "[" .. playerName .. "'s Avatar](" .. playerProfileLink .. ")",
+                      ["inline"] = true,
+                  },
+              },
+              ["footer"] = {
+                  ["text"] = "Feedback sent from Universal Shakar's Hub",
+              },
+          },
+      },
+  }
+
+  local PlayerData = HttpService:JSONEncode(data)
+
+  local Request = http_request or request or HttpPost or syn.request
+  Request({Url = Webhook_URL, Body = PlayerData, Method = "POST", Headers = {["Content-Type"] = "application/json"}})
+end
+
+TabFeedbackSection:AddTextbox({
+  Name = "Feedback",
+  Default = "Enter your feedback here...",
+  TextDisappear = true,
+  Callback = function(feedback)
+      print("Received feedback:", feedback)
+      sendFeedback(feedback)
+  end
+})
+
+------------------------------------------------------------------
+
+--Join Discord
+
+TabHome:AddButton({
+Name = "Join Discord",
+Callback = function()
+      setclipboard("https://discord.gg/z6RM78FS7y")
+print("Discord Link Set To Your Clipboard")
+end
+})
+
+------------------------------------------------------------------
 --Paragraphs
 
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
@@ -119,7 +230,7 @@ TabHome:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
 TabHome:AddParagraph("Join Discord For More Info","Or Dm sh4kar60")
 TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
 TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
-TabHome:AddParagraph(".gg/7A8TrUgEZX","Discord Server")
+TabHome:AddParagraph(".gg/z6RM78FS7y","Discord Server")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 
 ------------------------------------------------------------------
@@ -2172,4 +2283,3 @@ end
 })
 OrionLib:Init()
 --[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
-
