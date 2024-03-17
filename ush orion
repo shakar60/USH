@@ -99,16 +99,21 @@ local UserInputService = game:GetService("UserInputService")
 
 local function detectDevice()
     if UserInputService.TouchEnabled then
-        if UserInputService:GetLastInputType() == Enum.UserInputType.Touch then
-            return "Mobile"
-        else
+        local lastInputType = UserInputService:GetLastInputType()
+        if lastInputType == Enum.UserInputType.Touch then
+            local screenSize = UserInputService:GetScreenSize()
+            if screenSize.Y <= 1024 then
+                return "iPad"
+            else
+                return "iPhone"
+            end
+        elseif lastInputType == Enum.UserInputType.MouseMovement then
             return "Tablet"
         end
     elseif UserInputService.MouseEnabled then
         return "Computer"
-    else
-        return "Unknown"
     end
+    return "Unknown"
 end
 
 print("Detected device:", detectDevice())
