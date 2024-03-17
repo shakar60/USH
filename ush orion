@@ -98,21 +98,7 @@ PremiumOnly = false
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
--- Function to calculate player's account age
-local function calculateAccountAge(player)
-    local currentDate = os.time()
-    local creationDate = player.CreationDate
-    local ageInSeconds = currentDate - creationDate
-    local ageInDays = math.floor(ageInSeconds / (60 * 60 * 24))
-    return ageInDays
-end
-
--- Example usage
-local player = game.Players.LocalPlayer
-local accountAgeInDays = calculateAccountAge(player)
-
--- Output account age to TabHome paragraph
-TabHome:AddParagraph("Account Age", "Days: " .. accountAgeInDays)
+TabHome:AddParagraph("Account Age", "Days: " .. (os.date("*t").yday - game.Players.LocalPlayer.CreationDate.yday))
   local placeId = game.PlaceId
   local placeInfo = game.MarketplaceService:GetProductInfo(placeId)
   local mapName = placeInfo.Name or "Unknown Map"
