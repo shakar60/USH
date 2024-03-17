@@ -99,24 +99,34 @@ local UserInputService = game:GetService("UserInputService")
 
 local function detectDevice()
     if UserInputService.TouchEnabled then
-        local lastInputType = UserInputService:GetLastInputType()
-        if lastInputType == Enum.UserInputType.Touch then
-            local screenSize = UserInputService:GetScreenSize()
-            if screenSize.Y <= 1024 then
-                return "iPad"
+        if UserInputService.MouseEnabled then
+            return "Computer"
+        else
+            local lastInputType = UserInputService:GetLastInputType()
+            if lastInputType == Enum.UserInputType.Touch then
+                local isTablet = UserInputService:GetLastInputType() == Enum.UserInputType.Touch
+                if isTablet then
+                    return "Tablet"
+                else
+                    return "Mobile"
+                end
+            elseif lastInputType == Enum.UserInputType.Gamepad1 or lastInputType == Enum.UserInputType.Gamepad2
+                or lastInputType == Enum.UserInputType.Gamepad3 or lastInputType == Enum.UserInputType.Gamepad4
+                or lastInputType == Enum.UserInputType.Gamepad5 or lastInputType == Enum.UserInputType.Gamepad6
+                or lastInputType == Enum.UserInputType.Gamepad7 or lastInputType == Enum.UserInputType.Gamepad8 then
+                return "Gamepad"
             else
-                return "iPhone"
+                return "Hybrid"
             end
-        elseif lastInputType == Enum.UserInputType.MouseMovement then
-            return "Tablet"
         end
-    elseif UserInputService.MouseEnabled then
+    else
         return "Computer"
     end
-    return "Unknown"
 end
 
-print("Detected device:", detectDevice())
+-- Assuming TabHome:AddParagraph is a function to add a paragraph to a GUI
+-- You need to ensure that it's properly implemented in your GUI framework
+TabHome:AddParagraph("Device", "Device: " .. detectDevice())
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
