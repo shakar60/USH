@@ -208,7 +208,11 @@ end
 })
 
 ------------------------------------------------------------------
---Paragraphs
+--Player Infos In Paragraph
+
+TabHome:AddSection({
+  Name = "Player Info:"
+})
 
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
@@ -230,15 +234,14 @@ updateMapName()
 local mapID = game.PlaceId
 
 TabHome:AddParagraph("Map ID", "Map ID: " .. mapID)
-TabHome:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
-TabHome:AddParagraph("Join Discord For More Info","Or Dm sh4kar60")
-TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
-TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
-TabHome:AddParagraph(".gg/z6RM78FS7y","Discord Server")
-TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 
 ------------------------------------------------------------------
 --Credits
+TabCredits:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
+TabCredits:AddParagraph("Join Discord For More Info","Or Dm sh4kar60")
+TabCredits:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
+TabCredits:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
+TabCredits:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 TabCredits:AddParagraph("Made By sh4kar60 On Discord","Owner")
 TabCredits:AddParagraph("Credits To Everyone Who Make The Scripts","Credits")
 TabCredits:AddParagraph("Credits To Everyone Who Showcase My Script Hub","Credits")
@@ -2287,3 +2290,4 @@ end
 })
 OrionLib:Init()
 --[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
+
