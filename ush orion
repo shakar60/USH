@@ -98,8 +98,71 @@ PremiumOnly = false
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
-TabHome:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+-- Function to calculate the age of the account
+local function calculateAccountAge(displayType)
+    local player = game.Players.LocalPlayer
+    if player then
+        -- Get the creation date of the player's account
+        local creationDate = player.CreationDate
+        if creationDate then
+            -- Get the current date
+            local currentDate = os.date("*t")
+            -- Convert creation date to os.time format
+            local creationTime = os.time(creationDate)
+            -- Convert current date to os.time format
+            local currentTime = os.time(currentDate)
+            -- Calculate the difference in seconds
+            local ageInSeconds = currentTime - creationTime
 
+            -- Calculate the age in years, months, and days
+            local ageInYears = math.floor(ageInSeconds / (365 * 24 * 60 * 60))
+            local ageInMonths = math.floor(ageInSeconds / (30 * 24 * 60 * 60))
+            local ageInDays = math.floor(ageInSeconds / (24 * 60 * 60))
+
+            -- Choose the display format based on the parameter
+            if displayType == "years" then
+                return ageInYears
+            elseif displayType == "months" then
+                return ageInMonths
+            elseif displayType == "days" then
+                return ageInDays
+            else
+                -- Default to days if the display type is invalid
+                return ageInDays
+            end
+        else
+            return "Error: Creation date not available"
+        end
+    else
+        return "Error: Player not found"
+    end
+end
+
+-- Function to format the account age string
+local function formatAccountAge(age, displayType)
+    if type(age) == "number" then
+        if displayType == "years" then
+            return age .. " years"
+        elseif displayType == "months" then
+            return age .. " months"
+        elseif displayType == "days" then
+            return age .. " days"
+        else
+            return "Error: Invalid display type"
+        end
+    else
+        return age
+    end
+end
+
+-- Assuming TabHome:AddParagraph is a function to add a paragraph to a GUI
+-- You need to ensure that it's properly implemented in your GUI framework
+
+-- Example usage:
+local displayType = "days" -- Change this to "years", "months", or "days"
+local age = calculateAccountAge(displayType)
+local formattedAge = formatAccountAge(age, displayType)
+TabHome:AddParagraph("Account Age", "Account Age: " .. formattedAge)
 local Players = game:GetService("Players")
 
 local function updateMapName()
