@@ -195,6 +195,10 @@ TabFeedbackSection:AddTextbox({
 
 --Join Discord
 
+TabHome:AddSection({
+  Name = "Join The Discord Here"
+})
+
 TabHome:AddButton({
 Name = "Join Discord",
 Callback = function()
