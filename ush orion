@@ -98,25 +98,29 @@ PremiumOnly = false
 local UserInputService = game:GetService("UserInputService")
 
 local function detectDevice()
+    -- Check if touch input is enabled
     if UserInputService.TouchEnabled then
-        if UserInputService.MouseEnabled then
+        -- Check if there's a mouse or keyboard input available
+        if UserInputService.MouseEnabled or UserInputService.KeyboardEnabled then
             return "Computer"
         else
-            local lastInputType = UserInputService:GetLastInputType()
-            if lastInputType == Enum.UserInputType.Touch then
-                local isTablet = UserInputService:GetLastInputType() == Enum.UserInputType.Touch
-                if isTablet then
-                    return "Tablet"
-                else
-                    return "Mobile"
-                end
-            elseif lastInputType == Enum.UserInputType.Gamepad1 or lastInputType == Enum.UserInputType.Gamepad2
-                or lastInputType == Enum.UserInputType.Gamepad3 or lastInputType == Enum.UserInputType.Gamepad4
-                or lastInputType == Enum.UserInputType.Gamepad5 or lastInputType == Enum.UserInputType.Gamepad6
-                or lastInputType == Enum.UserInputType.Gamepad7 or lastInputType == Enum.UserInputType.Gamepad8 then
-                return "Gamepad"
+            -- Get the screen resolution
+            local screenResolution = UserInputService:GetScreenResolution()
+            local screenWidth = screenResolution.X
+            
+            -- Set a threshold for Tablet
+            local tabletThreshold = 1024
+            
+            -- Set a threshold for mobile devices
+            local mobileThreshold = 768
+            
+            -- Check if the screen width exceeds the Tablet threshold
+            if screenWidth > tabletThreshold then
+                return "Tablet"
+            elseif screenWidth > mobileThreshold then
+                return "Mobile"
             else
-                return "Hybrid"
+                return "Unknown"
             end
         end
     else
