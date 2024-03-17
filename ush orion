@@ -98,7 +98,11 @@ PremiumOnly = false
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
-Tab:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+TabHome:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+
+local Players = game:GetService("Players")
+
+local function updateMapName()
   local placeId = game.PlaceId
   local placeInfo = game.MarketplaceService:GetProductInfo(placeId)
   local mapName = placeInfo.Name or "Unknown Map"
@@ -2168,5 +2172,3 @@ end
 })
 OrionLib:Init()
 --[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
-
-
