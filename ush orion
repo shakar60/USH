@@ -131,6 +131,7 @@ end
 -- Assuming TabHome:AddParagraph is a function to add a paragraph to a GUI
 -- You need to ensure that it's properly implemented in your GUI framework
 TabHome:AddParagraph("Device", "Device: " .. detectDevice())
+
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
