@@ -94,7 +94,16 @@ PremiumOnly = false
 
 ------------------------------------------------------------------
 --Paragraphs
+local Players = game:GetService("Players")
 
+-- Function to get the player's nickname
+local function getPlayerNickname()
+    local player = game.Players.LocalPlayer
+    return player and player.DisplayName or "Unknown"
+end
+
+-- Add welcome paragraph
+TabHome:AddParagraph("Welcome", "Welcome To USH " .. getPlayerNickname() .. "!")
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
