@@ -98,7 +98,7 @@ PremiumOnly = false
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
-TabHome:AddParagraph("Account Age", "Days: " .. (os.date("%j") - game.Players.LocalPlayer.CreationDate:ToUniversalTime().DayOfYear))
+Tab:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
   local placeId = game.PlaceId
   local placeInfo = game.MarketplaceService:GetProductInfo(placeId)
   local mapName = placeInfo.Name or "Unknown Map"
