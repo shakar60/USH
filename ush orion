@@ -117,7 +117,7 @@ local function detectDevice()
                     return "iPhone"
                 else
                     -- If the screen width doesn't match typical mobile, tablet, or iPad sizes, consider it as "Other"
-                    return "Mobile"
+                    return "Other"
                 end
             end
         end
@@ -127,6 +127,7 @@ local function detectDevice()
 end
 
 TabHome:AddParagraph("Device", "Device: " .. detectDevice())
+
 TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
 TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
