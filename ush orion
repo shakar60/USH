@@ -18,7 +18,12 @@ Text = "Made by sh4kar60 On Discord";
 Duration = 5; 
 })
 ------------------------------------------------------------------
+
 --Tabs 
+
+-----
+
+--TabHome
 
 local TabHome = Window:MakeTab({
 Name = "Home",
@@ -26,11 +31,19 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+-----
+
+--TabPlayer
+
 local TabPlayer = Window:MakeTab({
 Name = "Player",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
+
+-----
+
+--Tab2
 
 local Tab2 = Window:MakeTab({
 Name = "Main Scripts",
@@ -38,11 +51,19 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+-----
+
+--Tab3
+
 local Tab3 = Window:MakeTab({
 Name = "Guis/hubs",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
+
+-----
+
+--TbAdmin
 
 local TabAdmin = Window:MakeTab({
 Name = "Admin Cmds",
@@ -50,11 +71,19 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+-----
+
+--TabAL
+
 local TabAL = Window:MakeTab({
 Name = "AimLock/Lock",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
+
+-----
+
+--TabDH
 
 local TabDH = Window:MakeTab({
 Name = "DH Based Scripts/Hubs",
@@ -62,11 +91,19 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+-----
+
+--TabBF
+
 local TabBF = Window:MakeTab({
 Name = "Blox Fruits Scripts",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
+
+-----
+
+--TabHitbox
 
 local TabHitbox = Window:MakeTab({
 Name = "Hitbox Expander",
@@ -74,17 +111,29 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+-----
+
+--Tab6
+
 local Tab6 = Window:MakeTab({
 Name = "Other Scripts",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+-----
+
+--TabK
+
 local TabK = Window:MakeTab({
 Name = "KeyStrokes",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
+
+-----
+
+--TabCredits
 
 local TabCredits = Window:MakeTab({
 Name = "Credits",
@@ -208,16 +257,32 @@ end
 })
 
 ------------------------------------------------------------------
---Player Infos In Paragraph
+--Player Infos
 
 TabHome:AddSection({
   Name = "Player Info:"
 })
 
-TabHome:AddParagraph("Player Name", "Player Name: " .. game.Players.LocalPlayer.Name)
-TabHome:AddParagraph("Nickname", "Nickname: " .. game.Players.LocalPlayer.DisplayName)
+TabHome:AddSection({
+  Name = "Player Username:"
+})
+TabHome:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
+TabHome:AddSection({
+  Name = "Player DisplayName:"
+})
+TabHome:AddParagraph("DisplayName", "DisplayName: " .. game.Players.LocalPlayer.DisplayName)
+TabHome:AddSection({
+  Name = "Player UserID:"
+})
 TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
+TabHome:AddSection({
+  Name = "Played Account Age:"
+})
 TabHome:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+
+TabHome:AddSection({
+  Name = "Map:"
+})
 
 local Players = game:GetService("Players")
 
@@ -230,6 +295,10 @@ end
 
 Players.PlayerAdded:Connect(updateMapName)
 updateMapName()
+
+TabHome:AddSection({
+  Name = "Map ID:"
+})
 
 local mapID = game.PlaceId
 
