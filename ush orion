@@ -2301,18 +2301,28 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Chat Logs Script"
+local Tab3Section = Tab3:AddSection({
+Name = "BedWars Alsploit"
 })
 
-Tab6:AddButton({
-Name = "Chat Logs Script",
+Tab3:AddButton({
+Name = "BedWars Alsploit",
 Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/stggPUBM",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AlSploit/GodSploit/main/LoadString",true))()
 print("Script Executed")
 end 
 })
 
-OrionLib:Init()
 
---[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]
+local Tab3Section = Tab3:AddSection({
+Name = "BedWars Vape V4"
+})
+
+Tab3:AddButton({
+Name = "BedWars Vape V4",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+print("Script Executed")
+end 
+})
+OrionLib:Init()
