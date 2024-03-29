@@ -1315,7 +1315,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Mm2 Script Guis"
+Name = "Mm2 Script Hub/Guis"
 })
 
 Tab3:AddButton({
@@ -1330,6 +1330,14 @@ Tab3:AddButton({
 Name = "Mm2 Admin Panel",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MarsQQ/ScriptHubScripts/master/MM2%20Admin%20Panel"))()
+print("Script Executed")
+end 
+})
+
+Tab3:AddButton({
+Name = "Tbao Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubMurderMystery2") )( )
 print("Script Executed")
 end 
 })
@@ -2391,6 +2399,19 @@ Tab3:AddButton({
 Name = "BedWars Vape V4",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+print("Script Executed")
+end 
+})
+
+
+local Tab3Section = Tab3:AddSection({
+Name = "Ski Hub"
+})
+
+Tab3:AddButton({
+Name = "Ski Hub",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/mT10xnt7",true))()
 print("Script Executed")
 end 
 })
