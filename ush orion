@@ -463,7 +463,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Anti Fling & Fling Scripts"
+Name = "Anti Fling V1"
 })
 
 Tab2:AddButton({
@@ -474,12 +474,20 @@ print("Script Executed")
 end 
 })
 
+local Tab2Section = Tab2:AddSection({
+Name = "Anti Fling V2"
+})
+
 Tab2:AddButton({
 Name = "Anti Fling V2",
 Callback = function()
 loadstring(game:HttpGet(('https://pastebin.com/raw/GxdesRQx'),true))()
 print("Script Executed")
 end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Click Fling"
 })
 
 Tab2:AddButton({
@@ -489,6 +497,8 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_4Q
 print("Script Executed")
 end 
 })
+
+
 
 Tab2:AddButton({
 Name = "Fling Gui",
@@ -505,7 +515,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fake Lag & Switch Lag"
+Name = "Fake Lag"
 })
 
 Tab2:AddButton({
@@ -514,6 +524,10 @@ Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/VM3b0Thg'))()
 print("Script Executed")
 end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Switch Lag"
 })
 
 Tab2:AddButton({
@@ -577,7 +591,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fly Scripts"
+Name = "Fly Script V1"
 })
 
 Tab2:AddButton({
@@ -588,12 +602,20 @@ print("Script Executed")
 end 
 })
 
+local Tab2Section = Tab2:AddSection({
+Name = "Fly Script V2"
+})
+
 Tab2:AddButton({
 Name = "Fly V2",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Flexzstr/FlyScript/main/Beta"))()
 print("Script Executed")
 end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Fly Script V3 (For DH)"
 })
 
 Tab2:AddButton({
@@ -605,7 +627,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Rejoin & Direct Rejoin"
+Name = "Rejoin Script (When Disconnected)"
 })
 
 Tab2:AddButton({
@@ -614,6 +636,10 @@ Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-2/main/rejoin%20button%20for%20kick%20message.lua", true))()
 print("Script Executed")
 end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Rejoin Script (Instant Rejoin)"
 })
 
 Tab2:AddButton({
@@ -637,11 +663,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Tp Walk V3"
+Name = "Tp Walk Script"
 })
 
 Tab6:AddButton({
-Name = "Tp Walk V3",
+Name = "Tp Walk Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TherealXORA/Roblox-Scripts/main/TpwalkV3"))()
 print("Script Executed")
@@ -729,11 +755,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Race Car Hub"
+Name = "Race Car Script Hub"
 })
 
 Tab3:AddButton({
-Name = "Race Car Hub",
+Name = "Race Car Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukezz/Fe-Scripts/main/Fe%20Racecar"))()
 print("Script Executed")
@@ -741,7 +767,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Babft Script Hubs"
+Name = "Babft Exe Script Hub"
 })
 
 Tab3:AddButton({
@@ -861,7 +887,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Ragdoll Engine Script Hub"
+Name = "Mystery Hub (For Ragdoll Engine)"
 })
 
 Tab3:AddButton({
@@ -873,7 +899,7 @@ end
 })
 
 Tab3:AddButton({
-Name = "Malware Hub",
+Name = "Malware Hub (For Ragdoll Engine)",
 Callback = function()
 loadstring(game:HttpGet('https://gist.githubusercontent.com/H20CalibreYT/462f6e6236a9371130f113def6549bb1/raw/'))()
 print("Script Executed")
@@ -881,11 +907,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Air Swim"
+Name = "Air Swim Script"
 })
 
 Tab6:AddButton({
-Name = "Air Swim",
+Name = "Air Swim Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/9CK0qSgn"))()
 print("Script Executed")
@@ -893,11 +919,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Chat Executor"
+Name = "Chat Executor Script"
 })
 
 Tab6:AddButton({
-Name = "Chat Executor",
+Name = "Chat Executor Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/chat-executor/main/chat-executor",true))()
 print("Script Executed")
@@ -929,7 +955,7 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Vehicle Legends Scripr"
+Name = "Vehicle Legends Script"
 })
 
 Tab6:AddButton({
@@ -1089,7 +1115,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "No Clip Guis"
+Name = "No Clip Gui V1"
 })
 
 Tab3:AddButton({
@@ -1100,6 +1126,9 @@ print("Script Executed")
 end 
 })
 
+local Tab3Section = Tab3:AddSection({
+Name = "No Clip Gui V1"
+})
 
 Tab3:AddButton({
 Name = "No Clip Gui V2",
@@ -1315,15 +1344,19 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Mm2 Script Hub/Guis"
+Name = "Vynixu's Mm2 Script Gui"
 })
 
 Tab3:AddButton({
-Name = "Vynixu's mm2 Gui",
+Name = "Vynixu's Mm2 Script Gui",
 Callback = function()
 loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
 print("Script Executed")
 end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Mm2 Admin Panel"
 })
 
 Tab3:AddButton({
@@ -1335,7 +1368,7 @@ end
 })
 
 Tab3:AddButton({
-Name = "Tbao Hub",
+Name = "Mm2 Tbao Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubMurderMystery2") )( )
 print("Script Executed")
@@ -1355,7 +1388,7 @@ end
 })
 
 local TabHitboxSection = TabHitbox:AddSection({
-Name = "Hitbox Expanders"
+Name = "Hitbox Expander V1"
 })
 
 TabHitbox:AddButton({
@@ -1366,6 +1399,9 @@ print("Script Executed")
 end 
 })
 
+local TabHitboxSection = TabHitbox:AddSection({
+Name = "Hitbox Expander V2"
+})
 
 TabHitbox:AddButton({
 Name = "Hitbox Expander V2",
@@ -1375,6 +1411,9 @@ print("Script Executed")
 end 
 })
 
+local TabHitboxSection = TabHitbox:AddSection({
+Name = "Hitbox Expander V3"
+})
 
 TabHitbox:AddButton({
 Name = "Hitbox Expander V3",
@@ -1385,11 +1424,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "ApeiroPhobia Script"
+Name = "ApeiroPhobia Script Hub"
 })
 
 Tab6:AddButton({
-Name = "ApeiroPhobia Script",
+Name = "ApeiroPhobia Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/apeirophobia/main/script",true))()
 print("Script Executed")
