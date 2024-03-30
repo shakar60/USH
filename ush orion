@@ -2415,4 +2415,64 @@ loadstring(game:HttpGet("https://pastebin.com/raw/mT10xnt7",true))()
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball Noxulico Gui"
+})
+
+Tab3:AddButton({
+Name = "Noxulico Gui",
+Callback = function()
+loadstring(Game:HttpGet("https://pastebin.com/raw/GeFeimBx"))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball Yelo Hub"
+})
+
+Tab3:AddButton({
+Name = "Yelo Hub",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/kierpogihahaxd2/MANUAL/main/Script'))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball EminX Hub"
+})
+
+Tab3:AddButton({
+Name = "EminX Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EminenceXLua/Blade-your-Balls/main/BladeBallLoader.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball Neon.C Gui"
+})
+
+Tab3:AddButton({
+Name = "Neon.C Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/toosiwhip/statue/main/neon.lua"))();
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball AutoParry Script"
+})
+
+Tab3:AddButton({
+Name = "AutoParry Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-parry-/main/blade%20ball",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
