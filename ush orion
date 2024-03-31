@@ -2540,7 +2540,7 @@ Name = "Pop It Trading Dupe Script Hub"
 })
 
 Tab6:AddButton({
-Name = "Pop It Trading Dupe ScriptHub",
+Name = "Pop It Trading Dupe Script Hub",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/dcyuEgyK'))()
 print("Script Executed")
