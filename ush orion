@@ -2514,4 +2514,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-parry-/
 print("Script Executed")
 end 
 })
+
+local TabBFSection = TabBF:AddSection({
+Name = "Alchrmy Hub"
+})
+
+TabBF:AddButton({
+Name = "Alchemy Hub",
+Callback = function()
+loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
+print("Script Executed")
+end 
+})
+
+local TabBFSection = TabBF:AddSection({
+Name = "Zephyr Hub"
+})
+
+TabBF:AddButton({
+Name = "Zephyr Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kenyoux2/zeqhyrhub/main/README.md"))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
