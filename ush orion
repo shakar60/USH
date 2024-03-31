@@ -2534,4 +2534,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/kenyoux2/zeqhyrhub/ma
 print("Script Executed")
 end 
 })
+
+local Tab6Section = Tab6:AddSection({
+Name = "Pop It Trading Dupe Script Hub"
+})
+
+Tab6:AddButton({
+Name = "Pop It Trading Dupe ScriptHub",
+Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/dcyuEgyK'))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
