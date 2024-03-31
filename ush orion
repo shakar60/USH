@@ -1163,11 +1163,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Chest Farm V1"
+Name = "Chest Farm V1"
 })
 
 TabBF:AddButton({
-Name = "BF Chest Farm V1",
+Name = "Chest Farm V1",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/ChestFarmOp"))()
 print("Script Executed")
@@ -1175,11 +1175,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Chest Farm V2"
+Name = "Chest Farm V2"
 })
 
 TabBF:AddButton({
-Name = "BF Chest Farm V2",
+Name = "Chest Farm V2",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Chest_onoff"))()
 print("Script Executed")
@@ -1187,11 +1187,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Script Hub Delta"
+Name = "Delta's Script Hub"
 })
 
 TabBF:AddButton({
-Name = "BF Script Hub Delta",
+Name = "Delta's Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/lxnnydev/1325a6ec942d0bb837bafe0ee25fcc5c/raw/c9ab9f038142427ba1739f099e78bb0b0588fa40/bf_script.lua",true))()
 print("Script Executed")
@@ -1199,11 +1199,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Fai Fao"
+Name = "Fai Fao Hub"
 })
 
 TabBF:AddButton({
-Name = "BF Fai Fao (Op)",
+Name = "Fai Fao Hub",
 Callback = function()
 loadstring(game:HttpGet"https://raw.githubusercontent.com/PNguyen0199/Script/main/Fai-Fao-Ver2.lua")()
 print("Script Executed")
@@ -1211,11 +1211,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF vector hub"
+Name = "Vector Hub"
 })
 
 TabBF:AddButton({
-Name = "BF vector hub",
+Name = "Vector Hub",
 Callback = function()
 _G.Mode = "Eng" 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/VectorHub/main/Loader.lua"))()
@@ -1800,10 +1800,6 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Boombox Scripts"
-})
-
-local Tab6Section = Tab6:AddSection({
 Name = "Salmons Skidded Boombox Hub"
 })
 
@@ -2064,11 +2060,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Prtty Much Evry Bordr Game Vr Script"
+Name = "Bordr Game Script"
 })
 
 Tab3:AddButton({
-Name = "Prtty Much Evry Bordr Game Vr",
+Name = "Bordr Game Script",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/memejames/New/main/Hub'))()
 print("Script Executed")
