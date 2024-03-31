@@ -2516,11 +2516,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "Alchrmy Hub"
+Name = "Alchemy Hub (Key System)"
 })
 
 TabBF:AddButton({
-Name = "Alchemy Hub",
+Name = "Alchemy Hub (Key System)",
 Callback = function()
 loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
 print("Script Executed")
