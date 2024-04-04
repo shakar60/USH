@@ -2256,7 +2256,7 @@ Name = "Arsenal Script Hub"
 })
 
 Tab3:AddButton({
-Name = "Arsenal Op Scripthub",
+Name = "Arsenal Op Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/B6fhpKJg"))()
 print("Script Executed")
@@ -2582,4 +2582,16 @@ loadstring(game:HttpGet('https://pastebin.com/raw/dcyuEgyK'))()
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "ScriptHub Script"
+})
+
+Tab3:AddButton({
+Name = "ScriptHub Script",
+Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/scripthubv3beta/main/scripthubv3beta1", true))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
