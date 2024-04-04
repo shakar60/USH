@@ -1086,6 +1086,18 @@ print("Script Executed")
 end 
 })
 
+local TabKSection = TabK:AddSection({
+Name = "T Tool"
+})
+
+TabK:AddButton({
+Name = "T Tool",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/T/main/Tool",true))()
+print("Script Executed")
+end 
+})
+
 local TabALSection = TabAL:AddSection({
 Name = "RyzzChips Lock"
 })
