@@ -595,7 +595,7 @@ Name = "Fly Script V1"
 })
 
 Tab2:AddButton({
-Name = "Fly V1",
+Name = "Fly Script V1",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
 print("Script Executed")
@@ -607,9 +607,9 @@ Name = "Fly Script V2"
 })
 
 Tab2:AddButton({
-Name = "Fly V2",
+Name = "Fly Script V2",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Flexzstr/FlyScript/main/Beta"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fly/main/script",true))()
 print("Script Executed")
 end 
 })
@@ -619,9 +619,33 @@ Name = "Fly Script V3 (For DH)"
 })
 
 Tab2:AddButton({
-Name = "Fly V3",
+Name = "Fly Script V3",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/gJfKgLra"))();
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Fly Script V4"
+})
+
+Tab2:AddButton({
+Name = "Fly Script V4",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/gaz0U0XX"))();
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Car Fly Script"
+})
+
+Tab2:AddButton({
+Name = "Car Fly Script",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
 print("Script Executed")
 end 
 })
