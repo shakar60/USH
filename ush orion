@@ -1098,6 +1098,130 @@ print("Script Executed")
 end 
 })
 
+local TabKSection = TabK:AddSection({
+Name = "KeyStroke Guis"
+})
+
+local TabKSection = TabK:AddSection({
+Name = "Q Gui"
+})
+
+TabK:AddButton({
+Name = "Q Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/QGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "G Gui"
+})
+
+TabK:AddButton({
+Name = "G Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/GGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "C Gui"
+})
+
+TabK:AddButton({
+Name = "C Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/CGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "M Gui"
+})
+
+TabK:AddButton({
+Name = "M Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/MGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "N Gui"
+})
+
+TabK:AddButton({
+Name = "N Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/NGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "F Gui"
+})
+
+TabK:AddButton({
+Name = "F Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/FGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "X Gui"
+})
+
+TabK:AddButton({
+Name = "X Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/XGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "Z Gui"
+})
+
+TabK:AddButton({
+Name = "Z Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/ZGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "T Gui"
+})
+
+TabK:AddButton({
+Name = "T Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "BackSpace Gui"
+})
+
+TabK:AddButton({
+Name = "BackSpace Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Backspace-Gui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
 local TabALSection = TabAL:AddSection({
 Name = "RyzzChips Lock"
 })
@@ -1126,6 +1250,10 @@ local Tab6Section = Tab6:AddSection({
 Name = "TP Scripts"
 })
 
+local Tab6Section = Tab6:AddSection({
+Name = "TP Players"
+})
+
 Tab6:AddButton({
 Name = "TP Players",
 Callback = function()
@@ -1134,12 +1262,20 @@ print("Script Executed")
 end 
 })
 
+local Tab6Section = Tab6:AddSection({
+Name = "Tween Tp"
+})
+
 Tab6:AddButton({
 Name = "Tween TP",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_gtQG8WW70awuM1u2O6I8Z3j007xzGnfC0vw6D6Tzj226R20KPLyKZR8MbK5V57mu.lua.txt'),true))()
 print("Script Executed")
 end 
+})
+
+local Tab6Section = Tab6:AddSection({
+Name = "Click To Tp"
 })
 
 Tab6:AddButton({
@@ -1163,7 +1299,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "No Clip Gui V1"
+Name = "No Clip Gui V2"
 })
 
 Tab3:AddButton({
@@ -1471,18 +1607,6 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "Ability Wars Gui [ Key: 4M70sudE2YtN58A9 ]"
-})
-
-Tab3:AddButton({
-Name = "Ability Wars Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/VxleLUA/Dynamic-Offical/main/System/GameChecker.lua"))()
-print("Script Executed")
-end 
-})
-
 local Tab2Section = Tab2:AddSection({
 Name = "Fe Freeze Script"
 })
@@ -1567,18 +1691,6 @@ print("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
-Name = "Orange Box Lock"
-})
-
-TabAL:AddButton({
-Name = "Orange Box Lock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzchips/6942334039b725b3ea380aaa7959949f938c2dc9/obf_swVYM0h5h3Rk75C9yprMgKc2ER64968pH0zAy2E30o3H3smBe01xnvZNwrm6oDYo.lua.txt", true))()
-print("Script Executed")
-end 
-})
-
 local TabDHSection = TabDH:AddSection({
 Name = "Speed Tool"
 })
@@ -1604,7 +1716,7 @@ end
 })
 
 local TabALSection = TabAL:AddSection({
-Name = " Rage AimLock"
+Name = "Rage AimLock"
 })
 
 TabAL:AddButton({
@@ -1963,18 +2075,6 @@ print("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
-Name = "Silent Aim Gui [ Bad ]"
-})
-
-TabAL:AddButton({
-Name = "Silent Aim Gui [ Bad ]",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/zuwdaq/legit-slient-aim-script/main/legit",true))()
-print("Script Executed")
-end 
-})
-
 local TabDHSection = TabDH:AddSection({
 Name = "Nyula Gui"
 })
@@ -1983,18 +2083,6 @@ TabDH:AddButton({
 Name = "Nyula Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/nyulachan/nyula/main/nyula", true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "i forgor Hub"
-})
-
-Tab3:AddButton({
-Name = "i forgor Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iforgotmodz/Universal-Script-Loader/main/Updated1.3"))()
 print("Script Executed")
 end 
 })
@@ -2072,11 +2160,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Anti Chat Ban"
+Name = "Anti Chat Log"
 })
 
 Tab2:AddButton({
-Name = "Anti Chat Ban",
+Name = "Anti Chat Log",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/Wqxzdi1q'))()
 print("Script Executed")
@@ -2160,7 +2248,7 @@ Name = "The Best Strongest Battle Ground Script Gui"
 })
 
 Tab3:AddButton({
-Name = "Strongest Battle Ground Key: [ BestTheStrongest5412Roblox ]",
+Name = "Key: [ BestTheStrongest5412Roblox ]",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Strongest/main/Battlegrounds77"))()
 print("Script Executed")
@@ -2168,25 +2256,13 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "RoGhoul Script Gui"
+Name = "RoGhoul Script Hub"
 })
 
 Tab3:AddButton({
-Name = "RoGhoul Script Gui",
+Name = "RoGhoul Script Hub",
 Callback = function()
 loadstring(game:HttpGet"https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader")()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Fe R15 To R6"
-})
-
-Tab2:AddButton({
-Name = "Fe R15 To R6",
-Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Imagnir/r6_anims_for_r15/main/r6_anims.lua'),true))()
 print("Script Executed")
 end 
 })
@@ -2256,7 +2332,7 @@ Name = "Arsenal Script Hub"
 })
 
 Tab3:AddButton({
-Name = "Arsenal Op Script Hub",
+Name = "Arsenal Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/B6fhpKJg"))()
 print("Script Executed")
@@ -2299,7 +2375,6 @@ print("Script Executed")
 end 
 })
 
-
 local Tab6Section = Tab6:AddSection({
 Name = "Blox Burg Cashier Autofarm"
 })
@@ -2307,7 +2382,7 @@ Name = "Blox Burg Cashier Autofarm"
 Tab6:AddButton({
 Name = "Blox Burg Cashier Autofarm",
 Callback = function()
-_G.time = 4 -- how long to auto farm before getting kicked (in hours)
+_G.time = 4
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ZackDaQuack/blox/main/minimum_wage.lua', true))()
 print("Script Executed")
@@ -2424,13 +2499,12 @@ print("Script Executed")
 end 
 })
 
-
 local Tab6Section = Tab6:AddSection({
-Name = "Fe Xray Script"
+Name = "Xray Script Gui"
 })
 
 Tab6:AddButton({
-Name = "Fe Xray Script",
+Name = "Xray Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/xray/main/script",true))()
 print("Script Executed")
@@ -2450,44 +2524,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "BedWars Alsploit"
-})
-
-Tab3:AddButton({
-Name = "BedWars Alsploit",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AlSploit/GodSploit/main/LoadString",true))()
-print("Script Executed")
-end 
-})
-
-
-local Tab3Section = Tab3:AddSection({
-Name = "BedWars Vape V4"
-})
-
-Tab3:AddButton({
-Name = "BedWars Vape V4",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-print("Script Executed")
-end 
-})
-
-
-local Tab3Section = Tab3:AddSection({
-Name = "Ski Hub"
-})
-
-Tab3:AddButton({
-Name = "Ski Hub",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/mT10xnt7",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Blade Ball Noxulico Gui"
 })
 
@@ -2495,18 +2531,6 @@ Tab3:AddButton({
 Name = "Noxulico Gui",
 Callback = function()
 loadstring(Game:HttpGet("https://pastebin.com/raw/GeFeimBx"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball Yelo Hub"
-})
-
-Tab3:AddButton({
-Name = "Yelo Hub",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/kierpogihahaxd2/MANUAL/main/Script'))()
 print("Script Executed")
 end 
 })
@@ -2536,180 +2560,12 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball AutoParry Script"
-})
-
-Tab3:AddButton({
-Name = "AutoParry Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-parry-/main/blade%20ball",true))()
-print("Script Executed")
-end 
-})
-
-local TabBFSection = TabBF:AddSection({
-Name = "Alchemy Hub (Key System)"
-})
-
-TabBF:AddButton({
-Name = "Alchemy Hub (Key System)",
-Callback = function()
-loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
-print("Script Executed")
-end 
-})
-
-local TabBFSection = TabBF:AddSection({
-Name = "Zephyr Hub"
-})
-
-TabBF:AddButton({
-Name = "Zephyr Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/kenyoux2/zeqhyrhub/main/README.md"))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Pop It Trading Dupe Script Hub"
-})
-
-Tab6:AddButton({
-Name = "Pop It Trading Dupe Script Hub",
-Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/dcyuEgyK'))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "ScriptHub Script"
 })
 
 Tab3:AddButton({
 Name = "ScriptHub Script",
 Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/scripthubv3beta/main/scripthubv3beta1", true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "Q Gui"
-})
-
-TabK:AddButton({
-Name = "Q Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/QGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "G Gui"
-})
-
-TabK:AddButton({
-Name = "G Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/GGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "C Gui"
-})
-
-TabK:AddButton({
-Name = "C Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/CGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "M Gui"
-})
-
-TabK:AddButton({
-Name = "M Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/MGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "N Gui"
-})
-
-TabK:AddButton({
-Name = "N Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/NGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "F Gui"
-})
-
-TabK:AddButton({
-Name = "F Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/FGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "X Gui"
-})
-
-TabK:AddButton({
-Name = "X Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/XGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "Z Gui"
-})
-
-TabK:AddButton({
-Name = "Z Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/ZGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "T Gui"
-})
-
-TabK:AddButton({
-Name = "T Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "BackSpace Gui"
-})
-
-TabK:AddButton({
-Name = "BackSpace Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Backspace-Gui/main/Script",true))()
 print("Script Executed")
 end 
 })
