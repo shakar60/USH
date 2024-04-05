@@ -2232,30 +2232,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Funky Friday Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Funky Friday Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ShowerHead-FluxTeam/scripts/main/funky-friday-autoplay"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "The Best Strongest Battle Ground Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Key: [ BestTheStrongest5412Roblox ]",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/Strongest/main/Battlegrounds77"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "RoGhoul Script Hub"
 })
 
@@ -2555,6 +2531,18 @@ Tab3:AddButton({
 Name = "Neon.C Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/toosiwhip/statue/main/neon.lua"))();
+print("Script Executed")
+end 
+})
+
+local TabBFSection = TabBF:AddSection({
+Name = "Alchemy Hub (Key System)"
+})
+
+TabBF:AddButton({
+Name = "Alchemy Hub (Key System)",
+Callback = function()
+loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
 print("Script Executed")
 end 
 })
