@@ -2594,4 +2594,123 @@ print("Script Executed")
 end 
 })
 
+local TabKSection = TabK:AddSection({
+Name = "Q Gui"
+})
+
+TabK:AddButton({
+Name = "Q Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/QGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "G Gui"
+})
+
+TabK:AddButton({
+Name = "G Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/GGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "C Gui"
+})
+
+TabK:AddButton({
+Name = "C Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/CGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "M Gui"
+})
+
+TabK:AddButton({
+Name = "M Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/MGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "N Gui"
+})
+
+TabK:AddButton({
+Name = "N Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/NGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "F Gui"
+})
+
+TabK:AddButton({
+Name = "F Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/FGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "X Gui"
+})
+
+TabK:AddButton({
+Name = "X Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/XGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "Z Gui"
+})
+
+TabK:AddButton({
+Name = "Z Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/ZGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "T Gui"
+})
+
+TabK:AddButton({
+Name = "T Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local TabKSection = TabK:AddSection({
+Name = "BackSpace Gui"
+})
+
+TabK:AddButton({
+Name = "BackSpace Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Backspace-Gui/main/Script",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
