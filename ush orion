@@ -2569,4 +2569,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/btools/main/
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Be A Parkor Ninja Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Be A Parkor Ninja Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Min1273/n-to/main/README.md"))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
