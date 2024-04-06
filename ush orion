@@ -463,55 +463,15 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Anti Fling V1"
+Name = "Fling n Anti Fling Gui"
 })
 
 Tab2:AddButton({
-Name = "Anti Fling V1",
+Name = "Fling n Anti Fling Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/anti.-./main/fling",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Fling-and-anti-fling-gui/main/Script",true))()
 print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Anti Fling V2"
-})
-
-Tab2:AddButton({
-Name = "Anti Fling V2",
-Callback = function()
-loadstring(game:HttpGet(('https://pastebin.com/raw/GxdesRQx'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Click Fling"
-})
-
-Tab2:AddButton({
-Name = "Click Fling",
-Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_4Q10q272NIQc093Os32uBi29U9PWkU0d3Tr1Uh4k92vus2u10786Z0jep5uhqE2N.lua.txt'),true))()
-print("Script Executed")
-end 
-})
-
-
-
-Tab2:AddButton({
-Name = "Fling Gui",
-Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
-end 
-})
-
-Tab2:AddButton({
-Name = "Toggle Fling",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
-end 
+end
 })
 
 local Tab2Section = Tab2:AddSection({
