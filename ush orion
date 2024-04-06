@@ -618,18 +618,6 @@ print("Script Executed")
 end 
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Script Hub V2"
-})
-
-Tab2:AddButton({
-Name = "Script Hub V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV2/main/SCRIPTHUBV2", true))()
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Kat Aimbot Script Gui"
 })
@@ -667,25 +655,13 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Invisible Script V1"
+Name = "Invisible Script Gui"
 })
 
 Tab2:AddButton({
-Name = "Invisible Script V1",
+Name = "Invisible Script Gui",
 Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/AYtzGEPb'))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Invisible Script V2"
-})
-
-Tab2:AddButton({
-Name = "Invisible Script V2",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/invisiblegui/main/script",true))()
 print("Script Executed")
 end 
 })
