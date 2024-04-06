@@ -951,41 +951,13 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "TP Scripts"
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "TP Players"
+Name = "TP Gui Script"
 })
 
 Tab6:AddButton({
-Name = "TP Players",
+Name = "TP Gui Script",
 Callback = function()
-loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Tween Tp"
-})
-
-Tab6:AddButton({
-Name = "Tween TP",
-Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_gtQG8WW70awuM1u2O6I8Z3j007xzGnfC0vw6D6Tzj226R20KPLyKZR8MbK5V57mu.lua.txt'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Click To Tp"
-})
-
-Tab6:AddButton({
-Name = "Click To TP",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/ClickToTp/main/Script",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TpGui/main/Script",true))()
 print("Script Executed")
 end 
 })
