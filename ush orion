@@ -2557,4 +2557,16 @@ Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.
 print("Script Executed")
 end 
 })
+
+local Tab6Section = Tab6:AddSection({
+Name = "Btools Script"
+})
+
+Tab6:AddButton({
+Name = "Btools Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/btools/main/script",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
