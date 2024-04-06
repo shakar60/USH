@@ -935,109 +935,13 @@ end
 })
 
 local TabKSection = TabK:AddSection({
-Name = "Q Tool"
+Name = "KeyStrokes Gui"
 })
 
 TabK:AddButton({
-Name = "Q Tool",
+Name = "KeyStrokes Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Q/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "G Tool"
-})
-
-TabK:AddButton({
-Name = "G Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/G./main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "C Tool"
-})
-
-TabK:AddButton({
-Name = "C Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/C/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "M Tool"
-})
-
-TabK:AddButton({
-Name = "M Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/M/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "N Tool"
-})
-
-TabK:AddButton({
-Name = "N Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/N/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "F Tool"
-})
-
-TabK:AddButton({
-Name = "F Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/F/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "X Tool"
-})
-
-TabK:AddButton({
-Name = "X Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/X/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "Z Tool"
-})
-
-TabK:AddButton({
-Name = "Z Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Z/main/Tool",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "T Tool"
-})
-
-TabK:AddButton({
-Name = "T Tool",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/T/main/Tool",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
 print("Script Executed")
 end 
 })
