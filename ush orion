@@ -678,6 +678,10 @@ print("Script Executed")
 end 
 })
 
+local Tab2Section = Tab2:AddSection({
+Name = "Invisible Script V2"
+})
+
 Tab2:AddButton({
 Name = "Invisible Script V2",
 Callback = function()
@@ -908,10 +912,6 @@ Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
 print("Script Executed")
 end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "KeyStroke Gui V2"
 })
 
 local TabKSection = TabK:AddSection({
@@ -2233,4 +2233,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Min1273/n-to/main/REA
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Free Gamepass Script Gui"
+})
+
+Tab3:AddButton({
+Name = Free Gamepass ScriptGui",
+Callback = function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
