@@ -1560,37 +1560,13 @@ end
 })
 
 local TabHitboxSection = TabHitbox:AddSection({
-Name = "Hitbox Expander V1"
+Name = "Hitbox Expander Gui"
 })
 
 TabHitbox:AddButton({
-Name = "Hitbox Expander V1",
+Name = "Hitbox Expander Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/hit/main/box",true))()
-print("Script Executed")
-end 
-})
-
-local TabHitboxSection = TabHitbox:AddSection({
-Name = "Hitbox Expander V2"
-})
-
-TabHitbox:AddButton({
-Name = "Hitbox Expander V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua"))()
-print("Script Executed")
-end 
-})
-
-local TabHitboxSection = TabHitbox:AddSection({
-Name = "Hitbox Expander V3"
-})
-
-TabHitbox:AddButton({
-Name = "Hitbox Expander V3",
-Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/JgtddWA3'))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/HitboxExpandersGui/main/Script",true))()
 print("Script Executed")
 end 
 })
@@ -2566,6 +2542,18 @@ Tab6:AddButton({
 Name = "Btools Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/btools/main/script",true))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Be A Parkor Ninja Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Be A Parkor Ninja Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Min1273/n-to/main/README.md"))()
 print("Script Executed")
 end 
 })
