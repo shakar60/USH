@@ -1404,15 +1404,19 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Rtx & Shader"
+Name = "Shader Script Gui"
 })
 
 Tab6:AddButton({
-Name = "Shader Script",
+Name = "Shader Script Gui",
 Callback = function()
 loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
 print("Script Executed")
 end 
+})
+
+local Tab6Section = Tab6:AddSection({
+Name = "Rtx Script"
 })
 
 Tab6:AddButton({
@@ -1492,11 +1496,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fe Fake Tools V4"
+Name = "Fake Tools Script"
 })
 
 Tab2:AddButton({
-Name = "Fe Fake Tools V4",
+Name = "Fake Tools Script",
 Callback = function()
 loadstring(game:HttpGet(('https://pastefy.app/VYIAk3o1/raw'),true))()
 print("Script Executed")
