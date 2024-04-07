@@ -787,7 +787,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = MalwarenHub (For Ragdoll Engine)"
+Name = "Malware Hub (For Ragdoll Engine)"
 })
 
 Tab3:AddButton({
