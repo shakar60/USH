@@ -450,18 +450,6 @@ end
 ------------------------------------------------------------------
 --Scripts
 
-local TabAdminSection = TabAdmin:AddSection({
-Name = "Infinite Yield"
-})
-
-TabAdmin:AddButton({
-Name = "Infinite Yield",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-print("Script Executed")
-end 
-})
-
 local Tab2Section = Tab2:AddSection({
 Name = "Fling n Anti Fling Gui"
 })
