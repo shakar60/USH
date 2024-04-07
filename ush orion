@@ -1563,46 +1563,14 @@ print("Script Executed")
 end 
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Player Esp"
+local Tab3Section = Tab3:AddSection({
+Name = "Lightux Esp Gui"
 })
 
-Tab2:AddButton({
-Name = "Player Esp V1",
+Tab3:AddButton({
+Name = "Lighttux Esp Gui"
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/box.esp/main/s",true))()
-print("Script Executed")
-end 
-})
-
-Tab2:AddButton({
-Name = "Player Esp V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/name.esp/main/s",true))()
-print("Script Executed")
-end 
-})
-
-Tab2:AddButton({
-Name = "Player Esp V3",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/charm/main/esp",true))()
-print("Script Executed")
-end 
-})
-
-Tab2:AddButton({
-Name = "Player Esp V4",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blue./main/esp",true))()
-print("Script Executed")
-end 
-})
-
-Tab2:AddButton({
-Name = "Player Esp V5",
-Callback = function()
-loadstring(game:HttpGet("https://paste.gg/p/anonymous/7259b0557ebf44ccabf2f7b58dc79899/files/0475cb5d744642a2b572e3a8af205588/raw"))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
 print("Script Executed")
 end 
 })
