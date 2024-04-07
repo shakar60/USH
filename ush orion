@@ -774,18 +774,6 @@ print("Script Executed")
 end 
 })
 
-local TabAdminSection = TabAdmin:AddSection({
-Name = "Legs Admin Cmd"
-})
-
-TabAdmin:AddButton({
-Name = "Legs Admin Cmd",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
-print("Script Executed")
-end 
-})
-
 local Tab6Section = Tab6:AddSection({
 Name = "Animation Changer"
 })
@@ -1248,37 +1236,13 @@ end
 })
 
 local TabAdminSection = TabAdmin:AddSection({
-Name = "Nameless Admin Cmd"
+Name = "Admin Cmd Gui"
 })
 
 TabAdmin:AddButton({
-Name = "Nameless Admin Cmd",
+Name = "Admin Cmd Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
-print("Script Executed")
-end 
-})
-
-local TabAdminSection = TabAdmin:AddSection({
-Name = "Fates Admin Cmd"
-})
-
-TabAdmin:AddButton({
-Name = "Fates Admin Cmd",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
-print("Script Executed")
-end 
-})
-
-local TabAdminSection = TabAdmin:AddSection({
-Name = "Revis Admin Cmd"
-})
-
-TabAdmin:AddButton({
-Name = "Revis Admin Cmd",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Caniwq2N",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/AdminGui/main/Script",true))()
 print("Script Executed")
 end 
 })
