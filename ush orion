@@ -1532,37 +1532,13 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Salmons Skidded Boombox Hub"
+Name = "Boombox Script Gui"
 })
 
 Tab6:AddButton({
-Name = "Salmons Skidded Boombox Script Hub",
+Name = "Boombox Script Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Dollhouse/main/Roleplay",true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "PineApple Boombox Ui Script"
-})
-
-Tab6:AddButton({
-Name = "PineApple Boombox Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/boombox/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "CowBells Boombox Script Hub V2"
-})
-
-Tab6:AddButton({
-Name = "CowBells Boombox Script Hub V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/boomboxv/main/v",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Boombox-Script-Gui/main/Script",true))()
 print("Script Executed")
 end 
 })
