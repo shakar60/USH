@@ -1411,18 +1411,6 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "PShade Script Gui"
-})
-
-Tab3:AddButton({
-Name = "PShade Script Gui",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
-print("Script Executed")
-end 
-})
-
 local TabALSection = TabAL:AddSection({
 Name = "Red Dot Lock Script"
 })
@@ -2114,6 +2102,18 @@ Tab3:AddButton({
 Name = "Free Gamepass Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "PShade Script Gui"
+})
+
+Tab3:AddButton({
+Name = "PShade Script Gui",
+Callback = function()
+loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
 print("Script Executed")
 end 
 })
