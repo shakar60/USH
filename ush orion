@@ -2117,4 +2117,16 @@ loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Mobile RemoteSpy Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Mobile RemoteSpy Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
