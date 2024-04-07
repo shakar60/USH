@@ -1171,6 +1171,10 @@ print("Script Executed")
 end 
 })
 
+local Tab3Section = Tab3:AddSection({
+Name = "Mm2 Tbai Hub"
+})
+
 Tab3:AddButton({
 Name = "Mm2 Tbao Hub",
 Callback = function()
@@ -1408,7 +1412,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Shader Script Gui"
+Name = "PShade Script Gui"
 })
 
 Tab3:AddButton({
