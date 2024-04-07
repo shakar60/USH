@@ -1407,26 +1407,14 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "Shader Script Gui"
 })
 
-Tab6:AddButton({
-Name = "Shader Script Gui",
+Tab3:AddButton({
+Name = "PShade Script Gui",
 Callback = function()
 loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Rtx Script"
-})
-
-Tab6:AddButton({
-Name = "Rtx Script",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
 print("Script Executed")
 end 
 })
