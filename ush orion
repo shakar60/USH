@@ -1436,7 +1436,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Shift Locks"
+Name = "Temprorary Shiftlock"
 })
 
 Tab2:AddButton({
@@ -1445,6 +1445,10 @@ Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/WQ9NPeDS'))();
 print("Script Executed")
 end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Perm Shiftlock"
 })
 
 Tab2:AddButton({
