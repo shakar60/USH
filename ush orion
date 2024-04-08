@@ -2006,4 +2006,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/trip/ma
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Bedwars Vape V4 Script Hub"
+})
+
+Tab3:AddButton({
+Name = "Bedwars Vape V4Script Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = " Bedwars Alsploit Script Hub"
+})
+
+Tab3:AddButton({
+Name = "Bedwars AlsploitScript Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AlSploit/AlSploit/main/Bedwars"))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
