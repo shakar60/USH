@@ -2020,11 +2020,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = " Bedwars Alsploit Script Hub"
+Name = "Bedwars Alsploit Script Hub"
 })
 
 Tab3:AddButton({
-Name = "Bedwars AlsploitScript Hub",
+Name = "Bedwars Alsploit Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AlSploit/AlSploit/main/Bedwars"))()
 print("Script Executed")
