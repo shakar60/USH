@@ -1982,4 +1982,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/Simpl
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "A Dusty Trip Script Gui"
+})
+
+Tab3:AddButton({
+Name = "A Dusty Trip Script Gui",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/toosiwhip/statue/main/dustytrip.lua'))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Legend Handles A Dusty Trip Script Hub"
+})
+
+Tab3:AddButton({
+Name = "Legend Handles Dusty Trip Script Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/trip/main/dusty"))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
