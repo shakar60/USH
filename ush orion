@@ -2000,21 +2000,9 @@ Name = "Bedwars Vape V4 Script Hub"
 })
 
 Tab3:AddButton({
-Name = "Bedwars Vape V4Script Hub",
+Name = "Bedwars Vape V4 Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Bedwars Alsploit Script Hub"
-})
-
-Tab3:AddButton({
-Name = "Bedwars Alsploit Script Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AlSploit/AlSploit/main/Bedwars"))()
 print("Script Executed")
 end 
 })
