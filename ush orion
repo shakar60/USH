@@ -511,23 +511,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Rizz Script"
+Name = "Fly Script Gui"
 })
 
 Tab2:AddButton({
-Name = "Rizz Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mikhailramlal/Rizzer/main/main"))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Fly Gui Script"
-})
-
-Tab2:AddButton({
-Name = "Fly Gui Script",
+Name = "Fly Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/flygui/main/script",true))()
 print("Script Executed")
@@ -595,11 +583,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Inf Jumps Gui"
+Name = "Inf Jumps  Script Gui"
 })
 
 Tab2:AddButton({
-Name = "Inf Jumps Gui",
+Name = "Inf Jumps Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/oksinfjump/main/workssssss",true))()
 print("Script Executed")
@@ -679,11 +667,11 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fe Save Position"
+Name = "Save Position Script"
 })
 
 Tab2:AddButton({
-Name = "Fe Save Position",
+Name = "Save Position Script",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/Tp%20Place%20GUI'),true))()
 print("Script Executed")
@@ -727,37 +715,13 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fe Chat Mimic"
+Name = "Chat Mimic Script"
 })
 
 Tab2:AddButton({
-Name = "Fe Chat Mimic",
+Name = "Chat Mimic Script",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe./8fb5ed20fb168d1ae3044ede45b90f67e3fb37a2/file'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Fe Parkour Script"
-})
-
-Tab6:AddButton({
-Name = "Fe Parkour",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.ga/6HAb8rAj/raw'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Info Gui Script"
-})
-
-Tab3:AddButton({
-Name = "Info Gui Script",
-Callback = function()
-loadstring(game:HttpGet(('https://pastebin.com/raw/5seCbYFa'),true))()
 print("Script Executed")
 end 
 })
@@ -810,30 +774,6 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Chat Executor Script"
-})
-
-Tab6:AddButton({
-Name = "Chat Executor Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/chat-executor/main/chat-executor",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Bido Skins Hub"
-})
-
-Tab3:AddButton({
-Name = "Bido Skins Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BidoSkinsYT/BidoSkinsYT/main/Bido%20Skins%20V1.7"))()
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Games Hub Destroyer V4"
 })
@@ -847,11 +787,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Vehicle Legends Script"
+Name = "Vehicle Legends Script Hub"
 })
 
 Tab6:AddButton({
-Name = "Vehicle Legends Script",
+Name = "Vehicle Legends Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IExpIoit/Script/main/UltimateHub"))()
 print("Script Executed")
@@ -859,11 +799,11 @@ end
 })
 
 local TabKSection = TabK:AddSection({
-Name = "KeyStrokes Gui V1"
+Name = "KeyStrokes Script Gui V1"
 })
 
 TabK:AddButton({
-Name = "KeyStrokes Gui V1",
+Name = "KeyStrokes Script Gui V1",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
 print("Script Executed")
@@ -871,11 +811,11 @@ end
 })
 
 local TabKSection = TabK:AddSection({
-Name = "KeyStroke Gui V2"
+Name = "KeyStroke Script Gui V2"
 })
 
 TabK:AddButton({
-Name = "KeyStroke Gui V2",
+Name = "KeyStroke Script Gui V2",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokeguiV2/main/script",true))()
 print("Script Executed")
@@ -895,11 +835,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "Player Specetor"
+Name = "Player Specetor Script"
 })
 
 Tab6:AddButton({
-Name = "Player Specetor",
+Name = "Player Specetor Script",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/wyvdb7gr'))()
 print("Script Executed")
@@ -907,11 +847,11 @@ end
 })
 
 local Tab6Section = Tab6:AddSection({
-Name = "TP Gui Script"
+Name = "TP Script Gui"
 })
 
 Tab6:AddButton({
-Name = "TP Gui Script",
+Name = "TP Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TpGui/main/Script",true))()
 print("Script Executed")
@@ -938,18 +878,6 @@ Tab3:AddButton({
 Name = "No Clip Gui V2",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/B5xRxTnk",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Brans Hub"
-})
-
-Tab3:AddButton({
-Name = "Brans Hub",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/8G5wzp3L"))()
 print("Script Executed")
 end 
 })
@@ -1028,11 +956,11 @@ end
 })
 
 local TabBFSection = TabBF:AddSection({
-Name = "BF Uranium Hub"
+Name = "Uranium Hub"
 })
 
 TabBF:AddButton({
-Name = "BF Uranium Hub",
+Name = "Uranium Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua"))()
 print("Script Executed")
@@ -1040,11 +968,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Ninja Legends Gui"
+Name = "Ninja Legends Script Hub"
 })
 
 Tab3:AddButton({
-Name = "Ninja Legends Gui",
+Name = "Ninja Legends Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AliCode14/scripts/main/ScriptHub.lua"))()
 print("Script Executed")
@@ -1063,24 +991,12 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "Arceus X Hub"
-})
-
-Tab3:AddButton({
-Name = "Arceus X Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
-print("Script Executed")
-end 
-})
-
 local Tab6Section = Tab6:AddSection({
-Name = "Netless"
+Name = "Netless Script"
 })
 
 Tab6:AddButton({
-Name = "Netless",
+Name = "Netless Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/netsless/main/netless",true))()
 print("Script Executed")
@@ -1111,12 +1027,12 @@ print("Script Executed")
 end 
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Pop It Trading Gui"
+local Tab3Section = Tab3:AddSection({
+Name = "Pop It Trading Hub"
 })
 
-Tab2:AddButton({
-Name = "Pop It Trading Gui",
+Tab3:AddButton({
+Name = "Pop It Trading Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponge123456789/Sponge/main/The%20cool%20Script"))()
 print("Script Executed")
@@ -1172,7 +1088,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Mm2 Tbai Hub"
+Name = "Mm2 Tbao Hub"
 })
 
 Tab3:AddButton({
@@ -1184,11 +1100,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Cw Nova Hub"
+Name = "CW Nova Hub"
 })
 
 Tab3:AddButton({
-Name = "Nova Hub",
+Name = " CW Nova Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SussyImposterRed/Scripts/main/NOVA_HUB_SOURCE"))()
 print("Script Executed")
@@ -1207,11 +1123,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "ApeiroPhobia Script Hub"
 })
 
-Tab6:AddButton({
+Tab3:AddButton({
 Name = "ApeiroPhobia Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/apeirophobia/main/script",true))()
@@ -1232,11 +1148,11 @@ end
 })
 
 local TabAdminSection = TabAdmin:AddSection({
-Name = "Admin Cmd Gui"
+Name = "Admin Cmd Script Gui"
 })
 
 TabAdmin:AddButton({
-Name = "Admin Cmd Gui",
+Name = "Admin Cmd Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/AdminGui/main/Script",true))()
 print("Script Executed")
