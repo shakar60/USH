@@ -46,7 +46,7 @@ PremiumOnly = false
 --Tab2
 
 local Tab2 = Window:MakeTab({
-Name = "Main Scripts",
+Name = "Scripts",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
@@ -57,16 +57,6 @@ PremiumOnly = false
 
 local Tab3 = Window:MakeTab({
 Name = "Guis/hubs",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
------
-
---TbAdmin
-
-local TabAdmin = Window:MakeTab({
-Name = "Admin Cmds",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
@@ -86,7 +76,7 @@ PremiumOnly = false
 --TabDH
 
 local TabDH = Window:MakeTab({
-Name = "DH Based Scripts/Hubs",
+Name = "DH Scripts",
 Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
@@ -101,46 +91,14 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
------
-
---TabHitbox
-
-local TabHitbox = Window:MakeTab({
-Name = "Hitbox Expander",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
------
-
---Tab6
-
-local Tab6 = Window:MakeTab({
-Name = "Other Scripts",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
------
-
---TabK
-
-local TabK = Window:MakeTab({
-Name = "KeyStrokes",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
------
-
---TabCredits
-
-local TabCredits = Window:MakeTab({
-Name = "Credits",
-Icon = "rbxassetid://4483345998",
-PremiumOnly = false
-})
-
+------------------------------------------------------------------
+TabHome:AddLabel("Tab Home:")
+TabPlayer:AddLabel("Player Speed/Etc:")
+Tab2:AddLabel("Scripts:")
+Tab3:AddLabel("Script Hubs/Guis:")
+TabAL:AddLabel("Aimlocks")
+TabDH:AddLabel("Da Hood Scripts")
+TabBF:AddLabel("Blox Fruit Scripts:")
 ------------------------------------------------------------------
 
 --Feedback Script
@@ -257,11 +215,22 @@ end
 })
 
 ------------------------------------------------------------------
---Player Infos
+
+--Credits
 
 TabHome:AddSection({
-  Name = "Player Info:"
+  Name = "Credits:"
 })
+
+TabHome:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
+TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
+TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
+TabHome:AddParagraph("Made By sh4kar60 On Discord","Owner")
+TabHome:AddParagraph("Please Credit Me (sh4kar60) When Showcasing The Script Hub","Credits")
+
+------------------------------------------------------------------
+
+--Player Infos
 
 TabHome:AddSection({
   Name = "Player Username:"
@@ -303,18 +272,6 @@ TabHome:AddSection({
 local mapID = game.PlaceId
 
 TabHome:AddParagraph("Map ID", "Map ID: " .. mapID)
-
-------------------------------------------------------------------
---Credits
-TabCredits:AddParagraph("TEAM USH","Was Kavo Ui Switched to Orion Libary")
-TabCredits:AddParagraph("Join Discord For More Info","Or Dm sh4kar60")
-TabCredits:AddParagraph("Created By shakar60-sh4kar60 On Discord","Shakar's Discord")
-TabCredits:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
-TabCredits:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
-TabCredits:AddParagraph("Made By sh4kar60 On Discord","Owner")
-TabCredits:AddParagraph("Credits To Everyone Who Make The Scripts","Credits")
-TabCredits:AddParagraph("Credits To Everyone Who Showcase My Script Hub","Credits")
-TabCredits:AddParagraph("Please Credit Me (sh4kar60) When Showcasing Script Hub","Credits")
 
 ------------------------------------------------------------------
 
@@ -450,6 +407,42 @@ end
 ------------------------------------------------------------------
 --Scripts
 
+local TabDHSection = TabDH:AddSection({
+Name = "KeyStrokes Script Gui V1"
+})
+
+TabDH:AddButton({
+Name = "KeyStrokes Script Gui V1",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
+print("Script Executed")
+end 
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "KeyStroke Script Gui V2"
+})
+
+TabDH:AddButton({
+Name = "KeyStroke Script Gui V2",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokeguiV2/main/script",true))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Admin Cmd Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Admin Cmd Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/AdminGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
 local Tab2Section = Tab2:AddSection({
 Name = "Fling n Anti Fling Gui"
 })
@@ -486,11 +479,11 @@ print("Script Executed")
 end
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Keyboard Script Gui"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Keyboard Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keyboardgui/main/script",true))()
@@ -570,11 +563,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Tp Walk Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Tp Walk Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TherealXORA/Roblox-Scripts/main/TpwalkV3"))()
@@ -726,12 +719,12 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Animation Changer"
+local Tab2Section = Tab2:AddSection({
+Name = " Fe Animation Changer"
 })
 
-Tab6:AddButton({
-Name = "Animation Changer",
+Tab2:AddButton({
+Name = "Fe Animation Changer",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LunarWareOP/Animation-Changer-Source/main/Script", true))()
 print("Script Executed")
@@ -762,11 +755,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Air Swim Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Air Swim Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/9CK0qSgn"))()
@@ -786,38 +779,14 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "Vehicle Legends Script Hub"
 })
 
-Tab6:AddButton({
+Tab3:AddButton({
 Name = "Vehicle Legends Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IExpIoit/Script/main/UltimateHub"))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "KeyStrokes Script Gui V1"
-})
-
-TabK:AddButton({
-Name = "KeyStrokes Script Gui V1",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local TabKSection = TabK:AddSection({
-Name = "KeyStroke Script Gui V2"
-})
-
-TabK:AddButton({
-Name = "KeyStroke Script Gui V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokeguiV2/main/script",true))()
 print("Script Executed")
 end 
 })
@@ -834,23 +803,23 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Player Specetor Script"
+local Tab2Section = Tab2:AddSection({
+Name = "Player Spectator Script"
 })
 
-Tab6:AddButton({
-Name = "Player Specetor Script",
+Tab2:AddButton({
+Name = "Player Spectator Script",
 Callback = function()
 loadstring(game:HttpGet('https://pastebin.com/raw/wyvdb7gr'))()
 print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "TP Script Gui"
 })
 
-Tab6:AddButton({
+Tab3:AddButton({
 Name = "TP Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TpGui/main/Script",true))()
@@ -991,11 +960,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Netless Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Netless Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/netsless/main/netless",true))()
@@ -1111,12 +1080,12 @@ print("Script Executed")
 end 
 })
 
-local TabHitboxSection = TabHitbox:AddSection({
-Name = "Hitbox Expander Gui"
+local Tab3Section = Tab3:AddSection({
+Name = "Hitbox Expander Script Gui"
 })
 
-TabHitbox:AddButton({
-Name = "Hitbox Expander Gui",
+Tab3:AddButton({
+Name = "Hitbox Expander Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/HitboxExpandersGui/main/Script",true))()
 print("Script Executed")
@@ -1147,18 +1116,6 @@ print("Script Executed")
 end 
 })
 
-local TabAdminSection = TabAdmin:AddSection({
-Name = "Admin Cmd Script Gui"
-})
-
-TabAdmin:AddButton({
-Name = "Admin Cmd Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/AdminGui/main/Script",true))()
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Fe Throw Gui"
 })
@@ -1167,18 +1124,6 @@ Tab3:AddButton({
 Name = "Fe Throw Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Gd"))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "99% Fail Impossible Obby Script"
-})
-
-Tab6:AddButton({
-Name = "99% Fail Impossible Obby Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/99-fail-impossible-obby/main/ok",true))()
 print("Script Executed")
 end 
 })
@@ -1279,11 +1224,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "KeyStrokes Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "KeyStrokes Script",
 Callback = function()
 loadstring(game:HttpGet(('https://pastefy.app/Te4dwSw2/raw'),true))()
@@ -1291,11 +1236,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "KeyBind Maker Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "KeyBind Maker Script",
 Callback = function()
 loadstring(game:HttpGet(('https://pastefy.app/Ujm4HWxh/raw'),true))()
@@ -1339,11 +1284,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Chat Spammer"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Chat Spammer",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/chatspammer/main/chatspammer", true))()
@@ -1435,11 +1380,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "Boombox Script Gui"
 })
 
-Tab6:AddButton({
+Tab3:AddButton({
 Name = "Boombox Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Boombox-Script-Gui/main/Script",true))()
@@ -1471,11 +1416,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Make Ppl Fly Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Make Ppl Fly Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fe-make-ppl-fly/main/s",true))()
@@ -1519,12 +1464,12 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Low Gfx"
+local Tab2Section = Tab2:AddSection({
+Name = "Low Gfx Script"
 })
 
-Tab6:AddButton({
-Name = "Low Gfx",
+Tab2:AddButton({
+Name = "Low Gfx Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/zQUqDRdJ",true))()
 print("Script Executed")
@@ -1783,11 +1728,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Blox Burg Cashier Autofarm"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Blox Burg Cashier Autofarm",
 Callback = function()
 _G.time = 4
@@ -1823,12 +1768,12 @@ end
 })
 
 
-local Tab6Section = Tab6:AddSection({
-Name = "Mightys Autoclicker"
+local Tab3Section = Tab3:AddSection({
+Name = "Mightys Autoclicker Script Guide"
 })
 
-Tab6:AddButton({
-Name = "Mightys Autoclicker",
+Tab3:AddButton({
+Name = "Mightys Autoclicker Script Guide",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Autoclicker/main/Working",true))()
 print("Script Executed")
@@ -1871,26 +1816,14 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
-Name = "Cursor Script"
+local Tab2Section = Tab2:AddSection({
+Name = "Universal Chat Spy Script"
 })
 
-Tab6:AddButton({
-Name = "Cursor Script",
+Tab2:AddButton({
+Name = "Universal Chat Spy Script",
 Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/58d8d52G/raw'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab6Section = Tab6:AddSection({
-Name = "Universal Chat Spy"
-})
-
-Tab6:AddButton({
-Name = "Universal Chat Spy",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/58d8d52G/raw'),true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/chat-spy/main/s",true))()
 print("Script Executed")
 end 
 })
@@ -1907,11 +1840,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "Xray Script Gui"
 })
 
-Tab6:AddButton({
+Tab3:AddButton({
 Name = "Xray Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/xray/main/script",true))()
@@ -1919,11 +1852,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Chat Bypass Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Chat Bypass Script",
 Callback = function()
 loadstring(game:HttpGet('https://pastes.io/raw/lstrrfipqq'))();
@@ -1990,11 +1923,11 @@ print("Script Executed")
 end 
 })
 
-local Tab6Section = Tab6:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Btools Script"
 })
 
-Tab6:AddButton({
+Tab2:AddButton({
 Name = "Btools Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/btools/main/script",true))()
