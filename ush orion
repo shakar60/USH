@@ -2006,4 +2006,28 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4Fo
 print("Script Executed")
 end 
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Vape V4 Render Config"
+})
+
+Tab3:AddButton({
+Name = "Vape V4 Render Config",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Render/main/VapeConfig",true))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Vape V4 Velocity Config"
+})
+
+Tab3:AddButton({
+Name = "Vape V4 Velocity Config",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/Installer.lua", true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
