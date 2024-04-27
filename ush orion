@@ -2050,7 +2050,7 @@ Name = "Best Silent Aim + CamLock"
 TabAL:AddButton({
 Name = "Best Silent Aim + CamLock",
 Callback = function()
-loadstring(game:HttpGet("https://github.com/shakar60/best-camlock/blob/main/script",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/best-camlock/main/script",true))()
 print("Script Executed")
 end 
 })
