@@ -1865,37 +1865,13 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball Noxulico Gui"
+Name = "Blade Ball AutoParry Hub "
 })
 
 Tab3:AddButton({
-Name = "Noxulico Gui",
+Name = "Blade Ball AutoParry Hub",
 Callback = function()
-loadstring(Game:HttpGet("https://pastebin.com/raw/GeFeimBx"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball EminX Hub"
-})
-
-Tab3:AddButton({
-Name = "EminX Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/EminenceXLua/Blade-your-Balls/main/BladeBallLoader.lua"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball Neon.C Gui"
-})
-
-Tab3:AddButton({
-Name = "Neon.C Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/toosiwhip/statue/main/neon.lua"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
 print("Script Executed")
 end 
 })
