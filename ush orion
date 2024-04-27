@@ -2030,4 +2030,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Copiums/Copium/main/I
 print("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Best Silent Aim"
+})
+
+TabAL:AddButton({
+Name = "Best Silent Aim",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/best-silentaim/main/script",true))()
+print("Script Executed")
+end 
+})
+
 OrionLib:Init()
