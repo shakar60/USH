@@ -2043,4 +2043,15 @@ print("Script Executed")
 end 
 })
 
+local TabALSection = TabAL:AddSection({
+Name = "Best Silent Aim + CamLock"
+})
+
+TabAL:AddButton({
+Name = "Best Silent Aim + CamLock",
+Callback = function()
+loadstring(game:HttpGet("https://github.com/shakar60/best-camlock/blob/main/script",true))()
+print("Script Executed")
+end 
+})
 OrionLib:Init()
