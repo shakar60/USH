@@ -2030,4 +2030,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/best-camlock
 print("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Skidded Aura X"
+})
+
+TabAL:AddButton({
+Name = "Skidded Aura X",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma"))()
+print ("Script Executed")
+end 
+})
+
 OrionLib:Init()
