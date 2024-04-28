@@ -2080,13 +2080,25 @@ end
 })
 
 local TabDHSection = TabAL:AddSection({
-Name = "Auto Reload Scropt"
+Name = "Auto Reload Script"
 })
 
 TabDH:AddButton({
 Name = "Auto Reload Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
+print ("Script Executed")
+end 
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Frost Gui"
+})
+
+TabAL:AddButton({
+Name = "Frost Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frost-gui/main/script",true))()
 print ("Script Executed")
 end 
 })
