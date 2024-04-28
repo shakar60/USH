@@ -2043,4 +2043,15 @@ print ("Script Executed")
 end 
 })
 
+local TabDHSection = TabDH:AddSection({
+Name = "Anti Lock + Aim Viewer"
+})
+
+TabDH:AddButton({
+Name = "Anti Lock + Aim Viewer",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
