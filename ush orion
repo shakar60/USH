@@ -1189,18 +1189,6 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Sky Anti Lock"
-})
-
-TabDH:AddButton({
-Name = "Sky Anti Lock (Z To Toggle)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
-print("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
 Name = "NukerMode"
 })
 
@@ -2043,14 +2031,38 @@ print ("Script Executed")
 end 
 })
 
-local TabDHSection = TabDH:AddSection({
+local TabALSection = TabAL:AddSection({
 Name = "Anti Lock + Aim Viewer"
 })
 
-TabDH:AddButton({
+TabAL:AddButton({
 Name = "Anti Lock + Aim Viewer",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
+print ("Script Executed")
+end 
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Sky Anti Lock"
+})
+
+TabAL:AddButton({
+Name = "Sky Anti Lock (Z To Toggle)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
+print("Script Executed")
+end 
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Ruby Lock Gui"
+})
+
+TabAL:AddButton({
+Name = "Ruby Lock Gui",
+Callback = function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2c49f13d52789471d283583f05ee91df.lua"))()
 print ("Script Executed")
 end 
 })
