@@ -2078,4 +2078,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blads-lock/m
 print ("Script Executed")
 end 
 })
+
+local TabDHSection = TabAL:AddSection({
+Name = "Auto Reload Scropt"
+})
+
+TabDH:AddButton({
+Name = "Auto Reload Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
