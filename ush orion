@@ -2066,4 +2066,16 @@ loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2c49f13d527894
 print ("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Blads Lock Gui"
+})
+
+TabAL:AddButton({
+Name = "Blads Lock Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blads-lock/main/script",true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
