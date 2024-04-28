@@ -2079,7 +2079,7 @@ print ("Script Executed")
 end 
 })
 
-local TabDHSection = TabAL:AddSection({
+local TabDHSection = TabDH:AddSection({
 Name = "Auto Reload Script"
 })
 
