@@ -2164,7 +2164,7 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Any Tool Script (Do "/e key (the key you want) to use)"
+Name = "Any Tool Script (Do /e key (the key you want) to use)"
 })
 
 TabDH:AddButton({
