@@ -2126,4 +2126,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox-Sc
 print ("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Blazing Lock Gui"
+})
+
+TabAL:AddButton({
+Name = "Blazing Lock Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blazing/main/lock",true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
