@@ -2138,4 +2138,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blazing/main
 print ("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Astral Lock Gui"
+})
+
+TabAL:AddButton({
+Name = "Astral Lock Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/astral/main/lock",true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
