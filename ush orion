@@ -2114,4 +2114,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-recoil/ma
 print ("Script Executed")
 end 
 })
+
+local TabDHSection = TabDH:AddSection({
+Name = "Cframe Script"
+})
+
+TabDH:AddButton({
+Name = "Cframe Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox-Scripts/main/Tpwalk%20V4%20%5B%20BETA%20%5D.lua", true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
