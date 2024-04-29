@@ -2162,4 +2162,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fearless/mai
 print ("Script Executed")
 end 
 })
+
+local TabDHSection = TabDH:AddSection({
+Name = "Any Tool Script (Do "/e key (the key you want) to use)"
+})
+
+TabDH:AddButton({
+Name = "Any Tool Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
