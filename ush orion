@@ -2174,4 +2174,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-
 print ("Script Executed")
 end 
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Celex Script"
+})
+
+TabAL:AddButton({
+Name = "Celex Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/celex/main/script",true))()
+print ("Script Executed")
+end 
+})
 OrionLib:Init()
