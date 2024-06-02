@@ -14,7 +14,7 @@ local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "⭐️ USH Loaded ⭐️"; 
-Text = "Made by sh4kar6o On Discord"; 
+Text = "Made by sh4kar60 On Discord"; 
 Duration = 5; 
 })
 ------------------------------------------------------------------
