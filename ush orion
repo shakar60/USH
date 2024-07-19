@@ -2140,7 +2140,7 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Any Tool Script (Do "/e key (the key you want) to use)"
+Name = "Any Tool Script (Do /e key (the key you want) to use)"
 })
 
 TabDH:AddButton({
@@ -2150,7 +2150,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-
 print ("Script Executed")
 end 
 })
-
 
 local Tab2Section = Tab2:AddSection({
 Name = "Chat Bypass (Key Sys)"
