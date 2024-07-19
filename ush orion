@@ -2170,7 +2170,7 @@ Name = "AzureModded Gui"
 TabDH:AddButton({
 Name = "AzureModded Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
 print ("Script Executed")
 end 
 })
