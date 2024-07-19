@@ -10,11 +10,11 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
---Notify
+--1St Notify
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "⭐️ USH Loaded ⭐️"; 
-Text = "Made by sh4kar60/sh4k4r6o On Discord"; 
+Text = "Made by sh4kar60 On Discord"; 
 Duration = 5; 
 })
 ------------------------------------------------------------------
@@ -1840,18 +1840,6 @@ print("Script Executed")
 end 
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Chat Bypass Script"
-})
-
-Tab2:AddButton({
-Name = "Chat Bypass Script",
-Callback = function()
-loadstring(game:HttpGet('https://pastes.io/raw/lstrrfipqq'))();
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Blade Ball AutoParry Hub "
 })
@@ -2008,18 +1996,6 @@ end
 })
 
 local TabALSection = TabAL:AddSection({
-Name = "Best Silent Aim + CamLock"
-})
-
-TabAL:AddButton({
-Name = "Best Silent Aim + CamLock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/best-camlock/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
 Name = "Skidded Aura X"
 })
 
@@ -2164,7 +2140,7 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Any Tool Script (Do /e key (the key you want) to use)"
+Name = "Any Tool Script (Do "/e key (the key you want) to use)"
 })
 
 TabDH:AddButton({
@@ -2175,14 +2151,39 @@ print ("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
-Name = "Celex Script"
+
+local Tab2Section = Tab2:AddSection({
+Name = "Chat Bypass (Key Sys)"
 })
 
-TabAL:AddButton({
-Name = "Celex Script",
+Tab2:AddButton({
+Name = "Chat Bypass (Key Sys)",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/celex/main/script",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
+print ("Script Executed")
+end 
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "AzureModded Gui"
+})
+
+TabDH:AddButton({
+Name = "AzureModded Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
+print ("Script Executed")
+end 
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "Cracked SwagMode"
+})
+
+TabDH:AddButton({
+Name = "Cracked SwagMode",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Roblox/master/SwagModeCracked.lua", true))()
 print ("Script Executed")
 end 
 })
