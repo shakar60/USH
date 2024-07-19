@@ -226,7 +226,7 @@ TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord
 TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 TabHome:AddParagraph("Made By sh4kar60-sh4k4r6o On Discord","Owner")
-TabHome:AddParagraph("Please Credit Me (sh4kar60) When Showcasing The Script Hub","Credits")
+TabHome:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub","Credits")
 
 ------------------------------------------------------------------
 
