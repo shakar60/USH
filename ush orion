@@ -2206,7 +2206,7 @@ Name = "Vascal Circle Dot Lock"
 TabAL:AddButton({
 Name = "Vascal Circle Dot Lock",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-Circle-DotXd"))()
 print ("Script Executed")
 end
 })
