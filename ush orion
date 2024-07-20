@@ -2210,5 +2210,29 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox/03
 print ("Script Executed")
 end
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "HellBounds Camlock"
+})
+
+TabAL:AddButton({
+Name = "HellBounds Camlock",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hellbound-alt/Hellbound-camlock-op/main/Op"))();
+print ("Script Executed")
+end
+})
+
+local TabDHSection = TabDH:AddSection({
+Name = "RightClick Button"
+})
+
+TabDH:AddButton({
+Name = "RightClick Button",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick"))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
