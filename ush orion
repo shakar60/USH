@@ -2198,5 +2198,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-va
 print ("Script Executed")
 end
 })
+
+local TabDHSection = TabDH:AddSection({
+Name = "XORAS Cframe/TpWalk"
+})
+
+TabDH:AddButton({
+Name = "XORAS Cframe/TpWalk",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox/032418166a40fd7a610fd7a17a2f8ade0da3c734/Tpwalk%20V4%20%5B%20BETA%20%5D.lua",true))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
