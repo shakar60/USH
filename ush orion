@@ -1995,11 +1995,11 @@ print ("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
+local TabDHSection = TabDH:AddSection({
 Name = "Anti Lock + Aim Viewer"
 })
 
-TabAL:AddButton({
+TabDH:AddButton({
 Name = "Anti Lock + Aim Viewer",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
@@ -2007,11 +2007,11 @@ print ("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
+local TabDHSection = TabDH:AddSection({
 Name = "Sky Anti Lock"
 })
 
-TabAL:AddButton({
+TabDH:AddButton({
 Name = "Sky Anti Lock (Z To Toggle)",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
@@ -2175,16 +2175,16 @@ print ("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
+local TabDHSection = TabDH:AddSection({
 Name = "Vascal AntiLock"
 })
 
-TabAL:AddButton({
+TabDH:AddButton({
 Name = "Vascal AntiLock",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-antilock-button"))()
 print ("Script Executed")
-end 
+end
 })
 
 local TabDHSection = TabDH:AddSection({
@@ -2193,6 +2193,18 @@ Name = "Vascal Speed Button"
 
 TabDH:AddButton({
 Name = "Vascal Speed Button",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
+print ("Script Executed")
+end
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Vascal Circle Dot Lock"
+})
+
+TabAL:AddButton({
+Name = "Vascal Circle Dot Lock",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
 print ("Script Executed")
