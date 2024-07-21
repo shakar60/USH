@@ -2258,5 +2258,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/coder382/CodeHub/main
 print ("Script Executed")
 end
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Ryzzchip Circle Camlock"
+})
+
+TabAL:AddButton({
+Name = "Ryzzchip Circle Camlock",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzchips/main/obf_i3ibnq2A9BZlYl131iIo339M8zDq0l3f7INJ9KJrr4qMyl4K80f29vZ458J6Sr91.lua"))();
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
