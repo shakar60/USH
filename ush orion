@@ -2270,5 +2270,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzch
 print ("Script Executed")
 end
 })
+
+local TabALSection = TabAL:AddSection({
+Name = "Pluhs Lock"
+})
+
+TabAL:AddButton({
+Name = "Pluhs Lock",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/camlock-load.lua"))();
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
