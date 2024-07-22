@@ -2247,18 +2247,6 @@ print ("Script Executed")
 end
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "CodeHub"
-})
-
-Tab3:AddButton({
-Name = "CodeHub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/coder382/CodeHub/main/Universal.lua"))()
-print ("Script Executed")
-end
-})
-
 local TabALSection = TabAL:AddSection({
 Name = "Ryzzchip Circle Camlock"
 })
@@ -2279,6 +2267,18 @@ TabAL:AddButton({
 Name = "Pluhs Lock",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/camlock-load.lua"))();
+print ("Script Executed")
+end
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Undetected Silent Aim"
+})
+
+TabAL:AddButton({
+Name = "Undetected Silent Aim",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim",true))();
 print ("Script Executed")
 end
 })
