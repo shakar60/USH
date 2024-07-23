@@ -1745,11 +1745,11 @@ end
 
 
 local Tab3Section = Tab3:AddSection({
-Name = "Mightys Autoclicker Script Guide"
+Name = "Mightys Autoclicker"
 })
 
 Tab3:AddButton({
-Name = "Mightys Autoclicker Script Guide",
+Name = "Mightys Autoclicker",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Autoclicker/main/Working",true))()
 print("Script Executed")
@@ -2279,6 +2279,54 @@ TabAL:AddButton({
 Name = "Undetected Silent Aim",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim",true))();
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Player Radar"
+})
+
+Tab2:AddButton({
+Name = "Player Radar",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim",true))();
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Free Camera"
+})
+
+Tab2:AddButton({
+Name = "Free Camera",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Free Camera V2"
+})
+
+Tab2:AddButton({
+Name = "Free Camera V2",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Break%20Camera'))()
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Better First Person"
+})
+
+Tab2:AddButton({
+Name = "Better First Person",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/free-cam/main/thisisbetterfirstpersonmb",true))()
 print ("Script Executed")
 end
 })
