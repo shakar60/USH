@@ -2362,7 +2362,7 @@ Name = "Pineapple Boombox Gui"
 Tab3:AddButton({
 Name = "Pineapple Boombox Gui",
 Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/gJfKgLra",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/pineapple/main/boombox",true))()
 print ("Script Executed")
 end
 })
