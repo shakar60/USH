@@ -1912,11 +1912,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Mobile RemoteSpy Script Gui"
+Name = "Mobile Remote Spy"
 })
 
 Tab3:AddButton({
-Name = "Mobile RemoteSpy Script Gui",
+Name = "Mobile Remote Spy",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
 print("Script Executed")
