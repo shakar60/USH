@@ -2278,7 +2278,7 @@ Name = "Player Radar"
 Tab2:AddButton({
 Name = "Player Radar",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim",true))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/player-radar/main/script",true))()
 print ("Script Executed")
 end
 })
