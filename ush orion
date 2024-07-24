@@ -2392,11 +2392,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Toras Gym League Script Gui"
+Name = "Toras Gym League Script Gui (Key Sys)"
 })
 
 Tab3:AddButton({
-Name = "Toras Gym League Script Gui",
+Name = "Toras Gym League Script Gui (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/GymLeague", true))()
 print ("Script Executed")
@@ -2411,6 +2411,18 @@ Tab3:AddButton({
 Name = "LightTuxs Script Hub (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/Lightux/main/README.md'),true))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Tuffs Gym League Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Tuffs Gym League Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisIsTuff/ArmWrestleSim/main/GymLeague.lua"))()
 print ("Script Executed")
 end
 })
