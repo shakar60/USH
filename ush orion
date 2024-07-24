@@ -2404,11 +2404,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "LightTux Gym League Script Gui"
+Name = "LightTuxs Script Hub (Key Sys)"
 })
 
 Tab3:AddButton({
-Name = "LightTuxs Script Hub",
+Name = "LightTuxs Script Hub (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/Lightux/main/README.md'),true))()
 print ("Script Executed")
