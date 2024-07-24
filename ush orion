@@ -2390,5 +2390,29 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/mai
 print ("Script Executed")
 end
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Toras Gym League Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Toras Gym League Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/GymLeague", true))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "LightTux Gym League Script Gui"
+})
+
+Tab3:AddButton({
+Name = "LightTux Gym League Script Gui",
+Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/Lightux/main/README.md'),true))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
