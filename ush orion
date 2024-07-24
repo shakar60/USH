@@ -2416,11 +2416,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Tuffs Gym League Script Gui"
+Name = "Tuffs Gym League Script Gui (Key Sys)"
 })
 
 Tab3:AddButton({
-Name = "Tuffs Gym League Script Gui",
+Name = "Tuffs Gym League Script Gui (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisIsTuff/ArmWrestleSim/main/GymLeague.lua"))()
 print ("Script Executed")
