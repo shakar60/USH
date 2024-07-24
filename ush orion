@@ -2408,7 +2408,7 @@ Name = "LightTux Gym League Script Gui"
 })
 
 Tab3:AddButton({
-Name = "LightTux Gym League Script Gui",
+Name = "LightTuxs Script Hub",
 Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/Lightux/main/README.md'),true))()
 print ("Script Executed")
