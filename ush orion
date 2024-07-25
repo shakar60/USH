@@ -209,7 +209,7 @@ TabHome:AddSection({
 TabHome:AddButton({
 Name = "Join Discord",
 Callback = function()
-      setclipboard("https://discord.gg/z6RM78FS7y")
+      setclipboard("https://discord.gg/vwXXfnuxUg")
 print("Discord Link Set To Your Clipboard")
 end
 })
