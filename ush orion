@@ -185,6 +185,11 @@ local function sendFeedback(feedback)
                         ["value"] = serverLink,
                         ["inline"] = true,
                     },
+                    {
+                        ["name"] = "Player Avatar:",
+                        ["value"] = "[" .. playerName .. "'s Avatar](" .. avatarUrl .. ")",
+                        ["inline"] = true,
+                    },
                 },
                 ["footer"] = {
                     ["text"] = "Feedback sent from Universal Shakar's Hub",
