@@ -106,13 +106,9 @@ TabBF:AddLabel("Blox Fruit Scripts:")
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 
-local TabFeedbackSection = TabHome:AddSection({
+local TabFSection = TabF:AddSection({
     Name = "Feedback"
 })
-
-local function getPlayerAvatar(userId)
-    return "https://www.roblox.com/headshot-thumbnail/image?userId=" .. tostring(userId) .. "&width=420&height=420&format=png"
-end
 
 local function sendFeedback(feedback)
     -- Check if feedback is empty
@@ -121,7 +117,10 @@ local function sendFeedback(feedback)
         return
     end
 
-    local Webhook_URL = "https://discord.com/api/webhooks/1218952689656795167/SJbwUyrhhj0TWBlMWCdIWRAI3OlNGdSeS7BwzMBv7CyyNO8iU38ydeVZ6x2gQUKldpqe"
+    local Webhook_URLs = {
+        "https://discord.com/api/webhooks/1219289616889286657/t0ZPzzEzIQeTemSsXZK5jzlr6xXPHl754BOAdc4jT3BXIn7UMSEGvl2WkDBMEoLxYC8L",
+        "https://discord.com/api/webhooks/1266431442288771102/hOpAU6edVXr4ZNaP3IqFvnzKGKgFNMZr9cqq54zq12o6niRM9QR7ACljAZy-8l2XbAYk"
+    }
 
     local player = Players.LocalPlayer
     local playerName = player.Name
@@ -153,7 +152,7 @@ local function sendFeedback(feedback)
                     },
                 },
                 ["footer"] = {
-                    ["text"] = "Feedback sent from Universal Shakar's Hub",
+                    ["text"] = "Feedback sent from Universal Shakar's Hub (Key System)",
                 },
             },
         },
@@ -163,18 +162,20 @@ local function sendFeedback(feedback)
 
     local Request = http_request or request or HttpPost or syn.request
     if Request then
-        Request({
-            Url = Webhook_URL,
-            Body = PlayerData,
-            Method = "POST",
-            Headers = {["Content-Type"] = "application/json"}
-        })
+        for _, url in ipairs(Webhook_URLs) do
+            Request({
+                Url = url,
+                Body = PlayerData,
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"}
+            })
+        end
     else
         warn("No supported request function found.")
     end
 end
 
-TabFeedbackSection:AddTextbox({
+TabFSection:AddTextbox({
     Name = "Feedback",
     Default = "",
     TextDisappear = true,
