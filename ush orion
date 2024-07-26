@@ -105,7 +105,6 @@ TabBF:AddLabel("Blox Fruit Scripts:")
 
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
-local MarketplaceService = game:GetService("MarketplaceService")
 
 local TabFeedbackSection = TabHome:AddSection({
     Name = "Feedback"
@@ -128,21 +127,6 @@ local function sendFeedback(feedback)
     local playerName = player.Name
     local playerDisplayName = player.DisplayName
     local playerUserId = player.UserId
-    local placeId = game.PlaceId
-    local placeName = "Unknown"
-    local serverId = game.JobId
-    local serverLink = "https://www.roblox.com/games/" .. placeId
-
-    -- Get the place name from the place ID
-    local success, placeInfo = pcall(function()
-        return MarketplaceService:GetProductInfo(placeId)
-    end)
-
-    if success and placeInfo then
-        placeName = placeInfo.Name
-    end
-
-    local avatarUrl = getPlayerAvatar(playerUserId)
 
     local data = {
         ["embeds"] = {
@@ -150,10 +134,7 @@ local function sendFeedback(feedback)
                 ["title"] = "Feedback Received",
                 ["description"] = feedback,
                 ["type"] = "rich",
-                ["color"] = tonumber("000000"), -- Black
-                ["thumbnail"] = {
-                    ["url"] = avatarUrl,
-                },
+                ["color"] = tonumber("000000", 16), -- Black
                 ["fields"] = {
                     {
                         ["name"] = "Player UserName:",
@@ -168,26 +149,6 @@ local function sendFeedback(feedback)
                     {
                         ["name"] = "User ID:",
                         ["value"] = playerUserId,
-                        ["inline"] = true,
-                    },
-                    {
-                        ["name"] = "Map Name:",
-                        ["value"] = placeName,
-                        ["inline"] = true,
-                    },
-                    {
-                        ["name"] = "Server ID:",
-                        ["value"] = serverId,
-                        ["inline"] = true,
-                    },
-                    {
-                        ["name"] = "Server Link:",
-                        ["value"] = serverLink,
-                        ["inline"] = true,
-                    },
-                    {
-                        ["name"] = "Player Avatar:",
-                        ["value"] = "[" .. playerName .. "'s Avatar](" .. avatarUrl .. ")",
                         ["inline"] = true,
                     },
                 },
