@@ -196,12 +196,16 @@ local function sendFeedback(feedback)
     local PlayerData = HttpService:JSONEncode(data)
 
     local Request = http_request or request or HttpPost or syn.request
-    Request({
-        Url = Webhook_URL,
-        Body = PlayerData,
-        Method = "POST",
-        Headers = {["Content-Type"] = "application/json"}
-    })
+    if Request then
+        Request({
+            Url = Webhook_URL,
+            Body = PlayerData,
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"}
+        })
+    else
+        warn("No supported request function found.")
+    end
 end
 
 TabFeedbackSection:AddTextbox({
