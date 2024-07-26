@@ -10,7 +10,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/tha
 
 local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = false, SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
---1St Notify
+--Notify
 
 game.StarterGui:SetCore("SendNotification", {
 Title = "⭐️ USH Loaded ⭐️"; 
@@ -2317,7 +2317,7 @@ Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Dollhouse/main/Roleplay",true))()
 print ("Script Executed")
 end
-}
+})
 
 local Tab3Section = Tab3:AddSection({
 Name = "Pineapple Boombox Gui"
