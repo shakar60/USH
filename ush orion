@@ -2295,42 +2295,6 @@ print ("Script Executed")
 end
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Free Camera V2"
-})
-
-Tab2:AddButton({
-Name = "Free Camera V2",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Break%20Camera'))()
-print ("Script Executed")
-end
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Better First Person"
-})
-
-Tab2:AddButton({
-Name = "Better First Person",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/free-cam/main/thisisbetterfirstpersonmb",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Hydroxide Gui"
-})
-
-Tab3:AddButton({
-Name = "Hydroxide Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/hydroxide/main/script",true))()
-print ("Script Executed")
-end
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Cowbells Boombox Gui"
 })
@@ -2353,7 +2317,7 @@ Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Dollhouse/main/Roleplay",true))()
 print ("Script Executed")
 end
-})
+}
 
 local Tab3Section = Tab3:AddSection({
 Name = "Pineapple Boombox Gui"
