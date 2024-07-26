@@ -117,10 +117,7 @@ local function sendFeedback(feedback)
         return
     end
 
-    local Webhook_URLs = {
-        "https://discord.com/api/webhooks/1219289616889286657/t0ZPzzEzIQeTemSsXZK5jzlr6xXPHl754BOAdc4jT3BXIn7UMSEGvl2WkDBMEoLxYC8L",
-        "https://discord.com/api/webhooks/1266431442288771102/hOpAU6edVXr4ZNaP3IqFvnzKGKgFNMZr9cqq54zq12o6niRM9QR7ACljAZy-8l2XbAYk"
-    }
+    local Webhook_URL = "https://discord.com/api/webhooks/1219289616889286657/t0ZPzzEzIQeTemSsXZK5jzlr6xXPHl754BOAdc4jT3BXIn7UMSEGvl2WkDBMEoLxYC8L"
 
     local player = Players.LocalPlayer
     local playerName = player.Name
@@ -162,14 +159,12 @@ local function sendFeedback(feedback)
 
     local Request = http_request or request or HttpPost or syn.request
     if Request then
-        for _, url in ipairs(Webhook_URLs) do
-            Request({
-                Url = url,
-                Body = PlayerData,
-                Method = "POST",
-                Headers = {["Content-Type"] = "application/json"}
-            })
-        end
+        Request({
+            Url = Webhook_URL,
+            Body = PlayerData,
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"}
+        })
     else
         warn("No supported request function found.")
     end
