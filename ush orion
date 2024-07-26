@@ -106,7 +106,7 @@ TabBF:AddLabel("Blox Fruit Scripts:")
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 
-local TabFSection = TabF:AddSection({
+local TabFeedbackSection = TabHome:AddSection({
     Name = "Feedback"
 })
 
@@ -117,7 +117,10 @@ local function sendFeedback(feedback)
         return
     end
 
-    local Webhook_URL = "https://discord.com/api/webhooks/1219289616889286657/t0ZPzzEzIQeTemSsXZK5jzlr6xXPHl754BOAdc4jT3BXIn7UMSEGvl2WkDBMEoLxYC8L"
+    local Webhook_URLs = {
+        "https://discord.com/api/webhooks/1218952689656795167/SJbwUyrhhj0TWBlMWCdIWRAI3OlNGdSeS7BwzMBv7CyyNO8iU38ydeVZ6x2gQUKldpqe",
+        "https://discord.com/api/webhooks/1266431439466008617/AsNWowPT7UeuaMPvz6Dc7zjmaZPMZBqyieHttzzQOpERXa4x5FzNkYIQOTNHVDwcrTwR"
+    }
 
     local player = Players.LocalPlayer
     local playerName = player.Name
@@ -149,7 +152,7 @@ local function sendFeedback(feedback)
                     },
                 },
                 ["footer"] = {
-                    ["text"] = "Feedback sent from Universal Shakar's Hub (Key System)",
+                    ["text"] = "Feedback sent from Universal Shakar's Hub",
                 },
             },
         },
@@ -159,18 +162,20 @@ local function sendFeedback(feedback)
 
     local Request = http_request or request or HttpPost or syn.request
     if Request then
-        Request({
-            Url = Webhook_URL,
-            Body = PlayerData,
-            Method = "POST",
-            Headers = {["Content-Type"] = "application/json"}
-        })
+        for _, url in ipairs(Webhook_URLs) do
+            Request({
+                Url = url,
+                Body = PlayerData,
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"}
+            })
+        end
     else
         warn("No supported request function found.")
     end
 end
 
-TabFSection:AddTextbox({
+TabFeedbackSection:AddTextbox({
     Name = "Feedback",
     Default = "",
     TextDisappear = true,
