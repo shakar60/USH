@@ -105,7 +105,6 @@ TabBF:AddLabel("Blox Fruit Scripts:")
 
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
-local MarketplaceService = game:GetService("MarketplaceService")
 
 local player = Players.LocalPlayer
 
@@ -125,9 +124,6 @@ local function sendFeedback(feedback)
     local playerName = player.Name
     local playerDisplayName = player.DisplayName
     local playerUserId = player.UserId
-
-    -- Construct player's Roblox profile link
-    local playerProfileLink = "https://www.roblox.com/users/" .. playerUserId .. "/profile"
 
     local data = {
         ["embeds"] = {
@@ -150,11 +146,6 @@ local function sendFeedback(feedback)
                     {
                         ["name"] = "User ID:",
                         ["value"] = playerUserId,
-                        ["inline"] = true,
-                    },
-                    {
-                        ["name"] = "Player Profile:",
-                        ["value"] = "[" .. playerName .. "'s Profile](" .. playerProfileLink .. ")",
                         ["inline"] = true,
                     },
                 },
