@@ -2501,11 +2501,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "RenxWare Untitled Tag Game Gui"
+Name = "RenxWare Untitled Tag Game Script Gui"
 })
 
 Tab3:AddButton({
-Name = "Renxware Untitled Tag Game Gui",
+Name = "Renxware Untitled Tag Game Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua"))()
 print ("Script Executed")
