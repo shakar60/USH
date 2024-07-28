@@ -1,3 +1,42 @@
+
+-- Blacklist Code
+
+-- Create a table to store blacklisted users
+local blacklist = {}
+
+-- Add users to the blacklist table
+table.insert(blacklist, "shakarkarim60")
+table.insert(blacklist, "Username2")
+table.insert(blacklist, "Username3")
+
+-- Create a function to check if a user is blacklisted
+local function isBlacklisted(username)
+-- Check if the username is in the blacklist table
+for _, blacklistedUsername in pairs(blacklist) do
+if username == blacklistedUsername then
+-- Return true if the user is blacklisted
+return true
+end
+end
+-- Return false if the user is not blacklisted
+return false
+end
+
+-- Create a function to kick blacklisted users
+local function kickBlacklistedUsers()
+-- Loop through all players in the game
+for _, player in pairs(game.Players:GetPlayers()) do
+-- Check if the player is blacklisted
+if isBlacklisted(player.Name) then
+-- Kick the player
+player:Kick("You are blacklisted From USH!")
+end
+end
+end
+
+-- Kick blacklisted users once
+kickBlacklistedUsers()
+
 ------------------------------------------------------------------
 
 --Execution Logs
