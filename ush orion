@@ -1,41 +1,11 @@
--- Blacklist script for script executors using usernames
-
--- List of blacklisted usernames
-local blacklistedUsernames = {
-    "shakarkarim60",  -- Replace with the usernames of the blacklisted players
-    "Username2",  -- Replace with the usernames of the blacklisted players
-    "Username3"   -- Replace with the usernames of the blacklisted players
-}
+local blacklistedUsername = "shakarkarim60"
 
 local Players = game:GetService("Players")
 
--- Function to check if a username is blacklisted
-local function isBlacklisted(username)
-    for _, blacklistedUsername in ipairs(blacklistedUsernames) do
-        if blacklistedUsername:lower() == username:lower() then
-            return true
-        end
-    end
-    return false
+local localPlayer = Players.LocalPlayer
+if localPlayer.Name:lower() == blacklistedUsername:lower() then
+    localPlayer:Kick("You Have Been BlackListed From USH")
 end
-
--- Check if the local player is blacklisted
-local function checkLocalPlayer()
-    local localPlayer = Players.LocalPlayer
-    if isBlacklisted(localPlayer.Name) then
-        localPlayer:Kick("You are blacklisted from this game.")
-    end
-end
-
--- Event to handle new players joining (for script executors that support server-side execution)
-Players.PlayerAdded:Connect(function(player)
-    if isBlacklisted(player.Name) then
-        player:Kick("You are blacklisted from this game.")
-    end
-end)
-
--- Initial check for the local player
-checkLocalPlayer()
 ------------------------------------------------------------------
 
 --Execution Logs
