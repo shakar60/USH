@@ -1,3 +1,20 @@
+local blacklists = {"shakarkarim60"} --Put the name of the person you want to blacklist here.
+
+function findblacklist(plr) -- Function to find if they are blacklisted.
+	for _,v in pairs(blacklists) do -- Indexes the blacklists table above.
+		if plr.Name == v then -- Looks to see if their name is in the table.
+			return true
+		end
+	end
+end
+
+game.Players.PlayerAdded:Connect(function(plr)
+	local isblacklisted = findblacklist(plr) -- Identifies if the player who joined is blacklisted.
+	
+	if isblacklisted then -- What you do here will effect blacklisted players.
+		plr:Kick("Your message here.") -- Kick and kick message.
+	end
+end)
 ------------------------------------------------------------------
 
 --Execution Logs
