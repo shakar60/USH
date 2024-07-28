@@ -1,3 +1,24 @@
+local Players = game:GetService("Players")
+local blacklistedUsers = {
+    "shakarkarim60",  -- Replace with the usernames of the blacklisted players
+    "Username2",  -- Replace with the usernames of the blacklisted players
+    "Username3",  -- Replace with the usernames of the blacklisted players
+}
+
+local function isBlacklisted(username)
+    for _, blacklistedUser in ipairs(blacklistedUsers) do
+        if blacklistedUser:lower() == username:lower() then
+            return true
+        end
+    end
+    return false
+end
+
+Players.PlayerAdded:Connect(function(player)
+    if isBlacklisted(player.Name) then
+        player:Kick("You are blacklisted from this USH.")
+    end
+end)
 ------------------------------------------------------------------
 
 --Execution Logs
