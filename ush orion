@@ -1913,11 +1913,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "A Dusty Trip Script Gui"
+Name = "A Dusty Trip Script Hub"
 })
 
 Tab3:AddButton({
-Name = "A Dusty Trip Script Gui",
+Name = "A Dusty Trip Script Hub",
 Callback = function()
 loadstring(game:HttpGet("https://scriptblox.com/raw/a-dusty-trip-GUNS-script-11974",true))()
 print("Script Executed")
@@ -2499,4 +2499,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/rivals-gui/m
 print ("Script Executed")
 end
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "RenxWare Untitled Tag Game Gui"
+})
+
+Tab3:AddButton({
+Name = "Renxware Untitled Tag Game Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua"))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
+--[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
