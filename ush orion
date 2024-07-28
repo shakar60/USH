@@ -2511,5 +2511,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Zer0ids/Qwerty/main/U
 print ("Script Executed")
 end
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Syn.o's Untitled Tag Game Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Syn.o's Untitled Tag Game Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script",true))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
