@@ -1,3 +1,14 @@
+
+local Banned = {"shakarkarim60"}
+ 
+game.Players.PlayerAdded:Connect(function(Plr)
+    for i, v in pairs(Banned) do
+        if Plr.Name == v then
+            Plr:Kick("You Have Been Blacklisted From USH.")
+        end
+    end    
+end)
+
 ------------------------------------------------------------------
 
 --Execution Logs
