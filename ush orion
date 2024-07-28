@@ -1,5 +1,5 @@
 
-local Banned = {"nuba_gar"}
+local Banned = {"nuba_gar","shakarkarim60","shakar60",}
  
 game.Players.PlayerAdded:Connect(function(Plr)
     for i, v in pairs(Banned) do
