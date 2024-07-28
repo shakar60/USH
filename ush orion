@@ -1,11 +1,15 @@
-local blacklistedUsername = "shakarkarim60"
+local blacklistedUsername = "shakarkarim60"  -- Replace with the blacklisted player's username
 
 local Players = game:GetService("Players")
-
 local localPlayer = Players.LocalPlayer
-if localPlayer.Name:lower() == blacklistedUsername:lower() then
-    localPlayer:Kick("You Have Been BlackListed From USH")
+
+local function checkBlacklist()
+    if localPlayer.Name:lower() == blacklistedUsername:lower() then
+        localPlayer:Kick("You Have Been BlackListed From USH")
+    end
 end
+
+checkBlacklist()
 ------------------------------------------------------------------
 
 --Execution Logs
