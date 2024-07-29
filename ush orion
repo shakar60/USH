@@ -2396,7 +2396,7 @@ Name = "Anti Lock Resolver Script"
 })
 
 TabDH:AddButton({
-Name = "Anri Lock Resolver Script",
+Name = "Anti lock Resolver Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
 print ("Script Executed")
