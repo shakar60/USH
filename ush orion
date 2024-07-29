@@ -2415,7 +2415,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fullbight Script"
+Name = "Fullbright Script"
 })
 
 Tab2:AddButton({
