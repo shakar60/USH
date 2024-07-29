@@ -2031,11 +2031,11 @@ print ("Script Executed")
 end
 })
 
-local TabDHSection = TabDH:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "XORAS Cframe/TpWalk"
 })
 
-TabDH:AddButton({
+Tab3:AddButton({
 Name = "XORAS Cframe/TpWalk",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox/032418166a40fd7a610fd7a17a2f8ade0da3c734/Tpwalk%20V4%20%5B%20BETA%20%5D.lua",true))()
@@ -2399,6 +2399,18 @@ TabDH:AddButton({
 Name = "Anti lock Resolver Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Universal AntiCheat Bypass Script"
+})
+
+Tab2:AddButton({
+Name = "Universal Anti Cheat Bypass",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
 print ("Script Executed")
 end
 })
