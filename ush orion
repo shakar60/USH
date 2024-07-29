@@ -2368,13 +2368,25 @@ end
 })
 
 local TabDHSection = TabDH:AddSection({
-Name = "Stretched Res Scrip"
+Name = "Stretched Res Script"
 })
 
 TabDH:AddButton({
 Name = "Stretched Res Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/stretched-res/main/dh",true))()
+print ("Script Executed")
+end
+})
+
+local TabALSection = TabAL:AddSection({
+Name = "Tief Lock Gui"
+})
+
+TabAL:AddButton({
+Name = "Tief Lock Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tiefdej/this-obskid/maineheheheheu/tief%20simp%20gui"))()
 print ("Script Executed")
 end
 })
