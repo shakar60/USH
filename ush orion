@@ -223,12 +223,10 @@ TabHome:AddSection({
   Name = "Credits:"
 })
 
-TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord")
+TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord,Owner Of The Hub")
 TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
-TabHome:AddParagraph("Made By sh4kar60-sh4k4r6o On Discord","Owner")
 TabHome:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub","Credits")
-
 ------------------------------------------------------------------
 
 --Player Infos
@@ -2409,6 +2407,18 @@ Name = "Universal AntiCheat Bypass Script"
 
 Tab2:AddButton({
 Name = "Universal Anti Cheat Bypass",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Fullbight Script"
+})
+
+Tab2:AddButton({
+Name = "Fullbright Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
 print ("Script Executed")
