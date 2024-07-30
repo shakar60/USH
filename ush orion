@@ -253,17 +253,32 @@ TabHome:AddSection({
   Name = "Map:"
 })
 
-local Players = game:GetService("Players")
+-- Map Info
+TabHome:AddSection({ Name = "Map:" })
+
+local mapParagraph
 
 local function updateMapName()
-  local placeId = game.PlaceId
-  local placeInfo = game.MarketplaceService:GetProductInfo(placeId)
-  local mapName = placeInfo.Name or "Unknown Map"
-  TabHome:AddParagraph("Map", "Map: " .. mapName)
+    local placeId = game.PlaceId
+    local placeInfo = game:GetService("MarketplaceService"):GetProductInfo(placeId)
+    local mapName = placeInfo.Name or "Unknown Map"
+
+    -- If the paragraph does not exist, create it
+    if not mapParagraph then
+        mapParagraph = TabHome:AddParagraph("Map", "Map: " .. mapName)
+    else
+        -- Otherwise, update the existing paragraph text
+        mapParagraph:SetText("Map: " .. mapName)
+    end
 end
 
-Players.PlayerAdded:Connect(updateMapName)
+-- Initial call to set the map name
 updateMapName()
+
+-- Update map name when a new player joins
+game:GetService("Players").PlayerAdded:Connect(function()
+    updateMapName()
+end)
 
 TabHome:AddSection({
   Name = "Map ID:"
