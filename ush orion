@@ -2448,7 +2448,31 @@ Name = "Fullbright Script"
 Tab2:AddButton({
 Name = "Fullbright Script",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fullbright/main/scripts",true))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Shakars Untitled Tag Game Script Gui"
+})
+
+Tab3:AddButton({
+Name = "Shakars Untitled Tag Game Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/shakars_utg/main/script",true))()
+print ("Script Executed")
+end
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "No Fog Script"
+})
+
+Tab2:AddButton({
+Name = "No Fog Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-fog/main/script",true))()
 print ("Script Executed")
 end
 })
