@@ -477,7 +477,7 @@ Name = "Fake Lag"
 Tab2:AddButton({
 Name = "Fake Lag",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/ghosthubs-fake-lag-source/main/leaked%20and%20skidded",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/fake%20lag",true))()
 print("Script Executed")
 end
 })
