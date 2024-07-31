@@ -2202,18 +2202,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Toras Gym League Script Gui (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Toras Gym League Script Gui (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/GymLeague", true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Gym League Script Gui (All In One)"
 })
 
