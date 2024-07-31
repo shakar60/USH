@@ -1,0 +1,323 @@
+-----------------------------------------
+
+--Execution Logs
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/script-execution-2/main/s",true))()
+
+-----------------------------------------
+
+--Orion Library 
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() --This Will Load The Script Code
+
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+    Name = "⭐️ USH | Universal Shakars Hub (Key System) ⭐️",
+    HidePremium = false,
+    SaveConfig = true,   
+    IntroEnabled = false,
+}) --This Will Load The Script Hub
+
+-----------------------------------------
+
+--Execute This When The Key Is Right
+
+function MakeScriptHub()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/ush%20orion",true))() --Put The Script That Will Load If The Key Is Correct Here
+end
+
+-----------------------------------------
+
+--Key System
+
+getgenv().Key = "X81bheVw7jd91" --Put The Correct Key Here
+getgenv().KeyInput = "String" --Require For The Key To Work
+
+-----------------------------------------
+
+--Tabs
+
+local TabKS = Window:MakeTab({
+  Name = "Key System",
+  Icon = "rbxassetid://4483345998",
+  PremiumOnly = false
+}) --Making A Tab
+
+local TabF = Window:MakeTab({
+Name = "Feedback",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local TabPI = Window:MakeTab({
+Name = "Player Info",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+-----------------------------------------
+
+--Feedback Script 
+
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+
+local TabFSection = TabF:AddSection({
+    Name = "Feedback"
+})
+
+local function sendFeedback(feedback)
+    -- Check if feedback is empty
+    if feedback == nil or feedback == "" then
+        print("Empty feedbacks will not be sent to any webhook.")
+        return
+    end
+
+    local Webhook_URLs = {
+        "https://discord.com/api/webhooks/1219289616889286657/t0ZPzzEzIQeTemSsXZK5jzlr6xXPHl754BOAdc4jT3BXIn7UMSEGvl2WkDBMEoLxYC8L",
+        "https://discord.com/api/webhooks/1266431442288771102/hOpAU6edVXr4ZNaP3IqFvnzKGKgFNMZr9cqq54zq12o6niRM9QR7ACljAZy-8l2XbAYk"
+    }
+
+    local player = Players.LocalPlayer
+    local playerName = player.Name
+    local playerDisplayName = player.DisplayName
+    local playerUserId = player.UserId
+
+    local data = {
+        ["embeds"] = {
+            {
+                ["title"] = "Feedback Received",
+                ["description"] = feedback,
+                ["type"] = "rich",
+                ["color"] = tonumber("000000", 16), -- Black
+                ["fields"] = {
+                    {
+                        ["name"] = "Player UserName:",
+                        ["value"] = playerName,
+                        ["inline"] = true,
+                    },
+                    {
+                        ["name"] = "Player DisplayName:",
+                        ["value"] = playerDisplayName,
+                        ["inline"] = true,
+                    },
+                    {
+                        ["name"] = "User ID:",
+                        ["value"] = playerUserId,
+                        ["inline"] = true,
+                    },
+                },
+                ["footer"] = {
+                    ["text"] = "Feedback sent from Universal Shakar's Hub (Key System)",
+                },
+            },
+        },
+    }
+
+    local PlayerData = HttpService:JSONEncode(data)
+
+    local Request = http_request or request or HttpPost or syn.request
+    if Request then
+        for _, url in ipairs(Webhook_URLs) do
+            Request({
+                Url = url,
+                Body = PlayerData,
+                Method = "POST",
+                Headers = {["Content-Type"] = "application/json"}
+            })
+        end
+    else
+        warn("No supported request function found.")
+    end
+end
+
+TabFSection:AddTextbox({
+    Name = "Feedback",
+    Default = "",
+    TextDisappear = true,
+    Callback = function(feedback)
+        if feedback == nil or feedback == "" then
+            print("Empty feedbacks will not be sent to any webhook.")
+        else
+            print("Received feedback:", feedback)
+            sendFeedback(feedback)
+        end
+    end
+})
+
+-----------------------------------------
+
+--Join Discord
+
+TabKS:AddSection({
+  Name = "Join The Discord Here"
+})
+
+TabKS:AddButton({
+Name = "Join Discord",
+Callback = function()
+      setclipboard("https://discord.gg/z6RM78FS7y")
+print("Discord Link Set To Your Clipboard")
+end
+})
+
+-----------------------------------------
+
+--Enter Key Script
+
+local TabSection = TabKS:AddSection({
+Name = "Enter The Key Here"
+})
+
+TabKS:AddTextbox({
+  Name = "Enter Key",
+  Default = "",
+  TextDisappear = true,
+  Callback = function(Value)
+    getgenv().KeyInput = Value
+  end	  
+}) --You Will Enter The Key Here
+
+-----------------------------------------
+
+--Check Key Script
+
+local TabSection = TabKS:AddSection({
+Name = "Check The Key Here"
+})
+
+TabKS:AddButton({
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Correct Key!",
+                Content = "The key you entered is Correct.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Incorrect Key!",
+                Content = "The key you entered is incorrect.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) --This Will Check The Key You Entered
+
+-----------------------------------------
+
+--Get Key Script
+
+local TabSection = TabKS:AddSection({
+Name = "Get The Key Here [lootlabs]"
+})
+
+TabKS:AddButton({
+  Name = "Get Key",
+  Callback = function()
+          setclipboard("https://loot-link.com/s?scjP") --This Will Copy The Link Of The Key
+    end    
+}) 
+
+local TabSection = TabKS:AddSection({
+Name = "Get The Key Here [Workink]"
+})
+
+TabKS:AddButton({
+  Name = "Get Key",
+  Callback = function()
+          setclipboard("https://work.ink/1U7r/ltrnbyr2") --This Will Copy The Link Of The Key
+    end    
+}) 
+
+local TabSection = TabKS:AddSection({
+Name = "Get The Key Here [Linkvertise]"
+})
+
+TabKS:AddButton({
+  Name = "Get Key",
+  Callback = function()
+          setclipboard("https://link-hub.net/1112684/get-ush-key-here") --This Will Copy The Link Of The Key
+    end    
+}) 
+
+local TabSection = TabKS:AddSection({
+Name = "Get The Key Here [Rekonise]"
+})
+
+TabKS:AddButton({
+  Name = "Get Key",
+  Callback = function()
+          setclipboard("https://rekonise.com/get-ush-key-here-r5hyq") --This Will Copy The Link Of The Key
+    end    
+}) 
+
+-----------------------------------------
+
+--Player Info
+
+TabPI:AddSection({
+  Name = "Player Info:"
+})
+
+TabPI:AddSection({
+  Name = "Player Username:"
+})
+TabPI:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
+TabPI:AddSection({
+  Name = "Player DisplayName:"
+})
+TabPI:AddParagraph("DisplayName", "DisplayName: " .. game.Players.LocalPlayer.DisplayName)
+TabPI:AddSection({
+  Name = "Player UserID:"
+})
+TabPI:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
+TabPI:AddSection({
+  Name = "Played Account Age:"
+})
+TabPI:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+
+TabPI:AddSection({
+  Name = "Map:"
+})
+
+local Players = game:GetService("Players")
+
+local function updateMapName()
+  local placeId = game.PlaceId
+  local placeInfo = game.MarketplaceService:GetProductInfo(placeId)
+  local mapName = placeInfo.Name or "Unknown Map"
+  TabPI:AddParagraph("Map", "Map: " .. mapName)
+end
+
+Players.PlayerAdded:Connect(updateMapName)
+updateMapName()
+
+TabPI:AddSection({
+  Name = "Map ID:"
+})
+
+local mapID = game.PlaceId
+
+TabPI:AddParagraph("Map ID", "Map ID: " .. mapID)
