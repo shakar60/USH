@@ -2214,61 +2214,13 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "LightTuxs Script Hub (Key Sys)"
+Name = "Gym League Script Gui (All In One)"
 })
 
 Tab3:AddButton({
-Name = "LightTuxs Script Hub (Key Sys)",
+Name = "Gym League Script Gui (All In One)",
 Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/Lightux/main/README.md'),true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Tuffs Gym League Script Gui (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Tuffs Gym League Script Gui (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisIsTuff/ArmWrestleSim/main/GymLeague.lua"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Speed Hub X Gym League Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Speed Hub X Gym League Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Gym%20League.lua"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Madbuks Gym League Script Gui"
-})
-
-Tab3:AddButton({
-Name = "MadBuks Gym League Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/MadbukScripts/Scripts/main/Obfuscated%20Gym%20League.lua"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Ryk Gym League Script Gui (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Ryk Gym League Script Gui (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet("https://ryk.bloxteam.com/loader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/gym-league-script-gui/main/fr",true))()
 print ("Script Executed")
 end
 })
