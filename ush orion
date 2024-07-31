@@ -2477,14 +2477,26 @@ print ("Script Executed")
 end
 })
 
-local Tab2Section = Tab2:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "Fe Flex Your Fps Script"
 })
 
-Tab2:AddButton({
+Tab3:AddButton({
 Name = "Fe Flex Your Fps Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Q0BhVUHx",true))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Gazer Fe Animation Hub (Ipad/Pc Recommended)"
+})
+
+Tab3:AddButton({
+Name = "Gazer Fe Animation Hub (Ipad/Pc Recommended)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G"))()
 print ("Script Executed")
 end
 })
