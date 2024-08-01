@@ -2,7 +2,7 @@
 
 --Execution Logs
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/script-execution-2/main/s",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/execution%20logs%20v2",true))()
 
 -----------------------------------------
 
