@@ -2416,5 +2416,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/mai
 print ("Script Executed")
 end
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Simple Cords Gui"
+})
+
+Tab3:AddButton({
+Name = "Simple Cords Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/coords",true))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
