@@ -2,17 +2,17 @@
 
 --BlackList
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blacklist/main/code",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/blacklist",true))()
 
 --Game Blacklister
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blacklistv2/main/code",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/game%20blacklister",true))()
 
 ------------------------------------------------------------------
 
 --Execution Logs
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/script-execution/main/s",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/execution%20logs%20v2",true))()
 
 ------------------------------------------------------------------
 --Window & Library
@@ -223,7 +223,7 @@ TabHome:AddSection({
   Name = "Credits:"
 })
 
-TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord,Owner Of The Hub")
+TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord")
 TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 TabHome:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub","Credits")
@@ -253,7 +253,6 @@ TabHome:AddSection({
   Name = "Map:"
 })
 
--- Map Info
 TabHome:AddSection({ Name = "Map:" })
 
 local mapParagraph
@@ -263,19 +262,16 @@ local function updateMapName()
     local placeInfo = game:GetService("MarketplaceService"):GetProductInfo(placeId)
     local mapName = placeInfo.Name or "Unknown Map"
 
-    -- If the paragraph does not exist, create it
     if not mapParagraph then
         mapParagraph = TabHome:AddParagraph("Map", "Map: " .. mapName)
     else
-        -- Otherwise, update the existing paragraph text
+        
         mapParagraph:SetText("Map: " .. mapName)
     end
 end
 
--- Initial call to set the map name
 updateMapName()
 
--- Update map name when a new player joins
 game:GetService("Players").PlayerAdded:Connect(function()
     updateMapName()
 end)
@@ -996,7 +992,7 @@ Name = "Combat Warriors MaxHub",
 Callback = function()
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/1d4db6a1b04aaeccf046f7c63fbad31a.lua"))()
 print("Script Executed")
-end
+end 
 })
 
 local Tab3Section = Tab3:AddSection({
@@ -1693,7 +1689,7 @@ Name = "Xray Script Gui"
 Tab3:AddButton({
 Name = "Xray Script Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/xray/main/script",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/xray",true))()
 print("Script Executed")
 end 
 })
@@ -2338,7 +2334,7 @@ Name = "Anti Lock Resolver Script"
 })
 
 TabDH:AddButton({
-Name = "Anti lock Resolver Script",
+Name = "Anti Lock Resolver Script",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
 print ("Script Executed")
