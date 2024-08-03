@@ -539,7 +539,19 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Rejoin Script (Instant Rejoin)"
+Name = "Rejoin Script (When Disconnected)"
+})
+
+Tab2:AddButton({
+Name = "Rejoin Script (When Disconnected)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GGH52lan/GGH52lan/main/Rejoin_Button.txt"))()
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Direct Rejoin Script"
 })
 
 Tab2:AddButton({
