@@ -707,7 +707,7 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = " Fe Animation Changer"
+Name = "Fe Animation Changer"
 })
 
 Tab2:AddButton({
@@ -1707,13 +1707,49 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball AutoParry Hub "
+Name = "Blade Ball FFJ Hub (Old)"
 })
 
 Tab3:AddButton({
-Name = "Blade Ball AutoParry Hub",
+Name = "Blade Ball FFJ Hub (Old)",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball FFJ Hub (Key Sys) (New)"
+})
+
+Tab3:AddButton({
+Name = "Blade Ball FFJ Hub (Key Sys) (New)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/BladeBallV3.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball Nexam Hub"
+})
+
+Tab3:AddButton({
+Name = "Blade Ball Nexam Hub",
+Callback = function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Blade Ball Astral Hub"
+})
+
+Tab3:AddButton({
+Name = "Blade Ball Astral Hub",
+Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Augustzyzx/A-s-t-r-a-l/main/Loader_BladeBall.lua'))()
 print("Script Executed")
 end 
 })
