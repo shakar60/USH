@@ -10,10 +10,10 @@ if game.PlaceId == specificPlaceId then
     local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() 
   
     local Window = OrionLib:MakeWindow({
-        Name = " ⭐️ Shakars UTG | Untitled Tag Game⭐️",
+        Name = "⭐️ Shakars UTG | Untitled Tag Game ⭐️",
         HidePremium = false,
         IntroEnabled = true,
-        IntroText = "⭐️ Shakars UTG | Untitled Tag Game⭐️",
+        IntroText = "⭐️ Shakars UTG | Untitled Tag Game ⭐️",
         SaveConfig = true,
         ConfigFolder = "shakar"
     })
