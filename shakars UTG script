@@ -13,6 +13,7 @@ if game.PlaceId == specificPlaceId then
         Name = " ⭐️ Shakars UTG | Untitled Tag Game⭐️",
         HidePremium = false,
         IntroEnabled = true,
+        IntroText = "⭐️ Shakars UTG | Untitled Tag Game⭐️",
         SaveConfig = true,
         ConfigFolder = "shakar"
     })
