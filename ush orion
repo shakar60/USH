@@ -18,7 +18,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
 --Window & Library
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() 
 
-local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = true, IntroText = "⭐️ USH | Universal Shakars Hub",SaveConfig = true, ConfigFolder = "shakar"})
+local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = true, IntroText = "⭐️ USH | Universal Shakars Hub ⭐️",SaveConfig = true, ConfigFolder = "shakar"})
 ------------------------------------------------------------------
 --Notify
 
