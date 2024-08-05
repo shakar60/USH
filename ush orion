@@ -575,13 +575,13 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Kat Aimbot Script Gui"
+Name = "BelugaWare For KAT"
 })
 
 Tab3:AddButton({
-Name = "Kat AimBot Script Gui",
+Name = "BelugaWare For KAT",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/JNHHGaming/Kat12/main/Kat"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/belugaware",true))()
 print("Script Executed")
 end 
 })
