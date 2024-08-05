@@ -809,7 +809,7 @@ Name = "No Clip Gui"
 Tab3:AddButton({
 Name = "No Clip Gui",
 Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/B5xRxTnk",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/no%20clip",true))()
 print("Script Executed")
 end 
 })
