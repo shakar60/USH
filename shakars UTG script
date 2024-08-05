@@ -13,7 +13,7 @@ if game.PlaceId == specificPlaceId then
         Name = "⭐️ Shakars UTG | Untitled Tag Game ⭐️",
         HidePremium = false,
         IntroEnabled = true,
-        IntroText = "⭐️ Shakars UTG | Untitled Tag Game ⭐️",
+        IntroText = "⭐️ Shakars UTG | Untitled Tag Game Script ⭐️",
         SaveConfig = true,
         ConfigFolder = "shakar"
     })
@@ -22,7 +22,7 @@ if game.PlaceId == specificPlaceId then
   
     -- Notify
     game.StarterGui:SetCore("SendNotification", {
-        Title = "⭐️ Shakars UTG Loaded ⭐️",
+        Title = "⭐️ Shakars UTG Script Has Been Loaded ⭐️",
         Text = "Made by sh4kar60-sh4k4r6o On Discord",
         Duration = 5,
     })
