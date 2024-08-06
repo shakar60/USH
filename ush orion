@@ -2522,11 +2522,11 @@ print ("Script Executed")
 end
 })
 
-local Tab3Section = Tab3:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Fe Cool Animation"
 })
 
-Tab3:AddButton({
+Tab2:AddButton({
 Name = "Fe Cool Animation",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/hgPJbwF0"))()
