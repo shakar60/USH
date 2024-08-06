@@ -2414,18 +2414,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Fe Flex Your Fps Script"
-})
-
-Tab3:AddButton({
-Name = "Fe Flex Your Fps Script",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Q0BhVUHx",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Gazer Fe Animation Hub (Ipad/Pc Recommended)"
 })
 
@@ -2530,6 +2518,18 @@ Name = "Fe Kill All Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui",true))()
 OrionLib:Init()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Fe Cool Animation"
+})
+
+Tab3:AddButton({
+Name = "Fe Cool Animation",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/hgPJbwF0"))()
 print ("Script Executed")
 end
 })
