@@ -2521,4 +2521,16 @@ OrionLib:Init()
 print ("Script Executed")
 end
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Redz Pet Simulator 99 Script"
+})
+
+Tab3:AddButton({
+Name = "Redz Pet Simulator 99 Script",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua"))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
