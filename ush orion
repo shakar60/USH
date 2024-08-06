@@ -2521,16 +2521,4 @@ OrionLib:Init()
 print ("Script Executed")
 end
 })
-
-local Tab2Section = Tab2:AddSection({
-Name = "Fe Cool Animation"
-})
-
-Tab2:AddButton({
-Name = "Fe Cool Animation",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/hgPJbwF0"))()
-print ("Script Executed")
-end
-})
 OrionLib:Init()
