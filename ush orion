@@ -1964,7 +1964,7 @@ Name = "Blazing Lock Gui"
 TabAL:AddButton({
 Name = "Blazing Lock Gui",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/blazing",true))()
+loadstring(game:HttpGet("https://pastebin.com/raw/d75VfZK1"))()
 print ("Script Executed")
 end 
 })
