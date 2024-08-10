@@ -887,18 +887,6 @@ print("Script Executed")
 end 
 })
 
-local TabBFSection = TabBF:AddSection({
-Name = "Uranium Hub"
-})
-
-TabBF:AddButton({
-Name = "Uranium Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Augustzyzx/UraniumMobile/main/UraniumKak.lua"))()
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Ninja Legends Script Hub"
 })
@@ -1140,18 +1128,6 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "KeyStrokes Script"
-})
-
-Tab2:AddButton({
-Name = "KeyStrokes Script",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/Te4dwSw2/raw'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
 Name = "KeyBind Maker Script"
 })
 
@@ -1344,30 +1320,6 @@ end
 })
 
 local Tab2Section = Tab2:AddSection({
-Name = "Fe Player Collision"
-})
-
-Tab2:AddButton({
-Name = "Fe Player Collision",
-Callback = function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/Collision.txt'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Fe Zombie Script"
-})
-
-Tab2:AddButton({
-Name = "Fe Zombie Script",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/w7KnPY70/raw'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
 Name = "Fe Walk On Wall Script"
 })
 
@@ -1439,18 +1391,6 @@ print("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
-Name = "Silent Aim Script"
-})
-
-TabAL:AddButton({
-Name = "Silent Aim Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/silents.aim/main/s",true))()
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "RoGhoul Script Hub"
 })
@@ -1471,18 +1411,6 @@ Tab3:AddButton({
 Name = "FrontLines Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frontlines./main/hitbox",true))()
-print("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Green Camlock (Q To Camlock)"
-})
-
-TabAL:AddButton({
-Name = "Green Camlock (Q To Camlock)",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/y2PQh0rB",true))()
 print("Script Executed")
 end 
 })
@@ -1760,8 +1688,7 @@ Name = "ScriptHub By Backup"
 
 Tab3:AddButton({
 Name = "ScriptHub By Backup",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
+Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
 print("Script Executed")
 end 
 })
@@ -2427,18 +2354,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Simple Cords Gui"
-})
-
-Tab3:AddButton({
-Name = "Simple Cords Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/coords",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Build A Bridge Simulator Script"
 })
 
@@ -2518,7 +2433,6 @@ Tab3:AddButton({
 Name = "Fe Kill All Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui",true))()
-OrionLib:Init()
 print ("Script Executed")
 end
 })
@@ -2534,4 +2448,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/PetSimulator9
 print ("Script Executed")
 end
 })
+
+local Tab3Section = Tab3:AddSection({
+Name = "Afem - Free Dance Menu"
+})
+
+Tab3:AddButton({
+Name = "Afem - Free Dance Menu",
+Callback = function()
+loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()
+print ("Script Executed")
+end
+})
 OrionLib:Init()
+--[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
