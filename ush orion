@@ -1755,12 +1755,13 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "ScriptHub Script"
+Name = "ScriptHub By Backup"
 })
 
 Tab3:AddButton({
-Name = "ScriptHub Script",
-Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/scripthubv3beta/main/scripthubv3beta1", true))()
+Name = "ScriptHub By Backup",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
 print("Script Executed")
 end 
 })
