@@ -418,11 +418,11 @@ end
 ------------------------------------------------------------------
 --Scripts
 
-local TabDHSection = TabDH:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "KeyStrokes Script Gui V1"
 })
 
-TabDH:AddButton({
+Tab3:AddButton({
 Name = "KeyStrokes Script Gui V1",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
@@ -430,11 +430,11 @@ print("Script Executed")
 end 
 })
 
-local TabDHSection = TabDH:AddSection({
+local Tab3Section = Tab3:AddSection({
 Name = "KeyStroke Script Gui V2"
 })
 
-TabDH:AddButton({
+Tab3:AddButton({
 Name = "KeyStroke Script Gui V2",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokeguiV2/main/script",true))()
