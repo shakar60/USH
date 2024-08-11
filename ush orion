@@ -2378,18 +2378,6 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Pet Simulator 99 Zap Hub Solara + AppleWare Support (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Pet Simulator 99 Zap Hub Solara + AppleWare Support (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet('https://zaphub.xyz/ExecSolara'))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
 Name = "Evade D8rk Hub"
 })
 
