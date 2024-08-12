@@ -2438,7 +2438,7 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Universal Shakara Hub Kavo Version
+Name = "Universal Shakara Hub Kavo Version",
 })
 
 Tab3:AddButton({
