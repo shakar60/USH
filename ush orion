@@ -2444,7 +2444,7 @@ Name = "Universal Shakara Hub Kavo Version",
 Tab3:AddButton({
 Name = "Universal Shakars Hub Kavo Version",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/ush%20kavo",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected",true))()
 print("Script Executed")
 end 
 })
