@@ -1043,18 +1043,6 @@ print("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
-Name = "Flash Lock"
-})
-
-TabAL:AddButton({
-Name = "Flash Lock",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/GXma0NrL",true))()
-print("Script Executed")
-end 
-})
-
 local TabDHSection = TabDH:AddSection({
 Name = "Speed Tool"
 })
@@ -2447,6 +2435,18 @@ Callback = function()
 loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()
 print ("Script Executed")
 end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Universal Shakara Hub Kavo Version
+})
+
+Tab3:AddButton({
+Name = "Universal Shakars Hub Kavo Version",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/ush%20kavo",true))()
+print("Script Executed")
+end 
 })
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
