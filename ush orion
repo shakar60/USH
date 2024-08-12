@@ -224,7 +224,7 @@ TabHome:AddSection({
 })
 
 TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord")
-TabHome:AddParagraph("I Dont Own Any Scripts In The Hub.","Must Know")
+TabHome:AddParagraph("I Dont Own All The Scripts In The Hub.","Must Know")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
 TabHome:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub","Credits")
 
@@ -940,7 +940,7 @@ Name = "Universal Spy Script"
 })
 
 Tab2:AddButton({
-Name = "Universal Spy Scrip",
+Name = "Universal Spy Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/MichaelScripter/MiniScript/main/Spy gui.lua"))()
 print("Script Executed")
