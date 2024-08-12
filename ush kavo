@@ -1,1 +1,1212 @@
+----------------------------------------------------------------------------------------------------------------------
 
+-- Library & Window
+
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Universal Shakars Hub", "DarkTheme")
+
+--Notify
+
+wait (0.5)
+game.StarterGui:SetCore("SendNotification", {
+Title = "Universal Shakars Hub Loaded"; 
+Text = "Made by sh4k4r6o"; 
+Duration = 5; 
+})
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- Tabs
+
+local TabHome = Window:NewTab("Home")
+local TabPlayer= Window:NewTab("Player")
+local Tab1 = Window:NewTab("Scripts")
+local Tab2 = Window:NewTab("Hubs/Guis")
+local Tab3 = Window:NewTab("Aimlock/Lock Scripts")
+local Tab4 = Window:NewTab("Blox fruits scripts")
+local Tab6 = Window:NewTab("Dh Scripts")
+local Tab5 = Window:NewTab("Credits")
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- Sections Inside Tabs
+local TabHomeSection = TabHome:NewSection("Infos:")
+local TabPlayerSection = TabPlayer:NewSection("Player:")
+local Tab1Section = Tab1:NewSection("Scripts:")
+local Tab2Section = Tab2:NewSection("Hubs:")
+local Tab3Section = Tab3:NewSection("Aimlocks:")
+local Tab4Section = Tab4:NewSection("Scripts:")
+local Tab6Section = Tab6:NewSection("Scripts:")
+local Tab5Section = Tab5:NewSection("Credits:")
+
+----------------------------------------------------------------------------------------------------------------------
+
+Tab5Section:NewLabel("Please Credit Me When Showcasing The Script")
+
+Tab5Section:NewLabel("My Discord Is sh4k4r6o")
+
+Tab5Section:NewLabel("Credits To All The People That Make The Scripts")
+
+Tab5Section:NewLabel("This Script Hub Is Made By sh4k4r6o")
+
+Tab5Section:NewLabel("The gui/hub is Kavo Ui Library")
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- Toggle Gui
+
+local ToggleGui = Instance.new("ScreenGui")
+local Toggle = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+
+--Properties
+ToggleGui.Name = "Toggle Gui"
+ToggleGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ToggleGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ToggleGui.ResetOnSpawn = false
+
+UICorner.Parent = Toggle
+Toggle.Name = "Toggle"
+Toggle.Parent = ToggleGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)--position of the toggle
+Toggle.Size = UDim2.new(0, 80, 0, 80)--size of the toggle
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "USH"--name of the toggle
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.TextSize = 19.000
+Toggle.Draggable = true
+Toggle.MouseButton1Click:connect(function()
+  Library:ToggleUI()
+end)
+
+local function showNotification()
+local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCore("SendNotification", {
+    Title = "Info";
+    Text = "Type /e killtoggle To Kill The Toggle";
+    Duration = 60; -- Duration in seconds
+})
+end
+
+-- Show the notification when the script starts
+showNotification()
+
+-- Function to handle the command
+local function onChatMessage(message)
+if message == "/e killtoggle" then
+    ToggleGui:Destroy()
+end
+end
+
+-- Connect the chat listener
+game.Players.LocalPlayer.Chatted:Connect(onChatMessage)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- Player Stuff
+
+local TabPlayerSection = TabPlayer:NewSection("Walkspeed:")
+TabPlayerSection:NewSlider("Walkspeed", "Makes You Walk Faster,Max WalkSpeed Is 1000", 500, 16, function(s) -- 1000 (MaxValue) | 16 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Set Walkspeed:")
+TabPlayerSection:NewTextBox("Set WalkSpeed", "Sets WalkSpeed", function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+  print(s)
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Jumppower:")
+TabPlayerSection:NewSlider("JumpPower", "Makes You Jump Higher,Max JumpPower Is 500", 500, 50, function(s) -- 500 (MaxValue) | 50 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Set Jumppower:")
+TabPlayerSection:NewTextBox("Set JumpPower", "Sets JumpPower", function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+  print(s)
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Fov Changer:")
+TabPlayerSection:NewSlider("Fov Changer", "Changes Your Fov,Max Fov Is 120", 120, 0, function(s) -- 120 (MaxValue) | 50 (MinValue)
+    workspace.CurrentCamera.FieldOfView = s
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Set Fov:")
+TabPlayerSection:NewTextBox("Set Fov", "Sets Fov", function(s)
+    workspace.CurrentCamera.FieldOfView = s
+  print(s)
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Gravity:")
+TabPlayerSection:NewSlider("Gravity", "Changes Your Gravity", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    workspace.Gravity = (s)
+end)
+
+local TabPlayerSection = TabPlayer:NewSection("Set Gravity:")
+TabPlayerSection:NewTextBox("Set Gravity","Sets Gravity", function(s)
+     workspace.Gravity = s
+      print(s)
+end)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- Player Infos
+
+local TabHomeSection = TabHome:NewSection("Player and Map Information")
+
+TabHomeSection:NewLabel("Player Username: " .. game.Players.LocalPlayer.Name)
+TabHomeSection:NewLabel("DisplayName: " .. game.Players.LocalPlayer.DisplayName)
+TabHomeSection:NewLabel("User ID: " .. game.Players.LocalPlayer.UserId)
+TabHomeSection:NewLabel("Account Age: " .. string.format("%.1f days", game.Players.LocalPlayer.AccountAge))
+
+local mapInfo = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+TabHomeSection:NewLabel("Map Name: " .. mapInfo.Name)
+TabHomeSection:NewLabel("Map ID: " .. game.PlaceId)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- dh scripts
+
+local Tab6Section = Tab6:NewSection("VinGuis Aimviewer:")
+Tab6Section:NewButton("VinGuis Aimviewer","VinGui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/VinGUI"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Fake Macro:")
+Tab6Section:NewButton("Fake Macro","Fake Macro", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Macro/main/M.N.C",true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("BeamedWare:")
+Tab6Section:NewButton("BeamedWare","BeamedWare", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/RYZZCHIPSX/ryzzchips/main/beamed%20ware%20script"))();
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Speed Tool:")
+Tab6Section:NewButton("Speed Tool","Speed Tool", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/EX6qHypK", true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Swag Mode:")
+Tab6Section:NewButton("Swag Mode","Swag Mode", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("RayCodex:")
+Tab6Section:NewButton("RayCodex","RayCodex", function()
+        loadstring(game:GetObjects("rbxassetid://5812737894")[1].Source)()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("NukerMode:")
+Tab6Section:NewButton("NukerMode","NukerMode", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Faded:")
+Tab6Section:NewButton("Faded","Faded", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NighterEpic/Faded/main/YesEpic", true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Pluto Hub:")
+Tab6Section:NewButton("Pluto","Pluto", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Scrvpter/Pluto/Lua/Loader.Lua', true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Nyula:")
+Tab6Section:NewButton("Nyula","Nyula", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/nyulachan/nyula/main/nyula", true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Trip Hub:")
+Tab6Section:NewButton("Trip Hub","Trip Hub", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Free%20Loader.lua'))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Detazy Hub:")
+Tab6Section:NewButton("Detazy Hub","Detazy Hub", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/I4MMO/Detazy/main/Main', true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Ballis Hub:")
+Tab6Section:NewButton("Ballis Hub","Ballis Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/DHHScript"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Agent Hub:")
+Tab6Section:NewButton("Agent Hub","Agent Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/mrhackerman35297/AgentCC/main/Launch.lua"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Anti Lock + Aim Viewer:")
+Tab6Section:NewButton("Anti Lock + Aim Viewer","Anti Lock + Aim Viewer", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Sky Anti Lock (Z To Toggle):")
+Tab6Section:NewButton("Sky Anti Lock","Sky Anti Lock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Auto Reload:")
+Tab6Section:NewButton("Auto Reload","Auto Reload", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("No Recoil:")
+Tab6Section:NewButton("No Recoil","No Recoil", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-recoil/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Any Tool (/e key then any word):")
+Tab6Section:NewButton("Any Tool","Any Tool", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("AzureModded")
+Tab6Section:NewButton("AzureModded","AzureModded", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Cracked SwagMode")
+Tab6Section:NewButton("Cracked SwagMode","Cracked SwagMode", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Roblox/master/SwagModeCracked.lua", true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Vascal AntiLock")
+Tab6Section:NewButton("Vascal AntiLock","Vascal AntiLock", function()
+     loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-antilock-button"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Vascal Speed Tool")
+Tab6Section:NewButton("Vascal Speed Tool","Vascal Speed Tool", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Right Click")
+Tab6Section:NewButton("Right Click","Right Click", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick"))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("Stretched Res")
+Tab6Section:NewButton("Stretched Res","Stretched Res", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/stretched-res/main/dh",true))()
+    print("Script Executed")
+end)
+
+local Tab6Section = Tab6:NewSection("AntiLock Resolver")
+Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
+    print("Script Executed")
+end)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- blox fruit
+
+local Tab4Section = Tab4:NewSection("Chest Farm V1")
+Tab4Section:NewButton("Chest Farm V1","Chest Farm V1", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/NickelHUBB/SonicTuru/main/ChestFarmOp"))()
+    print("Script Executed")
+end)
+
+local Tab4Section = Tab4:NewSection("Chest Farm V2")
+Tab4Section:NewButton("Chest Farm V2","Chest Farm V2", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Chest_onoff"))()
+    print("Script Executed")
+end)
+
+local Tab4Section = Tab4:NewSection("Deltas Script Hub")
+Tab4Section:NewButton("Deltas Script Hub","Deltas Script Hub", function()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/lxnnydev/1325a6ec942d0bb837bafe0ee25fcc5c/raw/c9ab9f038142427ba1739f099e78bb0b0588fa40/bf_script.lua",true))()
+    print("Script Executed")
+end)
+
+local Tab4Section = Tab4:NewSection("Fai Faos Script Hub")
+Tab4Section:NewButton("Fai Faos Script Hub","Fai Faos Script Hub", function()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/PNguyen0199/Script/main/Fai-Fao-Ver2.lua")()
+    print("Script Executed")
+end)
+
+local Tab4Section = Tab4:NewSection("Vectors Script Hub")
+Tab4Section:NewButton("Vectors Script Hub","Vectors Script Hub", function()
+        _G.Mode = "Eng" 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/VectorHub/main/Loader.lua"))()
+    print("Script Executed")
+end)
+
+local Tab4Section = Tab4:NewSection("Alchemy Script Hub (Key Sys)")
+Tab4Section:NewButton("Alchemy Script Hub","Alchemy Script Hub", function()
+        loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
+    print("Script Executed")
+end)
+
+local Tab4Section = Tab4:NewSection("Redz Script Hub")
+Tab4Section:NewButton("Redz Script Hub","Redz Script Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
+    print("Script Executed")
+end)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- scripts
+
+local Tab1Section = Tab1:NewSection("Fling n Anti Fling Gui")
+Tab1Section:NewButton("Fling n Anti Fling Gui", "Fling n Anti Fling Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Fling-and-anti-fling-gui/main/Script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fake Lag")
+Tab1Section:NewButton("Fake Lag", "Fake Lag", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/fake%20lag",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Switch Lag")
+Tab1Section:NewButton("Switch Lag", "Switch Lag", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/Protected%20-%202023-05-28T225112.055.lua.txt'),true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Keyboard Script Gui")
+Tab1Section:NewButton("Keyboard Script Gui", "Keyboard Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keyboardgui/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fly Script Gui")
+Tab1Section:NewButton("Fly Script Gui", "Fly Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/flygui/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Car Fly Script")
+Tab1Section:NewButton("Car Fly Script", "Car Fly Script", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Rejoin Script (When Disconnected)")
+Tab1Section:NewButton("Rejoin Script (When Disconnected)", "Rejoin Script (When Disconnected)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/GGH52lan/GGH52lan/main/Rejoin_Button.txt"))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Rejoin Script (Direct")
+Tab1Section:NewButton("Rejoin Script (Direct)", "Rejoin Script (Direct)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Direct/main/Rejoin",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Inf Jump Script")
+Tab1Section:NewButton("Inf Jump Script", "Inf Jump Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/oksinfjump/main/workssssss",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Strong Man Simulator Script")
+Tab1Section:NewButton("Strong Man Simulator Script", "Strong Man Simulator Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0strongman", true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Flash Back Script Gui")
+Tab1Section:NewButton("Flash Back Script Gui", "Flash Back Script Gui", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/cgWLwdN9", true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Invisible Script Gui")
+Tab1Section:NewButton("Invisible Script Gui", "Invisible Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/invisiblegui/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Save Position Script")
+Tab1Section:NewButton("Save Position Script", "Save Position Script", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/Tp%20Place%20GUI'),true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Free Dances Script Gui")
+Tab1Section:NewButton("Fe Free Dances Script Gui", "Fe Free Dances Script Gui", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/eCpipCTH"))()()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Chat Mimic Script")
+Tab1Section:NewButton("Chat Mimic Script", "Chat Mimic Script", function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe./8fb5ed20fb168d1ae3044ede45b90f67e3fb37a2/file'),true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Animation Changer")
+Tab1Section:NewButton("Fe Animation Changer", "Fe Animation Changer", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/LunarWareOP/Animation-Changer-Source/main/Script", true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Aim Swim")
+Tab1Section:NewButton("Fe Air Swim", "Fe Air Swim", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/9CK0qSgn"))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Player Spectator")
+Tab1Section:NewButton("Player Spectator", "Player Spectator", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/wyvdb7gr'))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Universal Spy")
+Tab1Section:NewButton("Universal Spy", "Universal Spy", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MichaelScripter/MiniScript/main/Spy gui.lua"))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Freeze Script")
+Tab1Section:NewButton("Fe Freeze Script", "Fe Freeze Script", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/creepstu/fuzzy-octo-giggle/main/Source'))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Keybind Maker Script")
+Tab1Section:NewButton("Keybind Maker Script", "Keybind Maker Script", function()
+        loadstring(game:HttpGet(('https://pastefy.app/Ujm4HWxh/raw'),true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Chat Spammer")
+Tab1Section:NewButton("Fe Chat Spammer", "Fe Chat Spammer", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/chatspammer/main/chatspammer", true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Temporary Shiftlock")
+Tab1Section:NewButton("Temporary Shiftlock", "Temporary Shiftlock", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/WQ9NPeDS'))();
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Perm Shiftlock")
+Tab1Section:NewButton("Perm Shiftlock", "Perm Shiftlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/PermShiftLock/main/S",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Chat Hax")
+Tab1Section:NewButton("Fe Chat Hax", "Fe Chat Hax", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/MBpnp3yS'))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fake Tools Script")
+Tab1Section:NewButton("Fake Tools Script", "Fake Tools Script", function()
+        loadstring(game:HttpGet(('https://pastefy.app/VYIAk3o1/raw'),true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Player Orbit")
+Tab1Section:NewButton("Fe Player Orbit", "Fe Player Orbit", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Orbit%20GUI"))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Hacker Chat")
+Tab1Section:NewButton("Fe Hacker Chat", "Fe Hacker Chat", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/hacker./main/chat",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Low Gfx Script")
+Tab1Section:NewButton("Low Gfx Script", "Low Gfx Script", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/zQUqDRdJ",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Fe Walk On Wall Script")
+Tab1Section:NewButton("Fe Walk On Wall Script", "Fe Walk On Wall Script", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Anti Chat Log")
+Tab1Section:NewButton("Anti Chat Log", "Anti Chat Log", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/Wqxzdi1q'))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Blox Burg Cashier Autofarm")
+Tab1Section:NewButton("Blox Burg Cashier Autofarm", "Blox Burg Cashier Autofarm", function()
+        _G.time = 4
+
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/ZackDaQuack/blox/main/minimum_wage.lua', true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Universal Chat Spy Script")
+Tab1Section:NewButton("Universal Chat Spy Script", "Universal Chat Spy Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/chat-spy/main/s",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Btools Script")
+Tab1Section:NewButton("Btools Script", "Btools Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/btools/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Chat Bypass Script (Key Sys)")
+Tab1Section:NewButton("Chat Bypass Script (Key Sys)", "Chat Bypass Script (Key Sys)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Player Radar")
+Tab1Section:NewButton("Player Radar", "Player Radar", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/player-radar/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Free Camera")
+Tab1Section:NewButton("Free Camera", "Free Camera", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Universal Anticheat Bypass")
+Tab1Section:NewButton("Universal Anticheat Bypass", "Universal Anticheat Bypass", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("Full Bright Script")
+Tab1Section:NewButton("Full Bright Script", "Full Bright Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fullbright/main/scripts",true))()
+    print("Script Executed")
+end)
+
+local Tab1Section = Tab1:NewSection("No Fog Script")
+Tab1Section:NewButton("No Fog Script", "No Fog Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-fog/main/script",true))()
+    print("Script Executed")
+end)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- aimlocks
+
+local Tab3Section = Tab3:NewSection("Kals Private Lock")
+Tab3Section:NewButton("Kals Private Lock", "Kals Private Lock", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/j08xM9mW", true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("RyzzChips Lock")
+Tab3Section:NewButton("RyzzChips Lock", "RizzChips Lock", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/j08xM9mW", true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Flash Lock")
+Tab3Section:NewButton("Flash Lock", "Flash Lock", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/GXma0NrL",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Rage Aimlock")
+Tab3Section:NewButton("Rage Aimlock", "Rage Aimlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzchips/main/Sub%20to%20Ryzzchips%20for%20more%20New%20aimlock%20script!"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Tenaki Camlock")
+Tab3Section:NewButton("Tenaki Camlock", "Tenaki Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Tenkai./main/imean.Tenaki",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("ImperialW Lock")
+Tab3Section:NewButton("ImperialW Lock", "ImperialW Lock", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/imperialw/main/imperialw",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Haalfi-cc Lock")
+Tab3Section:NewButton("Haalfi-cc Lock", "Haalfi-cc Lock", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/DaHood", true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Streamable Silent Aim")
+Tab3Section:NewButton("Streamable Silent Aim", "Streamable Silent Aim", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/streamable-silent/main/aim",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Thusky Lock")
+Tab3Section:NewButton("Thusky Lock", "Thusky Lock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/thusky-/main/lock",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Legit Silent Aim")
+Tab3Section:NewButton("Legit Silent Aim", "Legit Silent Aim", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/legit-silent/main/aim",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Spaces Camlock")
+Tab3Section:NewButton("Spaces Camlock", "Spaces Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/camlock/main/s",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Best Silent Aim")
+Tab3Section:NewButton("Best Silent Aim", "Best Silent Aim", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/best-silentaim/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Skidded AuraX")
+Tab3Section:NewButton("Skidded AuraX", "Skidded AuraX", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Ruby Lock")
+Tab3Section:NewButton("Ruby Lock", "Ruby Lock", function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2c49f13d52789471d283583f05ee91df.lua"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Blads Lock")
+Tab3Section:NewButton("Blads Lock", "Blads Lock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blads-lock/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Frost Lock")
+Tab3Section:NewButton("Frost Lock", "Frost Lock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frost-gui/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Blazing Lock")
+Tab3Section:NewButton("Blazing Lock", "Blazing Lock", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/d75VfZK1"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Astral Lock")
+Tab3Section:NewButton("Astral Lock", "Astral Lock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/astral/main/lock",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Fearless Lock")
+Tab3Section:NewButton("Fearless Lock", "Fearless Lock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fearless/main/lock",true))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Vascal Circle Dot")
+Tab3Section:NewButton("Vascal Circle Dot", "Vascal Circle Dot", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-Circle-DotXd"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Hellbounds Camlock")
+Tab3Section:NewButton("Hellbounds Camlock", "Hellbounds Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hellbound-alt/Hellbound-camlock-op/main/Op"))();
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Ballware V3 Camlock")
+Tab3Section:NewButton("Ballware V3 Camlock", "Ballware V3 Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/BallwareV3"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("RyzzChips Circle Camlock")
+Tab3Section:NewButton("RyzzChips Circle Camlock", "RyzzChips Circle Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzchips/main/obf_i3ibnq2A9BZlYl131iIo339M8zDq0l3f7INJ9KJrr4qMyl4K80f29vZ458J6Sr91.lua"))();
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Pluhs Camlock")
+Tab3Section:NewButton("Pluhs Camlock", "Pluhs Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/camlock-load.lua"))();
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Undetected Silent Aim")
+Tab3Section:NewButton("Undetected Silent Aim", "Undetected Silent Aim", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim",true))();
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Teifs Camlock")
+Tab3Section:NewButton("Tiefs Camlock", "Tiefs Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/tiefdej/this-obskid/maineheheheheu/tief%20simp%20gui"))()
+    print("Script Executed")
+end)
+
+----------------------------------------------------------------------------------------------------------------------
+
+-- guis/hubs
+
+local Tab2Section = Tab2:NewSection("KeyStrokes Gui V1")
+Tab2Section:NewButton("KeyStrokes Gui V1", "KeyStrokes Gui V1", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("KeyStrokes Gui V2")
+Tab2Section:NewButton("KeyStrokes Gui V2", "KeyStrokes Gui V2", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokeguiV2/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Admin Cmd Script Gui")
+Tab2Section:NewButton("Admin Cmd Script Gui", "Admin Cmd Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/AdminGui/main/Script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Unfair Hub")
+Tab2Section:NewButton("Unfair Hub", "Unfair Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/rblxscriptsnet/rblxhub/main/rblxhub.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Belugaware For KAT")
+Tab2Section:NewButton("Belugaware For KAT", "Belugaware For KAT", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/belugaware",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Race Car Script Hub")
+Tab2Section:NewButton("Race Car Script Hub", "Race Car Script Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukezz/Fe-Scripts/main/Fe%20Racecar"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Babft Exe Script Hub")
+Tab2Section:NewButton("Babft Exe Script Hub", "Babft Exe Script Hub", function()       loadstring(game:HttpGet('https://raw.githubusercontent.com/XRoLLu/UWU/main/BUILD%20A%20BOAT%20FOR%20TREASURE.lua'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Ragdoll Engine Mystery Hub")
+Tab2Section:NewButton("Ragdoll Engine Mystery Hub", "Ragdoll Engine Mystery Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/i4mitty/MysteryHub/main/MysteryHub%20-%20Ragdoll%20Engine.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Games Hub Destroyer")
+Tab2Section:NewButton("Games Hub Destroyer", "Games Hub Destroyer", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TakeModzz/Games-HUB-Destroyer-V4/main/Games%20HUB%20Destroyer%20V4"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Vehicle Legends Script Hub")
+Tab2Section:NewButton("Vehicle Legends Script Hub", "Vehicle Legends Script Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/IExpIoit/Script/main/UltimateHub"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Tp Script Gui")
+Tab2Section:NewButton("Tp Script Gui", "To Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/TpGui/main/Script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("No Clip Script Gui")
+Tab2Section:NewButton("No Clip Script Gui", "No Clip Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/no%20clip",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Ninja Legends Script Gui")
+Tab2Section:NewButton("Ninja Legends Script Gui", "Ninja Legends Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AliCode14/scripts/main/ScriptHub.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Pop It Trading Script Gui")
+Tab2Section:NewButton("Pop It Trading Script Gui", "Pop It Trading Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponge123456789/Sponge/main/The%20cool%20Script"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Jnhh Tool Giver Script Gui")
+Tab2Section:NewButton("Jnhh Tool Giver Script Gui", "Jnhh Tool Giver Script Gui", function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/4yGehrgh'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Vynixu's Mm2 Script Gui")
+Tab2Section:NewButton("Vynixu's Mm2 Script Gui", "Vynixu's Mm2 Script Gui", function()
+        loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Mm2 Admin Panel")
+Tab2Section:NewButton("Mm2 Admin Panel", "Mm2 Admin Panel", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MarsQQ/ScriptHubScripts/master/MM2%20Admin%20Panel"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Yarhms Script Hub")
+Tab2Section:NewButton("Yarhms Script Hub", "Yarhms Script Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/yahrms%20hub",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("MaxHubs Combat Warrior Script")
+Tab2Section:NewButton("MaxHubs Combat Warrior Script", "Max Hubs Combat Warrior Script", function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/1d4db6a1b04aaeccf046f7c63fbad31a.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Hitbox Expander Script Gui")
+Tab2Section:NewButton("Hitbox Expander Script Gui", "Hitbox Expander Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/HitboxExpandersGui/main/Script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("ApeiroPhobia Script Gui")
+Tab2Section:NewButton("ApeiroPhobia Script Gui", "ApeiroPhobia Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/apeirophobia/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Fe Throw Gui")
+Tab2Section:NewButton("Fe Throw Gui", "Fe Throw Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Gd"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Esclipe Hub")
+Tab2Section:NewButton("Esclipe Hub", "Esclipe Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Esclipe-Hub-V-0.95/main/Real",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("LightTuxs Esp Gui")
+Tab2Section:NewButton("LightTuxs Esp Gui", "LightTuxs Esp Gui", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md'),true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Sync Trd Script Gui")
+Tab2Section:NewButton("Sync Trd Script Gui", "Sync Trd Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kureu/Roblox-T.R.D-Camp-Script/main/Roblox%20T.R.D%20Camp%20Script"))();
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Bordr Game Script")
+Tab2Section:NewButton("Bordr Game Script", "Bordr Game Script", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/memejames/New/main/Hub'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Ghost Hub")
+Tab2Section:NewButton("Ghost Hub", "Ghost Hub", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Ice Hub")
+Tab2Section:NewButton("Ice Hub", "Ice Hub", function()
+        loadstring(game:HttpGet("https://icehub.cf/IceHubLoader"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Roghoul Script Gui")
+Tab2Section:NewButton("RoGhoul script Gui", "RoGhoul Script Gui", function()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader")()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Frontlines Script Gui")
+Tab2Section:NewButton("Frontlines Script Gui", "Frontlines Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frontlines./main/hitbox",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Arsenal Script Gui")
+Tab2Section:NewButton("Arsenal Script Gui", "Arsenal Script Gui", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/B6fhpKJg"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Westbound Script Gui")
+Tab2Section:NewButton("Westbound Script Gui", "Westbound Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/westyourballz"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Westbound Script Gui V2")
+Tab2Section:NewButton("Westbound Script Gui V2", "Westbound Script Gui V2", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Drrushh/Drrushh/main/Kdom",true))();
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Mightys Auto Clicker")
+Tab2Section:NewButton("Mightys Auto Clicker", "Mightys Auto Clicker", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Autoclicker/main/Working",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Plenum Hub")
+Tab2Section:NewButton("Plenum Hub", "Plenum Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Plenum-Hub/main/loader"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Xray Script Gui")
+Tab2Section:NewButton("Xray Script Gui", "Xray Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/xray",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Blade Ball Nexam Hub")
+Tab2Section:NewButton("Blade Ball Nexam Hub", "Blade Ball Nexam Hub", function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Blade Ball Astral Hub")
+Tab2Section:NewButton("Blade Ball Astral Hub", "Blade Ball Astral Hub", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Augustzyzx/A-s-t-r-a-l/main/Loader_BladeBall.lua'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Scripthub By Backup")
+Tab2Section:NewButton("Scripthub By Backup", "Scripthub By Backup", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Be A Parkor Ninja Script")
+Tab2Section:NewButton("Be A Parkor Ninja Script", "Be A Parkor Ninja Script", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Min1273/n-to/main/README.md"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Free GamePasses Script Gui")
+Tab2Section:NewButton("Free GamePasses Script Gui", "Fre GamePasses Script Gui", function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Pshade Script Guu")
+Tab2Section:NewButton("Pshade Script Gui", "Pshade Script Gui", function()
+        loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Remote Spy")
+Tab2Section:NewButton("Remote Spy", "Remote Spy", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("A Dusty Trip Script Hub")
+Tab2Section:NewButton("A Dusty Trip Script Hub", "A Dusty Trip Script Hub", function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/a-dusty-trip-GUNS-script-11974",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Bedwars Vape V4")
+Tab2Section:NewButton("Bedwars Vape V4", "Bedwars Vape V4", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Xoras Cframe/Tpwalk")
+Tab2Section:NewButton("Xoras Cframe/Tpwalk", "Xoras Cframe/Tpwalk", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox/032418166a40fd7a610fd7a17a2f8ade0da3c734/Tpwalk%20V4%20%5B%20BETA%20%5D.lua",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Boombox Script Gui")
+Tab2Section:NewButton("Boombox Script Gui", "", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Boombox-Script-Gui/main/Script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Doors FFJ Hub")
+Tab2Section:NewButton("Doors FFJ Hub", "Doors FFJ Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Car Dealer Ship Tycoon Script Gui")
+Tab2Section:NewButton("Car Dealer Ship Tycoon Script Gui", "Car Dealer Ship Tycoon Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/car%20dealer", true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Gym League Script Gui (All In One)")
+Tab2Section:NewButton("Gym League Script Gui (All In One)", "Gym League Script Gui (All In One)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/gym-league-script-gui/main/fr",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Close Your Eyes Script Gui")
+Tab2Section:NewButton("Close Your Eyes Script Gui", "Close Your Eyes Script Gui", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/dqvh/dqvh/main/CloseYourEyes.lua'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Fight In A School Script Gui")
+Tab2Section:NewButton("Fight In A School Script Gui", "Fight In A School Script Gui", function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/themanwiththemasterplan/sawd/main/.gitignore'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Rate My Avatar Booth Blocker Script gui")
+Tab2Section:NewButton("Rate My Avatar Booth Blocker Script Gui", "Rate My Avatar Booth Blocker Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/booth-blocker/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Rinns Hub")
+Tab2Section:NewButton("Rinns Hub", "Rinns Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Silent Rivals Script Hub")
+Tab2Section:NewButton("Silent Rivals Script Hub", "Silent Rivals Script Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/KxGOATESQUE/SilentRivals/main/SilentRivals"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Rivals Script Gui")
+Tab2Section:NewButton("Rivals Script Gui", "Rivals Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/rivals-gui/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Renxware Untitled Tag Game Script Gui")
+Tab2Section:NewButton("Renxware Untitled Tag Game Script Gui", "Renxware Untitled Tag Game Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Synos Untiled Tag Game Script Gui")
+Tab2Section:NewButton("Synos Untiled Tag Game Script Gui", "Synos Untiled Tag Game Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Shakars Untitled Tag Game Script Gui")
+Tab2Section:NewButton("Shakars Untitled Tag Game Script Gui", "Shakars Untitled Tag Game Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/shakars_utg/main/script",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Gazer Fe Animation Hub (Ipad/Pc Recommended)")
+Tab2Section:NewButton("Gazer Fe Animation Hub (Ipad/Pc Recommended)", "Gazer Fe Animation Hub (Ipad/Pc Recommended)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Build A Bridge Simulator Script")
+Tab2Section:NewButton("Build A Bridge Simulator Script", "Build A Bridge Simulator Script", function()
+        loadstring(game:HttpGet 'https://raw.githubusercontent.com/ProjectpopCat/ywxoscripts/main/nuhuh.lua')()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Pet Simulator 99 Zap Hub (Key Sys)")
+Tab2Section:NewButton("Pet Simulator 99 Zap Hub (Key Sys)", "Pet Simulator 99 Zap Hub (Key Sys)", function()
+        loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Evade D8rk Hub")
+Tab2Section:NewButton("Evade D8rk Hub", "Evade D8rk Hub", function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Evade-D8rk-Hub-V2-12956"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Fe Dance Gui")
+Tab2Section:NewButton("Fe Dance Gui", "Fe Dance Gui", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/RmD3qNp7", true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Dungeon Quest NS Hub")
+Tab2Section:NewButton("Dungeon Quest NS Hub", "Dungeon Quest NS HUB", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Fe Kill All Gui")
+Tab2Section:NewButton("Fe Kill All Gui", "Fe Kill All Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui",true))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Redz Pet Simulator 99 Script Hub")
+Tab2Section:NewButton("Redz Pet Simulator 99 Script Hub", "Redz Pet Simulator 99 Script Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Afem Free Dance Menu")
+Tab2Section:NewButton("Afem Free Dance Menu", "Afem Free Dance Menu", function()
+        loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()
+    print("Script Executed")
+end)
+
+----------------------------------------------------------------------------------------------------------------------
+
+--[[
+     Tabs:
+     TabHome = Window:NewTab("Home")
+     TabPlayer= Window:NewTab("Player")
+     Tab1 = Window:NewTab("Scripts")
+     Tab2 = Window:NewTab("Hubs/Guis")
+     Tab3 = Window:NewTab("Aimlock/Lock Scripts")
+     Tab4 = Window:NewTab("Blox fruits scripts")
+     Tab6 = Window:NewTab("Dh Scripts")
+     Tab5 = Window:NewTab("Credits") 
+
+     Button Code:
+
+local TabSection = Tab:NewSection("")
+TabSection:NewButton("", "", function()
+        
+    print("Script Executed")
+end)
+
+]]
