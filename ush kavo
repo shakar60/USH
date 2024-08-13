@@ -781,9 +781,9 @@ Tab3Section:NewButton("RyzzChips Circle Camlock", "RyzzChips Circle Camlock", fu
     print("Script Executed")
 end)
 
-local Tab3Section = Tab3:NewSection("Pluhs Camlock")
-Tab3Section:NewButton("Pluhs Camlock", "Pluhs Camlock", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/camlock-load.lua"))();
+local Tab3Section = Tab3:NewSection("Pluh.Lua")
+Tab3Section:NewButton("Pluh.Lua", "Pluh.Lua", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/v1-official.txt"))();
     print("Script Executed")
 end)
 
