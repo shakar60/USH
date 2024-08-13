@@ -2054,13 +2054,13 @@ end
 })
 
 local TabALSection = TabAL:AddSection({
-Name = "Pluhs Lock"
+Name = "Pluh.Lua"
 })
 
 TabAL:AddButton({
-Name = "Pluhs Lock",
+Name = "Pluh.Lua",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/camlock-load.lua"))();
+loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/v1-official.txt"))();
 print ("Script Executed")
 end
 })
