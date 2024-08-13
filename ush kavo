@@ -74,6 +74,8 @@ Tab5Section:NewLabel("The gui/hub is Kavo Ui Library")
 local ToggleGui = Instance.new("ScreenGui")
 local Toggle = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local TextStroke = Instance.new("UIStroke")
 
 -- Properties
 ToggleGui.Name = "Toggle Gui"
@@ -95,6 +97,32 @@ Toggle.Draggable = true
 -- Set up UICorner for rounded corners
 UICorner.CornerRadius = UDim.new(0, 20) -- Adjust radius to make corners rounded
 UICorner.Parent = Toggle
+
+-- Set up UIStroke for RGB outline
+UIStroke.Parent = Toggle
+UIStroke.Thickness = 3 -- Adjust thickness of the outline
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+-- Set up TextStroke for subtle text outline
+TextStroke.Parent = Toggle
+TextStroke.Thickness = 0.3 -- Subtle thickness of the text stroke
+TextStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+TextStroke.Color = Color3.fromRGB(0, 0, 0) -- Black text stroke for subtle effect
+
+-- Function to create a rainbow effect for the UIStroke, text color, and outline stroke
+local function RainbowEffect()
+    local hue = 0
+    while true do
+        hue = 0.5 + (hue + 5) % 360 -- Slightly modify the hue range for a more subtle effect
+        local color = Color3.fromHSV(hue / 360, 1, 1)
+        UIStroke.Color = color
+        Toggle.TextColor3 = color
+        wait(0.01)
+    end
+end
+
+-- Start the rainbow effect
+spawn(RainbowEffect)
 
 Toggle.MouseButton1Click:Connect(function()
     Library:ToggleUI()
@@ -343,7 +371,7 @@ end)
 
 local Tab6Section = Tab6:NewSection("AntiLock Resolver")
 Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver",true))()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
     print("Script Executed")
 end)
 
@@ -559,12 +587,6 @@ Tab1Section:NewButton("Fe Player Orbit", "Fe Player Orbit", function()
     print("Script Executed")
 end)
 
-local Tab1Section = Tab1:NewSection("Fe Hacker Chat")
-Tab1Section:NewButton("Fe Hacker Chat", "Fe Hacker Chat", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/hacker./main/chat",true))()
-    print("Script Executed")
-end)
-
 local Tab1Section = Tab1:NewSection("Low Gfx Script")
 Tab1Section:NewButton("Low Gfx Script", "Low Gfx Script", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/zQUqDRdJ",true))()
@@ -652,12 +674,6 @@ end)
 local Tab3Section = Tab3:NewSection("RyzzChips Lock")
 Tab3Section:NewButton("RyzzChips Lock", "RizzChips Lock", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/j08xM9mW", true))()
-    print("Script Executed")
-end)
-
-local Tab3Section = Tab3:NewSection("Flash Lock")
-Tab3Section:NewButton("Flash Lock", "Flash Lock", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/GXma0NrL",true))()
     print("Script Executed")
 end)
 
@@ -754,12 +770,6 @@ end)
 local Tab3Section = Tab3:NewSection("Fearless Lock")
 Tab3Section:NewButton("Fearless Lock", "Fearless Lock", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fearless/main/lock",true))()
-    print("Script Executed")
-end)
-
-local Tab3Section = Tab3:NewSection("Vascal Circle Dot")
-Tab3Section:NewButton("Vascal Circle Dot", "Vascal Circle Dot", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-Circle-DotXd"))()
     print("Script Executed")
 end)
 
