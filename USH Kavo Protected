@@ -1,6 +1,6 @@
---[[ Heres The Loadstring Version Copy It And Your Good]]
+--[[ Heres The Loadstring Version Copy It And Your Good
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected",true))() ]]
 
 --[[ Protected USH Kavo Ui No Need To Copy]]
 
