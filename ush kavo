@@ -71,7 +71,6 @@ Tab5Section:NewLabel("The gui/hub is Kavo Ui Library")
 
 -- Toggle Gui
 
--- Toggle Gui
 local ToggleGui = Instance.new("ScreenGui")
 local Toggle = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
