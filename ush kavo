@@ -154,6 +154,96 @@ game.Players.LocalPlayer.Chatted:Connect(onChatMessage)
 
 ----------------------------------------------------------------------------------------------------------------------
 
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+
+local function sendFeedback(feedback)
+-- Check if feedback is empty
+if feedback == nil or feedback == "" then
+    print("Empty feedbacks will not be sent to any webhook.")
+    return
+end
+
+local Webhook_URLs = {
+    "https://discord.com/api/webhooks/1218952689656795167/SJbwUyrhhj0TWBlMWCdIWRAI3OlNGdSeS7BwzMBv7CyyNO8iU38ydeVZ6x2gQUKldpqe",
+    "https://discord.com/api/webhooks/1266431439466008617/AsNWowPT7UeuaMPvz6Dc7zjmaZPMZBqyieHttzzQOpERXa4x5FzNkYIQOTNHVDwcrTwR"
+}
+
+local player = Players.LocalPlayer
+local playerName = player.Name
+local playerDisplayName = player.DisplayName
+local playerUserId = player.UserId
+
+local data = {
+    ["embeds"] = {
+        {
+            ["title"] = "Feedback Received",
+            ["description"] = feedback,
+            ["type"] = "rich",
+            ["color"] = tonumber("000000", 16), -- Black
+            ["fields"] = {
+                {
+                    ["name"] = "Player UserName:",
+                    ["value"] = playerName,
+                    ["inline"] = true,
+                },
+                {
+                    ["name"] = "Player DisplayName:",
+                    ["value"] = playerDisplayName,
+                    ["inline"] = true,
+                },
+                {
+                    ["name"] = "User ID:",
+                    ["value"] = playerUserId,
+                    ["inline"] = true,
+                },
+            },
+            ["footer"] = {
+                ["text"] = "Feedback sent from Universal Shakar's Hub",
+            },
+        },
+    },
+}
+
+local PlayerData = HttpService:JSONEncode(data)
+
+local Request = http_request or request or HttpPost or syn.request
+if Request then
+    for _, url in ipairs(Webhook_URLs) do
+        Request({
+            Url = url,
+            Body = PlayerData,
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"}
+        })
+    end
+else
+    warn("No supported request function found.")
+end
+end
+
+-- Adding feedback textbox to TabHomeSection
+TabHomeSection:NewTextBox("Feedback", "Provide your feedback here:", function(feedback)
+if feedback == nil or feedback == "" then
+    print("Empty feedbacks will not be sent to any webhook.")
+else
+    print("Received feedback:", feedback)
+    sendFeedback(feedback)
+end
+end)
+
+------------------------------------------------------------------
+
+--Join Discord
+
+            local TabHomeSection = TabHome:NewSection("Discord Server:")
+            TabHomeSection:NewButton("Discord Server","Discord Server", function()
+                    setclipboard("https://discord.gg/vwXXfnuxUg")
+                print("Discord Link Has Been Copied To Your Clipboard")
+            end)
+
+------------------------------------------------------------------
+
 -- Player Stuff
 
 local TabPlayerSection = TabPlayer:NewSection("Walkspeed:")
@@ -221,158 +311,158 @@ TabHomeSection:NewLabel("Map ID: " .. game.PlaceId)
 
 local Tab6Section = Tab6:NewSection("VinGuis Aimviewer:")
 Tab6Section:NewButton("VinGuis Aimviewer","VinGui", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/VinGUI"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nosssa/NossLock/main/VinGUI"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Fake Macro:")
+Tab6Section = Tab6:NewSection("Fake Macro:")
 Tab6Section:NewButton("Fake Macro","Fake Macro", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Macro/main/M.N.C",true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Macro/main/M.N.C",true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("BeamedWare:")
+Tab6Section = Tab6:NewSection("BeamedWare:")
 Tab6Section:NewButton("BeamedWare","BeamedWare", function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/RYZZCHIPSX/ryzzchips/main/beamed%20ware%20script"))();
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RYZZCHIPSX/ryzzchips/main/beamed%20ware%20script"))();
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Speed Tool:")
+Tab6Section = Tab6:NewSection("Speed Tool:")
 Tab6Section:NewButton("Speed Tool","Speed Tool", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/EX6qHypK", true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://pastebin.com/raw/EX6qHypK", true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Swag Mode:")
+Tab6Section = Tab6:NewSection("Swag Mode:")
 Tab6Section:NewButton("Swag Mode","Swag Mode", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
-    print("Script Executed")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("RayCodex:")
+Tab6Section = Tab6:NewSection("RayCodex:")
 Tab6Section:NewButton("RayCodex","RayCodex", function()
-        loadstring(game:GetObjects("rbxassetid://5812737894")[1].Source)()
-    print("Script Executed")
+loadstring(game:GetObjects("rbxassetid://5812737894")[1].Source)()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("NukerMode:")
+Tab6Section = Tab6:NewSection("NukerMode:")
 Tab6Section:NewButton("NukerMode","NukerMode", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Allvideo/test/main/Whitelist.txt"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Faded:")
+Tab6Section = Tab6:NewSection("Faded:")
 Tab6Section:NewButton("Faded","Faded", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/NighterEpic/Faded/main/YesEpic", true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NighterEpic/Faded/main/YesEpic", true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Pluto Hub:")
+Tab6Section = Tab6:NewSection("Pluto Hub:")
 Tab6Section:NewButton("Pluto","Pluto", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Scrvpter/Pluto/Lua/Loader.Lua', true))()
-    print("Script Executed")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Scrvpter/Pluto/Lua/Loader.Lua', true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Nyula:")
+Tab6Section = Tab6:NewSection("Nyula:")
 Tab6Section:NewButton("Nyula","Nyula", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/nyulachan/nyula/main/nyula", true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nyulachan/nyula/main/nyula", true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Trip Hub:")
+Tab6Section = Tab6:NewSection("Trip Hub:")
 Tab6Section:NewButton("Trip Hub","Trip Hub", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Free%20Loader.lua'))()
-    print("Script Executed")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/elxocasXD/Trip-Hub/main/Free%20Loader.lua'))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Detazy Hub:")
+Tab6Section = Tab6:NewSection("Detazy Hub:")
 Tab6Section:NewButton("Detazy Hub","Detazy Hub", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/I4MMO/Detazy/main/Main', true))()
-    print("Script Executed")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/I4MMO/Detazy/main/Main', true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Ballis Hub:")
+Tab6Section = Tab6:NewSection("Ballis Hub:")
 Tab6Section:NewButton("Ballis Hub","Ballis Hub", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/DHHScript"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/DHHScript"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Agent Hub:")
+Tab6Section = Tab6:NewSection("Agent Hub:")
 Tab6Section:NewButton("Agent Hub","Agent Hub", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/mrhackerman35297/AgentCC/main/Launch.lua"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mrhackerman35297/AgentCC/main/Launch.lua"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Anti Lock + Aim Viewer:")
+Tab6Section = Tab6:NewSection("Anti Lock + Aim Viewer:")
 Tab6Section:NewButton("Anti Lock + Aim Viewer","Anti Lock + Aim Viewer", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
-    print("Script Executed")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Sky Anti Lock (Z To Toggle):")
+Tab6Section = Tab6:NewSection("Sky Anti Lock (Z To Toggle):")
 Tab6Section:NewButton("Sky Anti Lock","Sky Anti Lock", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Auto Reload:")
+Tab6Section = Tab6:NewSection("Auto Reload:")
 Tab6Section:NewButton("Auto Reload","Auto Reload", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("No Recoil:")
+Tab6Section = Tab6:NewSection("No Recoil:")
 Tab6Section:NewButton("No Recoil","No Recoil", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-recoil/main/script",true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-recoil/main/script",true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Any Tool (/e key then any word):")
+Tab6Section = Tab6:NewSection("Any Tool (/e key then any word):")
 Tab6Section:NewButton("Any Tool","Any Tool", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("AzureModded")
+Tab6Section = Tab6:NewSection("AzureModded")
 Tab6Section:NewButton("AzureModded","AzureModded", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Cracked SwagMode")
+Tab6Section = Tab6:NewSection("Cracked SwagMode")
 Tab6Section:NewButton("Cracked SwagMode","Cracked SwagMode", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Roblox/master/SwagModeCracked.lua", true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Roblox/master/SwagModeCracked.lua", true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Vascal AntiLock")
+Tab6Section = Tab6:NewSection("Vascal AntiLock")
 Tab6Section:NewButton("Vascal AntiLock","Vascal AntiLock", function()
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-antilock-button"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-antilock-button"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Vascal Speed Tool")
+Tab6Section = Tab6:NewSection("Vascal Speed Tool")
 Tab6Section:NewButton("Vascal Speed Tool","Vascal Speed Tool", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Right Click")
+Tab6Section = Tab6:NewSection("Right Click")
 Tab6Section:NewButton("Right Click","Right Click", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick"))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("Stretched Res")
+Tab6Section = Tab6:NewSection("Stretched Res")
 Tab6Section:NewButton("Stretched Res","Stretched Res", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/stretched-res/main/dh",true))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/stretched-res/main/dh",true))()
+print("Script Executed")
 end)
 
-local Tab6Section = Tab6:NewSection("AntiLock Resolver")
+Tab6Section = Tab6:NewSection("AntiLock Resolver")
 Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
-    print("Script Executed")
+loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
+print("Script Executed")
 end)
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -1237,7 +1327,7 @@ end)
 
 local TabSection = Tab:NewSection("")
 TabSection:NewButton("", "", function()
-        
+
     print("Script Executed")
 end)
 
