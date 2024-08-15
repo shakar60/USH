@@ -71,11 +71,14 @@ Tab5Section:NewLabel("The gui/hub is Kavo Ui Library")
 
 -- Toggle Gui
 
+-- Toggle Gui
 local ToggleGui = Instance.new("ScreenGui")
 local Toggle = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 local TextStroke = Instance.new("UIStroke")
+local Logo = Instance.new("ImageLabel")
+local LogoUICorner = Instance.new("UICorner")
 
 -- Properties
 ToggleGui.Name = "Toggle Gui"
@@ -89,12 +92,12 @@ Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Toggle.Position = UDim2.new(0.5, -40, 0.05, 0) -- Centered horizontally and near the top
 Toggle.Size = UDim2.new(0, 80, 0, 80) -- Size of the toggle
 Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "USH" -- Name of the toggle
+Toggle.Text = "USH" -- Clear the text to make space for the logo
 Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.TextSize = 23.000
 Toggle.Draggable = true
 
--- Set up UICorner for rounded corners
+-- Set up UICorner for rounded corners on the Toggle button
 UICorner.CornerRadius = UDim.new(0, 20) -- Adjust radius to make corners rounded
 UICorner.Parent = Toggle
 
@@ -109,14 +112,25 @@ TextStroke.Thickness = 0.3 -- Subtle thickness of the text stroke
 TextStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
 TextStroke.Color = Color3.fromRGB(0, 0, 0) -- Black text stroke for subtle effect
 
--- Function to create a rainbow effect for the UIStroke, text color, and outline stroke
+-- Set up the Logo inside the Toggle button
+Logo.Name = "Logo"
+Logo.Parent = Toggle
+Logo.BackgroundTransparency = 1
+Logo.Size = UDim2.new(0, 80, 0, 80)
+Logo.Position = UDim2.new(0.5, -40, 0.5, -40) -- Centered within the Toggle button
+Logo.Image = "rbxassetid://87362972092816" -- Updated with your logo ID
+
+-- Set up UICorner for rounded corners on the Logo
+LogoUICorner.CornerRadius = UDim.new(0, 20) -- Match the corner radius with the Toggle button
+LogoUICorner.Parent = Logo
+
+-- Function to create a rainbow effect for the UIStroke and text color
 local function RainbowEffect()
     local hue = 0
     while true do
-        hue = 0.5 + (hue + 5) % 360 -- Slightly modify the hue range for a more subtle effect
+        hue = (hue + 1) % 360
         local color = Color3.fromHSV(hue / 360, 1, 1)
         UIStroke.Color = color
-        Toggle.TextColor3 = color
         wait(0.01)
     end
 end
