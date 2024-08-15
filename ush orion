@@ -1837,18 +1837,6 @@ print ("Script Executed")
 end 
 })
 
-local TabDHSection = TabDH:AddSection({
-Name = "Auto Reload Script"
-})
-
-TabDH:AddButton({
-Name = "Auto Reload Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
-print ("Script Executed")
-end 
-})
-
 local TabALSection = TabAL:AddSection({
 Name = "Frost Gui"
 })
@@ -1857,18 +1845,6 @@ TabAL:AddButton({
 Name = "Frost Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frost-gui/main/script",true))()
-print ("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "No Recoil Script"
-})
-
-TabDH:AddButton({
-Name = "No Recoil Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-recoil/main/script",true))()
 print ("Script Executed")
 end 
 })
@@ -2447,6 +2423,18 @@ Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected",true))()
 print("Script Executed")
 end 
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "jamkles.lua"
+})
+
+Tab3:AddButton({
+Name = "jamkles.lua",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/jamkles.lua%20free%20version",true))()
+print ("Script Executed")
+end
 })
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
