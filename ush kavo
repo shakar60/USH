@@ -70,7 +70,6 @@ Tab5Section:NewLabel("The gui/hub is Kavo Ui Library")
 ----------------------------------------------------------------------------------------------------------------------
 
 -- Toggle Gui
-
 local ToggleGui = Instance.new("ScreenGui")
 local Toggle = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -418,18 +417,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/
 print("Script Executed")
 end)
 
-Tab6Section = Tab6:NewSection("Auto Reload:")
-Tab6Section:NewButton("Auto Reload","Auto Reload", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/auto-reload/main/script",true))()
-print("Script Executed")
-end)
-
-Tab6Section = Tab6:NewSection("No Recoil:")
-Tab6Section:NewButton("No Recoil","No Recoil", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-recoil/main/script",true))()
-print("Script Executed")
-end)
-
 Tab6Section = Tab6:NewSection("Any Tool (/e key then any word):")
 Tab6Section:NewButton("Any Tool","Any Tool", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
@@ -473,7 +460,8 @@ print("Script Executed")
 end)
 
 Tab6Section = Tab6:NewSection("AntiLock Resolver")
-Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver",true))()
+Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver",true))()
 print("Script Executed")
 end)
 
@@ -908,6 +896,12 @@ end)
 local Tab3Section = Tab3:NewSection("Teifs Camlock")
 Tab3Section:NewButton("Tiefs Camlock", "Tiefs Camlock", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/tiefdej/this-obskid/maineheheheheu/tief%20simp%20gui"))()
+    print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("jamkles.lua")
+Tab3Section:NewButton("jamkles.lua", "jamkles.lua", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/jamkles.lua%20free%20version",true))()
     print("Script Executed")
 end)
 
