@@ -460,8 +460,7 @@ print("Script Executed")
 end)
 
 Tab6Section = Tab6:NewSection("AntiLock Resolver")
-Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Qdygmwr9"))()
+Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver",true))()
 print("Script Executed")
 end)
 
