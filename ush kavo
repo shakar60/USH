@@ -905,6 +905,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
     print("Script Executed")
 end)
 
+local Tab3Section = Tab3:NewSection("saxx.lol")
+Tab3Section:NewButton("saxx.lol", "saxx.lol", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/saxx.lol%20protected",true))()
+    print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
 
 -- guis/hubs
