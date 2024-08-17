@@ -2425,11 +2425,11 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
+local TabALSection = TabAL:AddSection({
 Name = "jamkles.lua"
 })
 
-Tab3:AddButton({
+TabAL:AddButton({
 Name = "jamkles.lua",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/jamkles.lua%20free%20version",true))()
@@ -2437,14 +2437,26 @@ print ("Script Executed")
 end
 })
 
-local Tab3Section = Tab3:AddSection({
+local TabALSection = TabAL:AddSection({
 Name = "saxx.lol"
 })
 
-Tab3:AddButton({
+TabAL:AddButton({
 Name = "saxx.lol",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/saxx.lol%20protected",true))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Infinix"
+})
+
+Tab3:AddButton({
+Name = "Infinix",
+Callback = function()
+loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
 print ("Script Executed")
 end
 })
