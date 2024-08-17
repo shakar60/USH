@@ -22,11 +22,18 @@ local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub
 ------------------------------------------------------------------
 --Notify
 
-game.StarterGui:SetCore("SendNotification", {
-Title = "⭐️ USH Loaded ⭐️"; 
-Text = "Made by sh4kar60-sh4k4r6o On Discord"; 
-Duration = 5; 
+local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'),true))()
+
+NotificationLoad:NewNotification({
+    ["Mode"] = "Custom", -- Leave like this
+    ["Title"] = "USH Loaded", -- Title of notification
+    ["Description"] = "Welcome User, USH Is An Universal Script By sh4k4r6o On Discord.", -- Description of notification
+    ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of notification
+    ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
+    ["Timeout"] = 10, -- Timer how long notification lasts
+    ["Audio"] = true -- Sound when notifications open
 })
+
 ------------------------------------------------------------------
 
 --Tabs 
