@@ -8,7 +8,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
 
 --Orion Library 
 
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/thanhdat4461/OrionMoblie/main/source')))() --This Will Load The Script Code
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
   local Window = OrionLib:MakeWindow({
