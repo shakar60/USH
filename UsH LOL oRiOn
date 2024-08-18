@@ -28,6 +28,7 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
         IntroText = "⭐️ USH | Universal Shakar's Hub ⭐️",
         IntroIcon = "rbxassetid://18989682136",
     })
+
 ------------------------------------------------------------------
 --Notify
 
