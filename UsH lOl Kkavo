@@ -1168,12 +1168,6 @@ Tab2Section:NewButton("Blade Ball Nexam Hub", "Blade Ball Nexam Hub", function()
     print("Script Executed")
 end)
 
-local Tab2Section = Tab2:NewSection("Blade Ball Astral Hub")
-Tab2Section:NewButton("Blade Ball Astral Hub", "Blade Ball Astral Hub", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Augustzyzx/A-s-t-r-a-l/main/Loader_BladeBall.lua'))()
-    print("Script Executed")
-end)
-
 local Tab2Section = Tab2:NewSection("Scripthub By Backup")
 Tab2Section:NewButton("Scripthub By Backup", "Scripthub By Backup", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
