@@ -17,6 +17,7 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
         SaveConfig = true,   
         IntroEnabled = true,
         IntroText = "⭐️ USH | Universal Shakars Hub (Key System) ⭐️",
+        IntroIcon = "rbxassetid://18987124708",
     })
 
 -----------------------------------------
@@ -27,7 +28,7 @@ NotificationLoad:NewNotification({
     ["Mode"] = "Custom", -- Leave like this
     ["Title"] = "USH Key System Loaded", -- Title of notification
     ["Description"] = "Welcome To USH Key System, Get The Key To Get The Main Script.", -- Description of notification
-    ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of notification
+    ["Notification_Image"] = "rbxassetid://18989817929", -- Side image of notification
     ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
     ["Timeout"] = 10, -- Timer how long notification lasts
     ["Audio"] = true -- Sound when notifications open
@@ -192,7 +193,7 @@ TabKS:AddButton({
             ["Mode"] = "Custom", -- Keep this as "Custom"
             ["Title"] = "USH Key System Destroyed", -- Title of the notification
             ["Description"] = "You Have Successfully Destroyed USH Key System.", -- Notification description
-            ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of the notification
+            ["Notification_Image"] = "rbxassetid://18989846910", -- Side image of the notification
             ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
             ["Timeout"] = 10, -- Duration of the notification
             ["Audio"] = true -- Play sound when the notification is displayed
