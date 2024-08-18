@@ -15,11 +15,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/execution%20logs%20v2",true))()
 
 ------------------------------------------------------------------
---Window & Library
+-- Window & Library
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/thanhdat4461/GUI-Library/main/Orion%20Library.lua",true))()
 
-local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = true, IntroText = "⭐️ USH | Universal Shakars Hub ⭐️", SaveConfig = true, ConfigFolder = "shakar"})
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+        Name = "⭐️ USH | Universal Shakar's Hub ⭐️",
+        HidePremium = false,
+        SaveConfig = true,   
+        IntroEnabled = true,
+        IntroText = "⭐️ USH | Universal Shakar's Hub ⭐️",
+        IntroIcon = "rbxassetid://18989682136",
+    })
 ------------------------------------------------------------------
 --Notify
 
