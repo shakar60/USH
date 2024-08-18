@@ -193,7 +193,7 @@ TabKS:AddButton({
             ["Mode"] = "Custom", -- Keep this as "Custom"
             ["Title"] = "USH Key System Destroyed", -- Title of the notification
             ["Description"] = "You Have Successfully Destroyed USH Key System.", -- Notification description
-            ["Notification_Image"] = "rbxassetid://18989846910", -- Side image of the notification
+            ["Notification_Image"] = "rbxassetid://18989817929", -- Side image of the notification
             ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
             ["Timeout"] = 10, -- Duration of the notification
             ["Audio"] = true -- Play sound when the notification is displayed
