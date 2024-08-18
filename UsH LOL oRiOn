@@ -2509,11 +2509,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Venox Rivals"
+Name = "Venox Rivals (Key Sys)"
 })
 
 Tab3:AddButton({
-Name = "Venox Rivals",
+Name = "Venox Rivals (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/venoxhh/universalscripts/main/rivals/venoxrivalsv2'))()
 print ("Script Executed")
