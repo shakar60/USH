@@ -12,11 +12,26 @@ local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/than
 
 local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
   local Window = OrionLib:MakeWindow({
-    Name = "⭐️ USH | Universal Shakars Hub (Key System) ⭐️",
-    HidePremium = false,
-    SaveConfig = true,   
-    IntroEnabled = false,
-}) --This Will Load The Script Hub
+        Name = "⭐️ USH | Universal Shakars Hub (Key System) ⭐️",
+        HidePremium = false,
+        SaveConfig = true,   
+        IntroEnabled = true,
+        IntroText = "⭐️ USH | Universal Shakars Hub (Key System) ⭐️",
+    })
+
+-----------------------------------------
+
+local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'),true))()
+
+NotificationLoad:NewNotification({
+    ["Mode"] = "Custom", -- Leave like this
+    ["Title"] = "USH Loaded", -- Title of notification
+    ["Description"] = "Welcome To USH Key System, Get The Key To Get The Main Script.", -- Description of notification
+    ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of notification
+    ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
+    ["Timeout"] = 10, -- Timer how long notification lasts
+    ["Audio"] = true -- Sound when notifications open
+})
 
 -----------------------------------------
 
@@ -39,19 +54,19 @@ getgenv().KeyInput = "String" --Require For The Key To Work
 
 local TabKS = Window:MakeTab({
   Name = "Key System",
-  Icon = "rbxassetid://4483345998",
+  Icon = "rbxassetid://18987124708",
   PremiumOnly = false
-}) --Making A Tab
+})
 
 local TabF = Window:MakeTab({
 Name = "Feedback",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987175482",
 PremiumOnly = false
 })
 
 local TabPI = Window:MakeTab({
 Name = "Player Info",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987171925",
 PremiumOnly = false
 })
 
