@@ -44,7 +44,7 @@ NotificationLoad:NewNotification({
 
 local TabHome = Window:MakeTab({
 Name = "Home",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987168719",
 PremiumOnly = false
 })
 
@@ -54,7 +54,7 @@ PremiumOnly = false
 
 local TabPlayer = Window:MakeTab({
 Name = "Player",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987171925",
 PremiumOnly = false
 })
 
@@ -64,7 +64,7 @@ PremiumOnly = false
 
 local Tab2 = Window:MakeTab({
 Name = "Scripts",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987763988",
 PremiumOnly = false
 })
 
@@ -74,7 +74,7 @@ PremiumOnly = false
 
 local Tab3 = Window:MakeTab({
 Name = "Guis/hubs",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987803959",
 PremiumOnly = false
 })
 
@@ -84,7 +84,7 @@ PremiumOnly = false
 
 local TabAL = Window:MakeTab({
 Name = "AimLock/Lock",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987626499",
 PremiumOnly = false
 })
 
@@ -94,7 +94,7 @@ PremiumOnly = false
 
 local TabDH = Window:MakeTab({
 Name = "DH Scripts",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987740547",
 PremiumOnly = false
 })
 
@@ -104,7 +104,7 @@ PremiumOnly = false
 
 local TabBF = Window:MakeTab({
 Name = "Blox Fruits Scripts",
-Icon = "rbxassetid://4483345998",
+Icon = "rbxassetid://18987680908",
 PremiumOnly = false
 })
 
