@@ -188,7 +188,7 @@ Tab1:AddButton({
         Tab4:AddSection({ Name = "Universal Anticheat Bypass Script" })
         addButton("Universal Anticheat Bypass Script", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
 
-        Tab4:AddParagraph("Other Untitled Tag Game Scripts")
+        Tab4:AddParagraph("Other Untitled Tag Game Scripts","Other Peoples UTG Script.")
 
         Tab4:AddSection({ Name = "RenxWare Untitled Tag Game Script Gui" })
         addButton("Renxware Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua")
