@@ -14,6 +14,7 @@ if game.PlaceId == specificPlaceId then
         HidePremium = false,
         IntroEnabled = true,
         IntroText = "⭐️ Shakars UTG | Untitled Tag Game Script ⭐️",
+        IntroIcon = "rbxassetid://18989869285",
         SaveConfig = true,
         ConfigFolder = "shakar"
     })
@@ -26,7 +27,7 @@ NotificationLoad:NewNotification({
     ["Mode"] = "Custom", -- Leave like this
     ["Title"] = "Shakars UTG Script Loaded", -- Title of notification
     ["Description"] = "Welcome User, UTG Is An Untitled Tag Game Based Script Also This Script Is Made By sh4k4r6o On Discord.", -- Description of notification
-    ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of notification
+    ["Notification_Image"] = "rbxassetid://18989848883", -- Side image of notification
     ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
     ["Timeout"] = 10, -- Timer how long notification lasts
     ["Audio"] = true -- Sound when notifications open
