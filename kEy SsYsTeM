@@ -25,7 +25,7 @@ local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent
 
 NotificationLoad:NewNotification({
     ["Mode"] = "Custom", -- Leave like this
-    ["Title"] = "USH Loaded", -- Title of notification
+    ["Title"] = "USH Key System Loaded", -- Title of notification
     ["Description"] = "Welcome To USH Key System, Get The Key To Get The Main Script.", -- Description of notification
     ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of notification
     ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
@@ -38,7 +38,7 @@ NotificationLoad:NewNotification({
 --Execute This When The Key Is Right
 
 function MakeScriptHub()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/ush%20orion",true))() --Put The Script That Will Load If The Key Is Correct Here
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/UsH%20LOL%20oRiOn",true))()
 end
 
 -----------------------------------------
@@ -178,9 +178,35 @@ end
 
 -----------------------------------------
 
+TabKS:AddSection({
+    Name = "Destroy USH Key System"
+})
+
+TabKS:AddButton({
+    Name = "Destroy USH Key System",
+    Callback = function()
+        -- Load the notification library
+        local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
+
+        NotificationLoad:NewNotification({
+            ["Mode"] = "Custom", -- Keep this as "Custom"
+            ["Title"] = "USH Destroyed", -- Title of the notification
+            ["Description"] = "You Have Successfully Destroyed The USH Script Hub.", -- Notification description
+            ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of the notification
+            ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
+            ["Timeout"] = 10, -- Duration of the notification
+            ["Audio"] = true -- Play sound when the notification is displayed
+        })
+
+        OrionLib:Destroy()
+    end    
+})
+
+------------------------------------------------------------------
+
 --Enter Key Script
 
-local TabSection = TabKS:AddSection({
+local TabKSSection = TabKS:AddSection({
 Name = "Enter The Key Here"
 })
 
@@ -207,14 +233,14 @@ TabKS:AddButton({
         if getgenv().KeyInput == getgenv().Key then
             OrionLib:MakeNotification({
                 Name = "Checking Key",
-                Content = "Checking The Key You Entered",
+                Content = "Checking The Key You Entered..",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
             wait(2)
             OrionLib:MakeNotification({
                 Name = "Correct Key!",
-                Content = "The key you entered is Correct.",
+                Content = "The key you entered is Correct!",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
@@ -225,14 +251,14 @@ TabKS:AddButton({
         else
            OrionLib:MakeNotification({
                 Name = "Checking Key",
-                Content = "Checking The Key You Entered",
+                Content = "Checking The Key You Entered..",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
             wait(2)
             OrionLib:MakeNotification({
                 Name = "Incorrect Key!",
-                Content = "The key you entered is incorrect.",
+                Content = "The key you entered is incorrect!",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
