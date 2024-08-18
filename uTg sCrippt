@@ -24,7 +24,7 @@ if game.PlaceId == specificPlaceId then
 
 NotificationLoad:NewNotification({
     ["Mode"] = "Custom", -- Leave like this
-    ["Title"] = "USH Loaded", -- Title of notification
+    ["Title"] = "Shakars UTG Script Loaded", -- Title of notification
     ["Description"] = "Welcome User, UTG Is An Untitled Tag Game Based Script Also This Script Is Made By sh4k4r6o On Discord.", -- Description of notification
     ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of notification
     ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
@@ -84,7 +84,33 @@ NotificationLoad:NewNotification({
     })
 
 -----------------------------------------------------------------
-  
+
+Tab1:AddSection({
+    Name = "Destroy Shakars UTG"
+})
+
+Tab1:AddButton({
+    Name = "Destroy Shakars UTG",
+    Callback = function()
+        -- Load the notification library
+        local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
+
+        NotificationLoad:NewNotification({
+            ["Mode"] = "Custom", -- Keep this as "Custom"
+            ["Title"] = "Shakars UTG Destroyed", -- Title of the notification
+            ["Description"] = "You Have Successfully Destroyed Shakars UTG Script.", -- Notification description
+            ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of the notification
+            ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
+            ["Timeout"] = 10, -- Duration of the notification
+            ["Audio"] = true -- Play sound when the notification is displayed
+        })
+
+        OrionLib:Destroy()
+    end    
+})
+
+------------------------------------------------------------------
+
     -- Credits
     Tab1:AddSection({
         Name = "Credits:"
