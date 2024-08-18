@@ -37,25 +37,25 @@ NotificationLoad:NewNotification({
     -- Tabs
     local Tab1 = Window:MakeTab({
         Name = "Home",
-        Icon = "rbxassetid://4483345998",
+        Icon = "rbxassetid://18987168719",
         PremiumOnly = false
     })
 
     local Tab2 = Window:MakeTab({
         Name = "Player Info",
-        Icon = "rbxassetid://4483345998",
+        Icon = "rbxassetid://18987171925",
         PremiumOnly = false
     })
 
     local Tab3 = Window:MakeTab({
         Name = "Reach/Hitbox Extension",
-        Icon = "rbxassetid://4483345998",
+        Icon = "rbxassetid://18987467474",
         PremiumOnly = false
     })
 
     local Tab4 = Window:MakeTab({
         Name = "Misc",
-        Icon = "rbxassetid://4483345998",
+        Icon = "rbxassetid://18987548519",
         PremiumOnly = false
     })
 
