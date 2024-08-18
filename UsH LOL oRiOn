@@ -16,6 +16,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
 
 ------------------------------------------------------------------
 --Window & Library
+
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/thanhdat4461/GUI-Library/main/Orion%20Library.lua",true))()
 
 local Window = OrionLib:MakeWindow({Name = " ⭐️ USH | Universal Shakar's Hub ⭐️", HidePremium = false, IntroEnabled = true, IntroText = "⭐️ USH | Universal Shakars Hub ⭐️", SaveConfig = true, ConfigFolder = "shakar"})
@@ -220,6 +221,36 @@ Callback = function()
       setclipboard("https://discord.gg/vwXXfnuxUg")
 print("Discord Link Set To Your Clipboard")
 end
+})
+
+------------------------------------------------------------------
+
+-- Add a section in the TabHome
+TabHome:AddSection({
+    Name = "Destroy USH"
+})
+
+-- Add a button in the TabHome
+TabHome:AddButton({
+    Name = "Destroy USH",
+    Callback = function()
+        -- Load the notification library
+        local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
+
+        -- Create and display the notification
+        NotificationLoad:NewNotification({
+            ["Mode"] = "Custom", -- Keep this as "Custom"
+            ["Title"] = "USH Destroyed", -- Title of the notification
+            ["Description"] = "You Have Successfully Destroyed USH.", -- Notification description
+            ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of the notification
+            ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
+            ["Timeout"] = 10, -- Duration of the notification
+            ["Audio"] = true -- Play sound when the notification is displayed
+        })
+
+        -- Destroy the USH GUI after showing the notification
+        OrionLib:Destroy()
+    end    
 })
 
 ------------------------------------------------------------------
