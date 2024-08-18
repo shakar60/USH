@@ -1681,18 +1681,6 @@ print("Script Executed")
 end 
 })
 
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball Astral Hub"
-})
-
-Tab3:AddButton({
-Name = "Blade Ball Astral Hub",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Augustzyzx/A-s-t-r-a-l/main/Loader_BladeBall.lua'))()
-print("Script Executed")
-end 
-})
-
 local TabBFSection = TabBF:AddSection({
 Name = "Alchemy Hub (Key System)"
 })
