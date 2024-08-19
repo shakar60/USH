@@ -1646,23 +1646,11 @@ end
 })
 
 local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball FFJ Hub (Old)"
+Name = "Blade Ball FFJ Hub (Key Sys)"
 })
 
 Tab3:AddButton({
-Name = "Blade Ball FFJ Hub (Old)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball FFJ Hub (Key Sys) (New)"
-})
-
-Tab3:AddButton({
-Name = "Blade Ball FFJ Hub (Key Sys) (New)",
+Name = "Blade Ball FFJ Hub (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/BladeBallV3.lua"))()
 print("Script Executed")
@@ -1920,11 +1908,11 @@ print ("Script Executed")
 end 
 })
 
-local TabDHSection = TabDH:AddSection({
+local Tab2Section = Tab2:AddSection({
 Name = "Any Tool Script (Do /e key (the key you want) to use)"
 })
 
-TabDH:AddButton({
+Tab2:AddButton({
 Name = "Any Tool Script",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
@@ -1932,12 +1920,12 @@ print ("Script Executed")
 end 
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Chat Bypass (Key Sys)"
+local Tab3Section = Tab3:AddSection({
+Name = "Usercreation (Chat Bypasser)"
 })
 
-Tab2:AddButton({
-Name = "Chat Bypass (Key Sys)",
+Tab3:AddButton({
+Name = "UserCreation (Chat Bypasser)",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
 print ("Script Executed")
@@ -2256,18 +2244,6 @@ print ("Script Executed")
 end
 })
 
-local TabDHSection = TabDH:AddSection({
-Name = "Stretched Res Script"
-})
-
-TabDH:AddButton({
-Name = "Stretched Res Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/stretched-res/main/dh",true))()
-print ("Script Executed")
-end
-})
-
 local TabALSection = TabAL:AddSection({
 Name = "Tief Lock Gui"
 })
@@ -2304,18 +2280,6 @@ print ("Script Executed")
 end
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Fullbright Script"
-})
-
-Tab2:AddButton({
-Name = "Fullbright Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fullbright/main/scripts",true))()
-print ("Script Executed")
-end
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Shakars Untitled Tag Game Script Gui"
 })
@@ -2324,18 +2288,6 @@ Tab3:AddButton({
 Name = "Shakars Untitled Tag Game Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/shakars_utg/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "No Fog Script"
-})
-
-Tab2:AddButton({
-Name = "No Fog Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/no-fog/main/script",true))()
 print ("Script Executed")
 end
 })
