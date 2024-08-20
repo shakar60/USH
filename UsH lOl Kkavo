@@ -485,15 +485,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOffic
 print("Script Executed")
 end)
 
-Tab6Section = Tab6:NewSection("Stretched Res")
-Tab6Section:NewButton("Stretched Res","Stretched Res", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/stretched-res/main/dh",true))()
-print("Script Executed")
-end)
-
 Tab6Section = Tab6:NewSection("AntiLock Resolver")
 Tab6Section:NewButton("AntiLock Resolver","AntiLock Resolver", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver",true))()
+print("Script Executed")
+end)
+
+Tab6Section = Tab6:NewSection("Bates Antilock")
+Tab6Section:NewButton("Bates Antilock","Bates Antilock", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Creatingtesting/BateOnTopOBFUSCATED/main/bate"))()
 print("Script Executed")
 end)
 
