@@ -637,12 +637,6 @@ Tab1Section:NewButton("Chat Mimic Script", "Chat Mimic Script", function() loads
     print("Script Executed")
 end)
 
-local Tab1Section = Tab1:NewSection("Fe Animation Changer")
-Tab1Section:NewButton("Fe Animation Changer", "Fe Animation Changer", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/LunarWareOP/Animation-Changer-Source/main/Script", true))()
-    print("Script Executed")
-end)
-
 local Tab1Section = Tab1:NewSection("Fe Aim Swim")
 Tab1Section:NewButton("Fe Air Swim", "Fe Air Swim", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/9CK0qSgn"))()
@@ -934,7 +928,7 @@ end)
 local Tab3Section = Tab3:NewSection("Polos Camlock")
 Tab3Section:NewButton("Polos Camlock", "Polos Camlock", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock",true))()
-    print("Script Executed")
+print("Script Executed")
 end)
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -1353,6 +1347,13 @@ Tab2Section:NewButton("Venox Rivals (Key Sys)", "Venox Rivals (Key Sys)", functi
     loadstring(game:HttpGet('https://raw.githubusercontent.com/venoxhh/universalscripts/main/rivals/venoxrivalsv2'))()
     print("Script Executed")
 end)
+
+local Tab2Section = Tab2:NewSection("Venox Rivals (Key Sys)")
+Tab2Section:NewButton("Venox Rivals (Key Sys)", "Venox Rivals (Key Sys)", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel",true))()
+    print("Script Executed")
+end)
+
 
 ----------------------------------------------------------------------------------------------------------------------
 
