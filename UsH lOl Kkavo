@@ -491,12 +491,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
 print("Script Executed")
 end)
 
-Tab6Section = Tab6:NewSection("Bates Antilock")
-Tab6Section:NewButton("Bates Antilock","Bates Antilock", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Creatingtesting/BateOnTopOBFUSCATED/main/bate"))()
-print("Script Executed")
-end)
-
 ----------------------------------------------------------------------------------------------------------------------
 
 -- blox fruit
