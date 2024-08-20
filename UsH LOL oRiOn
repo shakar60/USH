@@ -2436,11 +2436,11 @@ print ("Script Executed")
 end
 })
 
-local Tab3Section = Tab3:AddSection({
+local TabALSection = TabAL:AddSection({
 Name = "Polos Camlock"
 })
 
-Tab3:AddButton({
+TabAL:AddButton({
 Name = "Polos Camlock",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock",true))()
