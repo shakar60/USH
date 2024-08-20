@@ -2412,30 +2412,6 @@ print("Script Executed")
 end 
 })
 
-local TabALSection = TabAL:AddSection({
-Name = "jamkles.lua"
-})
-
-TabAL:AddButton({
-Name = "jamkles.lua",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/jamkles.lua%20free%20version",true))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "saxx.lol"
-})
-
-TabAL:AddButton({
-Name = "saxx.lol",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/saxx.lol%20protected",true))()
-print ("Script Executed")
-end
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Infinix"
 })
@@ -2456,6 +2432,18 @@ Tab3:AddButton({
 Name = "Venox Rivals (Key Sys)",
 Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/venoxhh/universalscripts/main/rivals/venoxrivalsv2'))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Polos Camlock"
+})
+
+Tab3:AddButton({
+Name = "Polos Camlock",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock",true))()
 print ("Script Executed")
 end
 })
