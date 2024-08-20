@@ -753,18 +753,6 @@ print("Script Executed")
 end 
 })
 
-local Tab2Section = Tab2:AddSection({
-Name = "Fe Animation Changer"
-})
-
-Tab2:AddButton({
-Name = "Fe Animation Changer",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LunarWareOP/Animation-Changer-Source/main/Script", true))()
-print("Script Executed")
-end 
-})
-
 local Tab3Section = Tab3:AddSection({
 Name = "Mystery Hub (For Ragdoll Engine)"
 })
@@ -2444,6 +2432,18 @@ TabAL:AddButton({
 Name = "Polos Camlock",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock",true))()
+print ("Script Executed")
+end
+})
+
+local Tab3Section = Tab3:AddSection({
+Name = "Rochips Panel"
+})
+
+Tab3:AddButton({
+Name = "Rochips Panel",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel",true))()
 print ("Script Executed")
 end
 })
