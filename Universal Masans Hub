@@ -654,42 +654,6 @@ end
 })
 
 local Tab1Section = Tab1:AddSection({
-Name = "Keyboard Script Gui"
-})
-
-Tab1:AddButton({
-Name = "Keyboard Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keyboardgui/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "KeyStrokes Script Gui V1"
-})
-
-Tab3:AddButton({
-Name = "KeyStrokes Script Gui V1",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokegui/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "KeyStroke Script Gui V2"
-})
-
-Tab3:AddButton({
-Name = "KeyStroke Script Gui V2",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/keystrokeguiV2/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local Tab1Section = Tab1:AddSection({
 Name = "Fake Lag"
 })
 
@@ -702,25 +666,13 @@ end
 })
 
 local Tab1Section = Tab1:AddSection({
-Name = "Rate My Avatar Booth Blocker Gui"
+Name = "Chat Bypasser"
 })
 
 Tab1:AddButton({
-Name = "Rate My Avatar Booth Blocker Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/booth-blocker/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab1Section = Tab1:AddSection({
-Name = "Usercreation (Chat Bypasser)"
-})
-
-Tab1:AddButton({
-Name = "UserCreation (Chat Bypasser)",
+Name = "Chat Bypasser",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
-print ("Script Executed")
+print("Script Executed")
 end 
 })
