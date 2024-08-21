@@ -1,0 +1,678 @@
+------------------------------------------------------------------
+
+-- loading screen 
+
+-- Services
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+
+-- Variables
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+-- Settings
+local settings = {
+guiDuration = 3,  -- Total duration for the entire GUI before it gets destroyed
+mainText = "Masans Hub",  -- Custom main text
+loadingText = "Masans Hub Loading",  -- Custom loading text
+loadedText = "Masans Hub Loaded",  -- Custom loaded text
+creditsText = "Credits To sh4k4r6o For Making The Loading Gui.",  -- Custom credits text
+countdownTextEnabled = true,  -- Toggle countdown number
+countdownTextDuration = 3,  -- Duration for the countdown text in seconds
+mainTextDuration = 2,  -- Duration for the main text display
+loadingTextDuration = 1,  -- Duration for the loading text display
+loadedTextDuration = 1,  -- Duration for the loaded text display
+creditsTextDuration = 1,  -- Duration for the credits text display
+fontSettings = {
+    mainTextFont = Enum.Font.Arcade,  -- Font for main text
+    loadingTextFont = Enum.Font.Arcade,  -- Font for loading text
+    loadedTextFont = Enum.Font.Arcade,  -- Font for loaded text
+    creditsFont = Enum.Font.Arcade,  -- Font for credits text
+    countdownFont = Enum.Font.Arcade  -- Font for countdown text
+}
+}
+
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "BlurGui"
+screenGui.Parent = PlayerGui
+
+-- Create BlurEffect
+local blurEffect = Instance.new("BlurEffect")
+blurEffect.Name = "BlurEffect"
+blurEffect.Size = 0
+blurEffect.Parent = game:GetService("Lighting")
+
+-- Create Main TextLabel
+local textLabel = Instance.new("TextLabel")
+textLabel.Name = "TextLabel"
+textLabel.Parent = screenGui
+textLabel.BackgroundTransparency = 1
+textLabel.Position = UDim2.new(0.5, -200, 0.5, -50)
+textLabel.Size = UDim2.new(0, 400, 0, 100)
+textLabel.Font = settings.fontSettings.mainTextFont
+textLabel.Text = settings.mainText
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textLabel.TextScaled = true
+textLabel.TextStrokeTransparency = 0.8
+textLabel.TextSize = 40
+
+-- Create Credits TextLabel
+local creditsLabel = Instance.new("TextLabel")
+creditsLabel.Name = "CreditsLabel"
+creditsLabel.Parent = screenGui
+creditsLabel.BackgroundTransparency = 1
+creditsLabel.Position = UDim2.new(0.5, -200, 0.5, 60) -- Positioned below the main text
+creditsLabel.Size = UDim2.new(0, 400, 0, 50)
+creditsLabel.Font = settings.fontSettings.creditsFont
+creditsLabel.Text = settings.creditsText
+creditsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+creditsLabel.TextScaled = true
+creditsLabel.TextStrokeTransparency = 0.8
+creditsLabel.TextSize = 8 -- Adjusted text size to 8
+
+-- Create Countdown TextLabel
+local countdownLabel = Instance.new("TextLabel")
+countdownLabel.Name = "CountdownLabel"
+countdownLabel.Parent = screenGui
+countdownLabel.BackgroundTransparency = 1
+countdownLabel.Position = UDim2.new(0.5, -200, 0.5, -100) -- Positioned above the main text
+countdownLabel.Size = UDim2.new(0, 400, 0, 50)
+countdownLabel.Font = settings.fontSettings.countdownFont
+countdownLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+countdownLabel.TextScaled = true
+countdownLabel.TextStrokeTransparency = 0.8
+countdownLabel.TextSize = 20 -- Adjusted text size to 20
+countdownLabel.Text = ""  -- Initially empty
+countdownLabel.Visible = false  -- Initially hidden
+
+-- Add a UIStroke for rainbow effect
+local function ApplyRainbowEffect(label)
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Parent = label
+UIStroke.Thickness = 2
+UIStroke.Transparency = 0.5
+
+-- Function to create a rainbow effect for the UIStroke and text color
+local function RainbowEffect()
+    local hue = 0
+    while label and label.Parent do
+        hue = (hue + 1) % 360
+        local color = Color3.fromHSV(hue / 360, 1, 1)
+        UIStroke.Color = color
+        label.TextColor3 = color
+        wait(0.01)
+    end
+end
+
+-- Start the rainbow effect
+spawn(RainbowEffect)
+end
+
+-- Apply rainbow effect to main text, credits text, and countdown text
+ApplyRainbowEffect(textLabel)
+ApplyRainbowEffect(creditsLabel)
+ApplyRainbowEffect(countdownLabel)
+
+-- Tweening for blur effect
+local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+local goal = {Size = 20}
+local tween = TweenService:Create(blurEffect, tweenInfo, goal)
+
+-- Show blur and text
+tween:Play()
+
+-- Function to update the countdown label
+local function UpdateCountdownLabel()
+if not settings.countdownTextEnabled then return end
+
+local timeLeft = settings.countdownTextDuration
+countdownLabel.Visible = true  -- Show countdown label when starting countdown
+while timeLeft > 0 do
+    countdownLabel.Text = "Please wait " .. timeLeft .. " seconds"
+    wait(1)
+    timeLeft = timeLeft - 1
+end
+countdownLabel.Text = "Please wait 0 seconds"  -- Display final message
+end
+
+-- Function to display each text with its duration
+local function DisplayTextWithDuration(textLabel, newText, font, duration)
+textLabel.Text = newText
+textLabel.Font = font
+wait(duration)
+end
+
+-- Show main text
+DisplayTextWithDuration(textLabel, settings.mainText, settings.fontSettings.mainTextFont, settings.mainTextDuration)
+
+-- Show loading text and countdown
+textLabel.Text = settings.loadingText
+textLabel.Font = settings.fontSettings.loadingTextFont
+UpdateCountdownLabel()
+wait(settings.loadingTextDuration)
+
+-- Hide countdown label after loading
+countdownLabel.Visible = false
+
+-- Show loaded text
+textLabel.Text = settings.loadedText
+textLabel.Font = settings.fontSettings.loadedTextFont
+wait(settings.loadedTextDuration)
+
+-- Show credits text
+creditsLabel.Text = settings.creditsText
+creditsLabel.Font = settings.fontSettings.creditsFont
+wait(settings.creditsTextDuration)
+
+-- Clean up
+screenGui:Destroy()
+blurEffect:Destroy()
+
+------------------------------------------------------------------
+
+            -- Window & Library
+
+            local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/thanhdat4461/GUI-Library/main/Orion%20Library.lua", true))()
+
+            local Player = game.Players.LocalPlayer -- This Will Reveal The Player Name
+            local Window = OrionLib:MakeWindow({
+                Name = "⭐️ Masans Hub | Universal Masans's Hub ⭐️",
+                HidePremium = false,
+                SaveConfig = true,
+                IntroEnabled = false,
+                IntroText = "⭐️ Masans Hub| Universal Masan's Hub ⭐️",
+                IntroIcon = "rbxassetid://18989682136",
+            })
+
+            ------------------------------------------------------------------
+
+            -- Tabs 
+
+            local TabHome = Window:MakeTab({
+                Name = "Home",
+                Icon = "rbxassetid://18987168719",
+                PremiumOnly = false
+            })
+
+            local TabPlayer = Window:MakeTab({
+                Name = "Player",
+                Icon = "rbxassetid://18987171925",
+                PremiumOnly = false
+            })
+
+            local Tab1 = Window:MakeTab({
+                Name = "Scripts",
+                Icon = "rbxassetid://18987763988",
+                PremiumOnly = false
+            })
+
+            local Tab2 = Window:MakeTab({
+                Name = "Blade Ball",
+                Icon = "rbxassetid://114221982322086",
+                PremiumOnly = false
+            })
+
+            ------------------------------------------------------------------
+
+            TabHome:AddLabel("Tab Home:")
+            TabPlayer:AddLabel("Tab Player:")
+            Tab1:AddLabel("Scripts:")
+            Tab2:AddLabel("Blade Ball Scripts:")
+
+            ------------------------------------------------------------------
+
+            -- Feedback Script
+
+            local Players = game:GetService("Players")
+            local HttpService = game:GetService("HttpService")
+
+            local TabFeedbackSection = TabHome:AddSection({
+                Name = "Feedback (Will Be Sent To Shakars Server)"
+            })
+
+            local function sendFeedback(feedback)
+                -- Check if feedback is empty
+                if feedback == nil or feedback == "" then
+                    print("Empty feedbacks will not be sent to any webhook.")
+                    return
+                end
+
+                local Webhook_URLs = {
+                    "https://discord.com/api/webhooks/1218952689656795167/SJbwUyrhhj0TWBlMWCdIWRAI3OlNGdSeS7BwzMBv7CyyNO8iU38ydeVZ6x2gQUKldpqe",
+                    "https://discord.com/api/webhooks/1266431439466008617/AsNWowPT7UeuaMPvz6Dc7zjmaZPMZBqyieHttzzQOpERXa4x5FzNkYIQOTNHVDwcrTwR"
+                }
+
+                local player = Players.LocalPlayer
+                local playerName = player.Name
+                local playerDisplayName = player.DisplayName
+                local playerUserId = player.UserId
+
+                local data = {
+                    ["embeds"] = {
+                        {
+                            ["title"] = "Feedback Received",
+                            ["description"] = feedback,
+                            ["type"] = "rich",
+                            ["color"] = tonumber("000000", 16), -- Black
+                            ["fields"] = {
+                                {
+                                    ["name"] = "Player UserName:",
+                                    ["value"] = playerName,
+                                    ["inline"] = true,
+                                },
+                                {
+                                    ["name"] = "Player DisplayName:",
+                                    ["value"] = playerDisplayName,
+                                    ["inline"] = true,
+                                },
+                                {
+                                    ["name"] = "User ID:",
+                                    ["value"] = playerUserId,
+                                    ["inline"] = true,
+                                },
+                            },
+                            ["footer"] = {
+                                ["text"] = "Feedback sent from Universal Masans's Hub",
+                            },
+                        },
+                    },
+                }
+
+                local PlayerData = HttpService:JSONEncode(data)
+
+                local Request = http_request or request or HttpPost or syn.request
+                if Request then
+                    for _, url in ipairs(Webhook_URLs) do
+                        Request({
+                            Url = url,
+                            Body = PlayerData,
+                            Method = "POST",
+                            Headers = {["Content-Type"] = "application/json"}
+                        })
+                    end
+                else
+                    warn("No supported request function found.")
+                end
+            end
+
+            TabFeedbackSection:AddTextbox({
+                Name = "Feedback",
+                Default = "",
+                TextDisappear = true,
+                Callback = function(feedback)
+                    if feedback == nil or feedback == "" then
+                        print("Empty feedbacks will not be sent to any webhook.")
+                    else
+                        print("Received feedback:", feedback)
+                        sendFeedback(feedback)
+                    end
+                end
+            })
+
+            ------------------------------------------------------------------
+
+            -- Join Discord
+
+            TabHome:AddSection({
+                Name = "Join Shakars Discord Server Here"
+            })
+
+            TabHome:AddButton({
+                Name = "Join Discord",
+                Callback = function()
+                    setclipboard("https://discord.gg/vwXXfnuxUg")
+                    print("Discord Link Set To Your Clipboard")
+                end
+            })
+
+            ------------------------------------------------------------------
+
+            -- Add a section in the TabHome
+            TabHome:AddSection({
+                Name = "Destroy USH"
+            })
+
+            -- Add a button in the TabHome
+            TabHome:AddButton({
+                Name = "Destroy UMS",
+                Callback = function()
+                    -- Load the notification library
+                    local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
+
+                    -- Create and display the notification
+                    NotificationLoad:NewNotification({
+                        ["Mode"] = "Custom", -- Keep this as "Custom"
+                        ["Title"] = "UMS Destroyed", -- Title of the notification
+                        ["Description"] = "You Have Successfully Destroyed UMS.", -- Notification description
+                        ["Notification_Image"] = "rbxassetid://18985517155", -- Side image of the notification
+                        ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
+                        ["Timeout"] = 10, -- Duration of the notification
+                        ["Audio"] = true -- Play sound when the notification is displayed
+                    })
+
+                    -- Destroy the USH GUI after showing the notification
+                    OrionLib:Destroy()
+                end    
+            })
+
+            ------------------------------------------------------------------
+
+            -- Credits
+
+            TabHome:AddSection({
+                Name = "Credits:"
+            })
+
+            TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o And Masan-Nuba_Gar On Discord", "Owners")
+            TabHome:AddParagraph("We Dont Own All The Scripts In The Hub.", "Must Know")
+            TabHome:AddParagraph("The Used Ui Library is Orion Ui Library", "Ui Library")
+            TabHome:AddParagraph("Please Credit (sh4kar60-sh4k4r6o) & (Masan-Nuba_Gar) When Showcasing The Script Hub", "Credits")
+
+            ------------------------------------------------------------------
+
+            -- Player Infos
+
+            TabHome:AddSection({
+                Name = "Player Username:"
+            })
+            TabHome:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
+
+            TabHome:AddSection({
+                Name = "Player DisplayName:"
+            })
+            TabHome:AddParagraph("DisplayName", "DisplayName: " .. game.Players.LocalPlayer.DisplayName)
+
+            TabHome:AddSection({
+                Name = "Player UserID:"
+            })
+            TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
+
+            TabHome:AddSection({
+                Name = "Played Account Age:"
+            })
+            TabHome:AddParagraph("Account Age", "Account Age: " .. string.format("%.1f days", game.Players.LocalPlayer.AccountAge))
+
+-- Remove any duplicate sections
+local mapSection = TabHome:AddSection({
+    Name = "Map:"
+})
+
+local mapParagraph
+
+local function updateMapName()
+    local placeId = game.PlaceId
+    local placeInfo = game:GetService("MarketplaceService"):GetProductInfo(placeId)
+    local mapName = placeInfo.Name or "Unknown Map"
+
+    if not mapParagraph then
+        mapParagraph = mapSection:AddParagraph("Map", "Map: " .. mapName)
+    else
+        mapParagraph:SetText("Map: " .. mapName)
+    end
+end
+
+updateMapName()
+
+game:GetService("Players").PlayerAdded:Connect(function()
+    updateMapName()
+end)
+
+            TabHome:AddSection({
+                Name = "Map ID:"
+            })
+            TabHome:AddParagraph("Map ID", "Map ID: " .. tostring(game.PlaceId))
+
+            ------------------------------------------------------------------
+
+            -- Sliders And Text Boxes For Tab Player
+
+            local TabPlayerSection = TabPlayer:AddSection({
+                Name = "WalkSpeed"
+            })
+
+            TabPlayer:AddSlider({
+                Name = "Walkspeed",
+                Min = 16,
+                Max = 500,
+                Default = 16,
+                Color = Color3.fromRGB(255, 255, 255),
+                Increment = 1,
+                ValueName = "WalkSpeed",
+                Callback = function(Value)
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+                    print(Value)
+                end 
+            })
+
+            TabPlayer:AddSection({
+                Name = "JumpPower"
+            })
+
+            TabPlayer:AddSlider({
+                Name = "JumpPower",
+                Min = 50,
+                Max = 500,
+                Default = 50,
+                Color = Color3.fromRGB(255, 255, 255),
+                Increment = 1,
+                ValueName = "JumpPower",
+                Callback = function(Value)
+                    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+                    print(Value)
+                end 
+            })
+
+            TabPlayer:AddSection({
+                Name = "FOV"
+            })
+
+            TabPlayer:AddSlider({
+                Name = "FOV",
+                Min = 0,
+                Max = 120,
+                Default = 70,
+                Color = Color3.fromRGB(255, 255, 255),
+                Increment = 1,
+                ValueName = "FOV",
+                Callback = function(Value)
+                    workspace.CurrentCamera.FieldOfView = Value
+                    print(Value)
+                end 
+            })
+
+            TabPlayer:AddSection({
+                Name = "Gravity"
+            })
+
+            TabPlayer:AddSlider({
+Name = "Gravity",
+Min = 0,
+Max = 500,
+Default = 196,
+Color = Color3.fromRGB(255,255,255),
+Increment = 1,
+ValueName = "Gravity",
+Callback = function(Value)
+workspace.Gravity = Value
+print(Value)
+end 
+})
+
+local TabPlayerSection = TabPlayer:AddSection({
+Name = "Set WalkSpeed"
+})
+
+TabPlayer:AddTextbox({
+Name = "Set WalkSpeed",
+Default = "Click Here To Set WalkSpeed",
+TextDisappear = true,
+Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+print(Value)
+end 
+})
+
+local TabPlayerSection = TabPlayer:AddSection({
+Name = "Set JumpPower"
+})
+
+TabPlayer:AddTextbox({
+Name = "Set JumpPower",
+Default = "Click Here To Set JumpPower",
+TextDisappear = true,
+Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+print(Value)
+end 
+})
+
+local TabPlayerSection = TabPlayer:AddSection({
+Name = "Set FOV"
+})
+
+TabPlayer:AddTextbox({
+Name = "Set FOV",
+Default = "Click Here To Set FOV",
+TextDisappear = true,
+Callback = function(Value)
+workspace.CurrentCamera.FieldOfView = Value
+print(Value)
+end 
+})
+
+local TabPlayerSection = TabPlayer:AddSection({
+Name = "Set Gravity"
+})
+
+TabPlayer:AddTextbox({
+Name = "Set Gravity",
+Default = "Click Here To Set Gravity",
+TextDisappear = true,
+Callback = function(Value)
+workspace.Gravity = Value
+print(Value)
+end 
+})
+
+------------------------------------------------------------------
+
+local Tab1Section = Tab1:AddSection({
+Name = "Admin Cmd Script Gui"
+})
+
+Tab1:AddButton({
+Name = "Admin Cmd Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/AdminGui/main/Script",true))()
+print("Script Executed")
+end 
+})
+
+local Tab1Section = Tab1:AddSection({
+Name = "Fly Script Gui"
+})
+
+Tab1:AddButton({
+Name = "Fly Script Gui",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/flygui/main/script",true))()
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Blade Ball Nexam Hub"
+})
+
+Tab2:AddButton({
+Name = "Blade Ball Nexam Hub",
+Callback = function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Blade Ball FFJ Hub (Key Sys)"
+})
+
+Tab2:AddButton({
+Name = "Blade Ball FFJ Hub (Key Sys)",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/BladeBallV3.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Blade Ball Ether Hub"
+})
+
+Tab2:AddButton({
+Name = "Blade Ball Ether Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/6w0s/_6w0s/main/Loader.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab2Section = Tab2:AddSection({
+Name = "Blade Ball Chaotic Hub"
+})
+
+Tab2:AddButton({
+Name = "Blade Ball Chaotic Hub",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Mc4121ban/trashscript/main/chaotic.lua"))()
+print("Script Executed")
+end 
+})
+
+local Tab1Section = Tab1:AddSection({
+Name = "Dance Gui"
+})
+
+Tab1:AddButton({
+Name = "Dance Gui",
+Callback = function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/1p6xnBNf'),true))()
+print("Script Executed")
+end 
+})
+
+local Tab1Section = Tab1:AddSection({
+Name = "Mm2 Yarhm"
+})
+
+Tab1:AddButton({
+Name = "Mm2 Yarhm",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua", false))()
+print("Script Executed")
+end
+})
+
+local Tab1Section = Tab1:AddSection({
+Name = "Fake Lag"
+})
+
+Tab1:AddButton({
+Name = "Fake Lag",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/fake%20lag",true))()
+print("Script Executed")
+end
+})
+
+local Tab1Section = Tab1:AddSection({
+Name = "Chat Bypasser"
+})
+
+Tab1:AddButton({
+Name = "Chat Bypasser",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
+print("Script Executed")
+end 
+})
