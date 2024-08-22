@@ -1409,7 +1409,7 @@ end)
 
 local Tab2Section = Tab2:NewSection("Fe Dance Gui")
 Tab2Section:NewButton("Fe Dance Gui", "Fe Dance Gui", function()
-        loadstring(game:HttpGet("https://pastebin.com/raw/RmD3qNp7", true))()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/1p6xnBNf'),true))()
     print("Script Executed")
 end)
 
