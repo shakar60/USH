@@ -1253,7 +1253,7 @@ end)
 
 local Tab2Section = Tab2:NewSection("Blade Ball Nexam Hub")
 Tab2Section:NewButton("Blade Ball Nexam Hub", "Blade Ball Nexam Hub", function()
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ea80f1b008dbe2b77b7ac8b3a525a180.lua"))()
     print("Script Executed")
 end)
 
