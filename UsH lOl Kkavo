@@ -1371,9 +1371,9 @@ Tab2Section:NewButton("Fight In A School Script Gui", "Fight In A School Script 
     print("Script Executed")
 end)
 
-local Tab2Section = Tab2:NewSection("Rate My Avatar Booth Blocker Script gui")
-Tab2Section:NewButton("Rate My Avatar Booth Blocker Script Gui", "Rate My Avatar Booth Blocker Script Gui", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/booth-blocker/main/script",true))()
+local Tab2Section = Tab2:NewSection("Rate My Avata Script gui")
+Tab2Section:NewButton("Rate My Avatar Script Gui", "Rate My Avatar Script Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/rate%20my%20avatar",true))()
     print("Script Executed")
 end)
 
