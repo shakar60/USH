@@ -1353,7 +1353,7 @@ local Tab2Section = Tab2:NewSection("Rinns Hub")
 Tab2Section:NewButton("Rinns Hub", "Rinns Hub", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
     print("Script Executed")
-end
+end)
 
 local Tab2Section = Tab2:NewSection("Renxware Untitled Tag Game Script Gui")
 Tab2Section:NewButton("Renxware Untitled Tag Game Script Gui", "Renxware Untitled Tag Game Script Gui", function()
@@ -1430,12 +1430,6 @@ end)
 local Tab2Section = Tab2:NewSection("Infinix")
 Tab2Section:NewButton("Infinix", "Infinix", function()
         loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
-    print("Script Executed")
-end)
-
-local Tab2Section = Tab2:NewSection("Venox Rivals (Key Sys)")
-Tab2Section:NewButton("Venox Rivals (Key Sys)", "Venox Rivals (Key Sys)", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/venoxhh/universalscripts/main/rivals/venoxrivalsv2'))()
     print("Script Executed")
 end)
 
