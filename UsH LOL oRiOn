@@ -1610,6 +1610,8 @@ AddScript(Tab3, "Plenum Hub", "Plenum Hub", "https://raw.githubusercontent.com/G
 AddScript(Tab3, "Xray Script Gui", "Xray Script Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/xray")
 AddScript(Tab3, "Blade Ball FFJ Hub (Key Sys)", "Blade Ball FFJ Hub (Key Sys)", "https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/BladeBallV3.lua")
 AddScript(Tab3, "Blade Ball Nexam Hub", "Blade Ball Nexam Hub", "https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua")
+AddScript(Tab3, "Blade Ball Ether Hub", "Blade Ball Ether Hub", "https://raw.githubusercontent.com/6w0s/_6w0s/main/Loader.lua")
+AddScript(Tab3, "Blade Ball Chaotic Hub", "Blade Ball Chaotic Hub", "https://raw.githubusercontent.com/Mc4121ban/trashscript/main/chaotic.lua")
 AddScript(TabBF, "Alchemy Hub (Key System)", "Alchemy Hub (Key System)", "https://alchemyhub.xyz/v2")
 AddScript(TabBF, "Redz Hub", "Redz Hub", "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999")
 AddScript(Tab3, "ScriptHub By Backup", "ScriptHub By Backup", "https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3")
