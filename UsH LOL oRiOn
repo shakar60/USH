@@ -1672,7 +1672,7 @@ AddScript(Tab3, "Car DealerShip Tycoon Gui", "Car DealerShip Tycoon Gui", "https
 AddScript(Tab3, "Gym League Script Gui (All In One)", "Gym League Script Gui (All In One)", "https://raw.githubusercontent.com/shakar60/gym-league-script-gui/main/fr")
 AddScript(Tab3, "Close Your Eyes Script Gui", "Close Your Eyes Script Gui", "https://raw.githubusercontent.com/dqvh/dqvh/main/CloseYourEyes.lua")
 AddScript(Tab3, "Fight In A School Script Gui", "Fight In A School Script Gui", "https://raw.githubusercontent.com/themanwiththemasterplan/sawd/main/.gitignore")
-AddScript(Tab3, "Rate My Avatar Booth Blocker Gui", "Rate My Avatar Booth Blocker Gui", "https://raw.githubusercontent.com/shakar60/booth-blocker/main/script")
+AddScript(Tab3, "Rate My Avatar Scdiot Gui", "Rate My Avatar Script Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/rate%20my%20avatar")
 AddScript(Tab3, "Rinns Hub", "Rinns Hub", "https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code")
 AddScript(Tab3, "RenxWare Untitled Tag Game Script Gui", "RenxWare Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua")
 AddScript(Tab3, "Syn.o's Untitled Tag Game Script Gui", "Syn.o's Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script")
