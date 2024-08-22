@@ -107,8 +107,6 @@ blurEffect:Destroy()
 
 -----------------------------------------------------------------
 
-------------------------------------------------------------------
-
 --BlackList
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/blacklist",true))()
@@ -1256,6 +1254,18 @@ end)
 local Tab2Section = Tab2:NewSection("Blade Ball Nexam Hub")
 Tab2Section:NewButton("Blade Ball Nexam Hub", "Blade Ball Nexam Hub", function()
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Blade Ball Ether Hub")
+Tab2Section:NewButton("Blade Ball Ether Hub", "Blade Ether Nexam Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/6w0s/_6w0s/main/Loader.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Blade Ball Ether Hub")
+Tab2Section:NewButton("Blade Ball Chaotic Hub", "Blade Ether Chaotic Hub", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mc4121ban/trashscript/main/chaotic.lua"))()
     print("Script Executed")
 end)
 
