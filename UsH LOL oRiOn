@@ -1,3 +1,110 @@
+------------------------------------------------------------------
+
+-- loading screen
+
+-- Services
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+
+-- Settings
+local settings = {
+    guiDuration = 3,
+    mainText = "Universal Shakars Hub",
+    loadingText = "Universal Shakars Hub Loading",
+    loadedText = "Universal Shakars Hub Loaded",
+    creditsText = "Credits To sh4k4r6o For Making The Loading Gui.",
+    countdownTextEnabled = true,
+    countdownTextDuration = 3,
+    mainTextDuration = 1,
+    loadingTextDuration = 1,
+    loadedTextDuration = 1,
+    creditsTextDuration = 1,
+    font = Enum.Font.Arcade
+}
+
+-- Create ScreenGui and BlurEffect
+local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui", playerGui)
+screenGui.Name = "BlurGui"
+
+local blurEffect = Instance.new("BlurEffect", game:GetService("Lighting"))
+blurEffect.Name = "BlurEffect"
+blurEffect.Size = 0
+
+-- Create Labels
+local function createLabel(name, text, position, size, textSize, visible)
+    local label = Instance.new("TextLabel", screenGui)
+    label.Name = name
+    label.BackgroundTransparency = 1
+    label.Position = position
+    label.Size = size
+    label.Font = settings.font
+    label.Text = text
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextScaled = true
+    label.TextStrokeTransparency = 0.8
+    label.TextSize = textSize
+    label.Visible = visible
+    return label
+end
+
+local textLabel = createLabel("TextLabel", settings.mainText, UDim2.new(0.5, -200, 0.5, -50), UDim2.new(0, 400, 0, 100), 40, true)
+local creditsLabel = createLabel("CreditsLabel", settings.creditsText, UDim2.new(0.5, -200, 0.5, 60), UDim2.new(0, 400, 0, 50), 8, true)
+local countdownLabel = createLabel("CountdownLabel", "", UDim2.new(0.5, -200, 0.5, -100), UDim2.new(0, 400, 0, 50), 20, false)
+
+-- Rainbow Effect
+local function applyRainbowEffect(label)
+    local UIStroke = Instance.new("UIStroke", label)
+    UIStroke.Thickness = 2
+    UIStroke.Transparency = 0.5
+    spawn(function()
+        local hue = 0
+        while label and label.Parent do
+            hue = (hue + 1) % 360
+            local color = Color3.fromHSV(hue / 360, 1, 1)
+            UIStroke.Color = color
+            label.TextColor3 = color
+            wait(0.01)
+        end
+    end)
+end
+
+applyRainbowEffect(textLabel)
+applyRainbowEffect(creditsLabel)
+applyRainbowEffect(countdownLabel)
+
+-- Tween Blur Effect
+TweenService:Create(blurEffect, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = 20}):Play()
+
+-- Countdown Update
+local function updateCountdown()
+    if not settings.countdownTextEnabled then return end
+    countdownLabel.Visible = true
+    for timeLeft = settings.countdownTextDuration, 0, -1 do
+        countdownLabel.Text = "Please wait " .. timeLeft .. " seconds"
+        wait(1)
+    end
+    countdownLabel.Text = "Please wait 0 seconds"
+    wait(1)
+    countdownLabel.Visible = false
+end
+
+-- Show Text
+local function showText(label, text, duration)
+    label.Text = text
+    wait(duration)
+end
+
+showText(textLabel, settings.mainText, settings.mainTextDuration)
+showText(textLabel, settings.loadingText, settings.loadingTextDuration)
+updateCountdown()
+showText(textLabel, settings.loadedText, settings.loadedTextDuration)
+wait(settings.creditsTextDuration)
+
+-- Cleanup
+screenGui:Destroy()
+blurEffect:Destroy()
+
 -----------------------------------------------------------------
 
 --BlackList
@@ -24,7 +131,7 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
         Name = "⭐️ USH | Universal Shakar's Hub ⭐️",
         HidePremium = false,
         SaveConfig = true,   
-        IntroEnabled = true,
+        IntroEnabled = false,
         IntroText = "⭐️ USH | Universal Shakar's Hub ⭐️",
         IntroIcon = "rbxassetid://18989682136",
     })
@@ -270,200 +377,124 @@ TabHome:AddSection({
   Name = "Credits:"
 })
 
-TabHome:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord","Shakar's Discord")
+TabHome:AddParagraph("Created By sh4k4r6o On Discord","Shakar's Discord")
 TabHome:AddParagraph("I Dont Own All The Scripts In The Hub.","Must Know")
 TabHome:AddParagraph("The Used Ui Library is Orion Ui Library","Ui Library")
-TabHome:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub","Credits")
+TabHome:AddParagraph("Please Credit Me (sh4k4r6o) When Showcasing The Script Hub","Credits")
 
 ------------------------------------------------------------------
 
 --Player Infos
 
-TabHome:AddSection({
-  Name = "Player Username:"
-})
-TabHome:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
-TabHome:AddSection({
-  Name = "Player DisplayName:"
-})
-TabHome:AddParagraph("DisplayName", "DisplayName: " .. game.Players.LocalPlayer.DisplayName)
-TabHome:AddSection({
-  Name = "Player UserID:"
-})
-TabHome:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
-TabHome:AddSection({
-  Name = "Played Account Age:"
-})
-TabHome:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
+local player=game.Players.LocalPlayer
+local marketplaceService=game:GetService("MarketplaceService")
 
-TabHome:AddSection({
-  Name = "Map:"
-})
+TabHome:AddSection({Name="Player Username:"})
+TabHome:AddParagraph("UserName", "UserName: " .. player.Name)
+TabHome:AddSection({Name="Player DisplayName:"})
+TabHome:AddParagraph("DisplayName", "DisplayName: " .. player.DisplayName)
+TabHome:AddSection({Name="Player UserID:"})
+TabHome:AddParagraph("User ID", "User ID: " .. player.UserId)
+TabHome:AddSection({Name="Played Account Age:"})
+TabHome:AddParagraph("Account Age", string.format("%.1f days", player.AccountAge))
 
-TabHome:AddSection({ Name = "Map:" })
-
-local mapParagraph
+local mapSection=TabHome:AddSection({Name="Map:"})
 
 local function updateMapName()
-    local placeId = game.PlaceId
-    local placeInfo = game:GetService("MarketplaceService"):GetProductInfo(placeId)
-    local mapName = placeInfo.Name or "Unknown Map"
-
-    if not mapParagraph then
-        mapParagraph = TabHome:AddParagraph("Map", "Map: " .. mapName)
-    else
-
-        mapParagraph:SetText("Map: " .. mapName)
-    end
+    local placeInfo=marketplaceService:GetProductInfo(game.PlaceId)
+    local mapName=placeInfo.Name or "Unknown Map"
+    local mapParagraph=mapSection:AddParagraph("Map", "Map: " .. mapName)
+    return mapParagraph
 end
 
-updateMapName()
+updateMapName()  -- Initial update
 
-game:GetService("Players").PlayerAdded:Connect(function()
-    updateMapName()
-end)
-
-TabHome:AddSection({
-  Name = "Map ID:"
-})
-
-local mapID = game.PlaceId
-
-TabHome:AddParagraph("Map ID", "Map ID: " .. mapID)
+TabHome:AddSection({Name="Map ID:"})
+TabHome:AddParagraph("Map ID", "Map ID: " .. game.PlaceId)
 
 ------------------------------------------------------------------
 
 --Sliders And Text Boxes
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "WalkSpeed"
-})
-
+local function addSlider(name, min, max, default, increment, valueName, callback)
+TabPlayer:AddSection({Name = name})
 TabPlayer:AddSlider({
-Name = "Walkspeed",
-Min = 16,
-Max = 500,
-Default = 16,
-Color = Color3.fromRGB(255,255,255),
-Increment = 1,
-ValueName = "WalkSpeed",
-Callback = function(Value)
+    Name = name,
+    Min = min,
+    Max = max,
+    Default = default,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = increment,
+    ValueName = valueName,
+    Callback = callback
+})
+end
+
+local function addTextbox(name, default, callback)
+TabPlayer:AddSection({Name = name})
+TabPlayer:AddTextbox({
+    Name = name,
+    Default = default,
+    TextDisappear = true,
+    Callback = callback
+})
+end
+
+addSlider("WalkSpeed", 16, 500, 16, 1, "WalkSpeed", function(Value)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 print(Value)
-end 
-})
+end)
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "JumpPower"
-})
-
-TabPlayer:AddSlider({
-Name = "JumpPower",
-Min = 50,
-Max = 500,
-Default = 50,
-Color = Color3.fromRGB(255,255,255),
-Increment = 1,
-ValueName = "JumpPower",
-Callback = function(Value)
+addSlider("JumpPower", 50, 500, 50, 1, "JumpPower", function(Value)
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 print(Value)
-end 
-})
+end)
 
-local TabPlayeeSection = TabPlayer:AddSection({
-Name = "FOV"
-})
-
-TabPlayer:AddSlider({
-Name = "FOV",
-Min = 0,
-Max = 120,
-Default = 70,
-Color = Color3.fromRGB(255,255,255),
-Increment = 1,
-ValueName = "FOV",
-Callback = function(Value)
+addSlider("FOV", 0, 120, 70, 1, "FOV", function(Value)
 workspace.CurrentCamera.FieldOfView = Value
 print(Value)
-end 
-})
+end)
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "Gravity"
-})
-
-TabPlayer:AddSlider({
-Name = "Gravity",
-Min = 0,
-Max = 500,
-Default = 196,
-Color = Color3.fromRGB(255,255,255),
-Increment = 1,
-ValueName = "Gravity",
-Callback = function(Value)
+addSlider("Gravity", 0, 500, 196, 1, "Gravity", function(Value)
 workspace.Gravity = Value
 print(Value)
-end 
-})
+end)
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "Set WalkSpeed"
-})
-
-TabPlayer:AddTextbox({
-Name = "Set WalkSpeed",
-Default = "Click Here To Set WalkSpeed",
-TextDisappear = true,
-Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+addTextbox("Set WalkSpeed", "Click Here To Set WalkSpeed", function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(Value) or 16
 print(Value)
-end 
-})
+end)
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "Set JumpPower"
-})
-
-TabPlayer:AddTextbox({
-Name = "Set JumpPower",
-Default = "Click Here To Set JumpPower",
-TextDisappear = true,
-Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+addTextbox("Set JumpPower", "Click Here To Set JumpPower", function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(Value) or 50
 print(Value)
-end 
-})
+end)
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "Set FOV"
-})
-
-TabPlayer:AddTextbox({
-Name = "Set FOV",
-Default = "Click Here To Set FOV",
-TextDisappear = true,
-Callback = function(Value)
-workspace.CurrentCamera.FieldOfView = Value
+addTextbox("Set FOV", "Click Here To Set FOV", function(Value)
+workspace.CurrentCamera.FieldOfView = tonumber(Value) or 70
 print(Value)
-end 
-})
+end)
 
-local TabPlayerSection = TabPlayer:AddSection({
-Name = "Set Gravity"
-})
-
-TabPlayer:AddTextbox({
-Name = "Set Gravity",
-Default = "Click Here To Set Gravity",
-TextDisappear = true,
-Callback = function(Value)
-workspace.Gravity = Value
+addTextbox("Set Gravity", "Click Here To Set Gravity", function(Value)
+workspace.Gravity = tonumber(Value) or 196
 print(Value)
-end 
-})
+end)
 ------------------------------------------------------------------
 --Scripts
+
+local function addScript(tab, sectionName, buttonName, url)
+tab:AddSection({
+    Name = sectionName
+})
+
+tab:AddButton({
+    Name = buttonName,
+    Callback = function()
+        loadstring(game:HttpGet(url, true))()
+        print("Script Executed")
+    end
+})
+end
 
 local Tab3Section = Tab3:AddSection({
 Name = "KeyStrokes Script Gui V1"
@@ -569,18 +600,6 @@ Tab2:AddButton({
 Name = "Fly Script Gui",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/flygui/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Car Fly Script"
-})
-
-Tab2:AddButton({
-Name = "Car Fly Script",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
 print("Script Executed")
 end 
 })
@@ -1573,879 +1592,86 @@ print("Script Executed")
 end 
 })
 
-local TabDHSection = TabDH:AddSection({
-Name = "Ballis Hub"
+local function AddScript(tab, sectionName, buttonName, scriptUrl)
+tab:AddSection({ Name = sectionName })
+tab:AddButton({
+    Name = buttonName,
+    Callback = function()
+        loadstring(game:HttpGet(scriptUrl, true))()
+        print("Script Executed")
+    end
 })
-
-TabDH:AddButton({
-Name = "Ballis Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/DHHScript"))()
-print("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "Agent Hub"
-})
-
-TabDH:AddButton({
-Name = "Agent Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/mrhackerman35297/AgentCC/main/Launch.lua"))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Universal Chat Spy Script"
-})
-
-Tab2:AddButton({
-Name = "Universal Chat Spy Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/chat-spy/main/s",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Plenum Hub"
-})
-
-Tab3:AddButton({
-Name = "Penum Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GamerScripter/Plenum-Hub/main/loader"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Xray Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Xray Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/xray",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball FFJ Hub (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Blade Ball FFJ Hub (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/BladeBallV3.lua"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Blade Ball Nexam Hub"
-})
-
-Tab3:AddButton({
-Name = "Blade Ball Nexam Hub",
-Callback = function()
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua"))()
-print("Script Executed")
-end 
-})
-
-local TabBFSection = TabBF:AddSection({
-Name = "Alchemy Hub (Key System)"
-})
-
-TabBF:AddButton({
-Name = "Alchemy Hub (Key System)",
-Callback = function()
-loadstring(game:HttpGet("https://alchemyhub.xyz/v2"))()
-print("Script Executed")
-end 
-})
-
-local TabBFSection = TabBF:AddSection({
-Name = "Redz Hub"
-})
-
-TabBF:AddButton({
-Name = "Redz Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "ScriptHub By Backup"
-})
-
-Tab3:AddButton({
-Name = "ScriptHub By Backup",
-Callback = function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
-print("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Btools Script"
-})
-
-Tab2:AddButton({
-Name = "Btools Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/btools/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Be A Parkor Ninja Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Be A Parkor Ninja Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Min1273/n-to/main/README.md"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Free Gamepass Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Free Gamepass Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "PShade Script Gui"
-})
-
-Tab3:AddButton({
-Name = "PShade Script Gui",
-Callback = function()
-loadstring(game:HttpGet(('https://pastefy.app/BIr8OzrR/raw'),true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Mobile Remote Spy"
-})
-
-Tab3:AddButton({
-Name = "Mobile Remote Spy",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "A Dusty Trip Script Hub"
-})
-
-Tab3:AddButton({
-Name = "A Dusty Trip Script Hub",
-Callback = function()
-loadstring(game:HttpGet("https://scriptblox.com/raw/a-dusty-trip-GUNS-script-11974",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Bedwars Vape V4 Script Hub"
-})
-
-Tab3:AddButton({
-Name = "Bedwars Vape V4 Script Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
-print("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Best Silent Aim"
-})
-
-TabAL:AddButton({
-Name = "Best Silent Aim",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/best-silentaim/main/script",true))()
-print("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Skidded Aura X"
-})
-
-TabAL:AddButton({
-Name = "Skidded Aura X",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma"))()
-print ("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "Anti Lock + Aim Viewer"
-})
-
-TabDH:AddButton({
-Name = "Anti Lock + Aim Viewer",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
-print ("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "Sky Anti Lock"
-})
-
-TabDH:AddButton({
-Name = "Sky Anti Lock (Z To Toggle)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2",true))()
-print("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Ruby Lock Gui"
-})
-
-TabAL:AddButton({
-Name = "Ruby Lock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2c49f13d52789471d283583f05ee91df.lua"))()
-print ("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Blads Lock Gui"
-})
-
-TabAL:AddButton({
-Name = "Blads Lock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/blads-lock/main/script",true))()
-print ("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Frost Gui"
-})
-
-TabAL:AddButton({
-Name = "Frost Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/frost-gui/main/script",true))()
-print ("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Blazing Lock Gui"
-})
-
-TabAL:AddButton({
-Name = "Blazing Lock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/d75VfZK1"))()
-print ("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Astral Lock Gui"
-})
-
-TabAL:AddButton({
-Name = "Astral Lock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/astral/main/lock",true))()
-print ("Script Executed")
-end 
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Fearless Lock Gui"
-})
-
-TabAL:AddButton({
-Name = "Fearless Lock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/fearless/main/lock",true))()
-print ("Script Executed")
-end 
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Any Tool Script (Do /e key (the key you want) to use)"
-})
-
-Tab2:AddButton({
-Name = "Any Tool Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua", true))()
-print ("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Usercreation (Chat Bypasser)"
-})
-
-Tab3:AddButton({
-Name = "UserCreation (Chat Bypasser)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua", true))()
-print ("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "AzureModded Gui"
-})
-
-TabDH:AddButton({
-Name = "AzureModded Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
-print ("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "Cracked SwagMode"
-})
-
-TabDH:AddButton({
-Name = "Cracked SwagMode",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ttwizz/Roblox/master/SwagModeCracked.lua", true))()
-print ("Script Executed")
-end 
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "Vascal AntiLock"
-})
-
-TabDH:AddButton({
-Name = "Vascal AntiLock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-antilock-button"))()
-print ("Script Executed")
 end
-})
 
-local TabDHSection = TabDH:AddSection({
-Name = "Vascal Speed Button"
-})
-
-TabDH:AddButton({
-Name = "Vascal Speed Button",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool"))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Vascal Circle Dot Lock"
-})
-
-TabAL:AddButton({
-Name = "Vascal Circle Dot Lock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-Circle-DotXd"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "XORAS Cframe/TpWalk"
-})
-
-Tab3:AddButton({
-Name = "XORAS Cframe/TpWalk",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealXORA/Roblox/032418166a40fd7a610fd7a17a2f8ade0da3c734/Tpwalk%20V4%20%5B%20BETA%20%5D.lua",true))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "HellBounds Camlock"
-})
-
-TabAL:AddButton({
-Name = "HellBounds Camlock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hellbound-alt/Hellbound-camlock-op/main/Op"))();
-print ("Script Executed")
-end
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "RightClick Button"
-})
-
-TabDH:AddButton({
-Name = "RightClick Button",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick"))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Ballware V3 Camlock Gui"
-})
-
-TabAL:AddButton({
-Name = "Ballware V3 Camlock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/BallwareV3"))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Ryzzchip Circle Camlock"
-})
-
-TabAL:AddButton({
-Name = "Ryzzchip Circle Camlock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzchips/main/obf_i3ibnq2A9BZlYl131iIo339M8zDq0l3f7INJ9KJrr4qMyl4K80f29vZ458J6Sr91.lua"))();
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Pluh.Lua"
-})
-
-TabAL:AddButton({
-Name = "Pluh.Lua",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/v1-official.txt"))();
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Undetected Silent Aim"
-})
-
-TabAL:AddButton({
-Name = "Undetected Silent Aim",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim",true))();
-print ("Script Executed")
-end
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Player Radar"
-})
-
-Tab2:AddButton({
-Name = "Player Radar",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/player-radar/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Free Camera"
-})
-
-Tab2:AddButton({
-Name = "Free Camera",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Boombox Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Boombox Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/Boombox-Script-Gui/main/Script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Doors FFJ Hub"
-})
-
-Tab3:AddButton({
-Name = "Doors FFJ Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Car DealerShip Tycoon Gui"
-})
-
-Tab3:AddButton({
-Name = "Car DealerShip Tycoon Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Marco8642/science/main/car%20dealer", true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Gym League Script Gui (All In One)"
-})
-
-Tab3:AddButton({
-Name = "Gym League Script Gui (All In One)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/gym-league-script-gui/main/fr",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Close Your Eyes Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Close Your Eyes Script Gui",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/dqvh/dqvh/main/CloseYourEyes.lua'))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Fight In A School Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Fight In A School Script Gui",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/themanwiththemasterplan/sawd/main/.gitignore'))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Rate My Avatar Booth Blocker Gui"
-})
-
-Tab3:AddButton({
-Name = "Rate My Avatar Booth Blocker Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/booth-blocker/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Rinns Hub"
-})
-
-Tab3:AddButton({
-Name = "Rinns Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Silent-Rivals Script Hub (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Silent-Rivals Script Hub (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/KxGOATESQUE/SilentRivals/main/SilentRivals"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Rivals Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Rivals Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/rivals-gui/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "RenxWare Untitled Tag Game Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Renxware Untitled Tag Game Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Syn.o's Untitled Tag Game Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Syn.o's Untitled Tag Game Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Tief Lock Gui"
-})
-
-TabAL:AddButton({
-Name = "Tief Lock Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/tiefdej/this-obskid/maineheheheheu/tief%20simp%20gui"))()
-print ("Script Executed")
-end
-})
-
-local TabDHSection = TabDH:AddSection({
-Name = "Anti Lock Resolver Script"
-})
-
-TabDH:AddButton({
-Name = "Anti Lock Resolver Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver",true))()
-print ("Script Executed")
-end
-})
-
-local Tab2Section = Tab2:AddSection({
-Name = "Universal AntiCheat Bypass Script"
-})
-
-Tab2:AddButton({
-Name = "Universal Anti Cheat Bypass",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Shakars Untitled Tag Game Script Gui"
-})
-
-Tab3:AddButton({
-Name = "Shakars Untitled Tag Game Script Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/shakars_utg/main/script",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Gazer Fe Animation Hub (Ipad/Pc Recommended)"
-})
-
-Tab3:AddButton({
-Name = "Gazer Fe Animation Hub (Ipad/Pc Recommended)",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Build A Bridge Simulator Script"
-})
-
-Tab3:AddButton({
-Name = "Build A Bridge Simulator Script",
-Callback = function()
-loadstring(game:HttpGet 'https://raw.githubusercontent.com/ProjectpopCat/ywxoscripts/main/nuhuh.lua')()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Pet Simulator 99 Zap Hub (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Pet Simulator 99 Zap Hub (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Evade D8rk Hub"
-})
-
-Tab3:AddButton({
-Name = "Evade D8rk Hub",
-Callback = function()
-loadstring(game:HttpGet("https://scriptblox.com/raw/Evade-D8rk-Hub-V2-12956"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Fe Dance Gui"
-})
-
-Tab3:AddButton({
-Name = "Fe Dance Gui",
-Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/RmD3qNp7", true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Dungeon Quest NS Hub"
-})
-
-Tab3:AddButton({
-Name = "Dungeon Quest NS Hub",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Fe Kill All Gui"
-})
-
-Tab3:AddButton({
-Name = "Fe Kill All Gui",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Redz Pet Simulator 99 Script"
-})
-
-Tab3:AddButton({
-Name = "Redz Pet Simulator 99 Script",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Afem - Free Dance Menu"
-})
-
-Tab3:AddButton({
-Name = "Afem - Free Dance Menu",
-Callback = function()
-loadstring(game:HttpGet("https://yarhm.goteamst.com/scr?channel=afem"))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Universal Shakara Hub Kavo Version",
-})
-
-Tab3:AddButton({
-Name = "Universal Shakars Hub Kavo Version",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected",true))()
-print("Script Executed")
-end 
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Infinix"
-})
-
-Tab3:AddButton({
-Name = "Infinix",
-Callback = function()
-loadstring(game:HttpGet("https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Venox Rivals (Key Sys)"
-})
-
-Tab3:AddButton({
-Name = "Venox Rivals (Key Sys)",
-Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/venoxhh/universalscripts/main/rivals/venoxrivalsv2'))()
-print ("Script Executed")
-end
-})
-
-local TabALSection = TabAL:AddSection({
-Name = "Polos Camlock"
-})
-
-TabAL:AddButton({
-Name = "Polos Camlock",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock",true))()
-print ("Script Executed")
-end
-})
-
-local Tab3Section = Tab3:AddSection({
-Name = "Rochips Panel"
-})
-
-Tab3:AddButton({
-Name = "Rochips Panel",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel",true))()
-print ("Script Executed")
-end
-})
+AddScript(TabDH, "Ballis Hub", "Ballis Hub", "https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/DHHScript")
+AddScript(TabDH, "Agent Hub", "Agent Hub", "https://raw.githubusercontent.com/mrhackerman35297/AgentCC/main/Launch.lua")
+AddScript(Tab2, "Universal Chat Spy Script", "Universal Chat Spy Script", "https://raw.githubusercontent.com/shakar60/chat-spy/main/s")
+AddScript(Tab3, "Plenum Hub", "Plenum Hub", "https://raw.githubusercontent.com/GamerScripter/Plenum-Hub/main/loader")
+AddScript(Tab3, "Xray Script Gui", "Xray Script Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/xray")
+AddScript(Tab3, "Blade Ball FFJ Hub (Key Sys)", "Blade Ball FFJ Hub (Key Sys)", "https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/BladeBallV3.lua")
+AddScript(Tab3, "Blade Ball Nexam Hub", "Blade Ball Nexam Hub", "https://api.luarmor.net/files/v3/loaders/6af56c1753ac6679dee3acbd1fd952e5.lua")
+AddScript(TabBF, "Alchemy Hub (Key System)", "Alchemy Hub (Key System)", "https://alchemyhub.xyz/v2")
+AddScript(TabBF, "Redz Hub", "Redz Hub", "https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999")
+AddScript(Tab3, "ScriptHub By Backup", "ScriptHub By Backup", "https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3")
+AddScript(Tab2, "Btools Script", "Btools Script", "https://raw.githubusercontent.com/shakar60/btools/main/script")
+AddScript(Tab3, "Be A Parkor Ninja Script Gui", "Be A Parkor Ninja Script Gui", "https://raw.githubusercontent.com/Min1273/n-to/main/README.md")
+AddScript(Tab3, "Free Gamepass Script Gui", "Free Gamepass Script Gui", "https://gist.githubusercontent.com/dark-modz/6982de484735e730494b2d5a10fd6a2a/raw/a92563b0cd6a63683341a09f54baccea5349ed69/feGamepassV2")
+AddScript(Tab3, "PShade Script Gui", "PShade Script Gui", "https://pastefy.app/BIr8OzrR/raw")
+AddScript(Tab3, "Mobile Remote Spy", "Mobile Remote Spy", "https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile")
+AddScript(Tab3, "A Dusty Trip Script Hub", "A Dusty Trip Script Hub", "https://scriptblox.com/raw/a-dusty-trip-GUNS-script-11974")
+AddScript(Tab3, "Bedwars Vape V4 Script Hub", "Bedwars Vape V4 Script Hub", "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua")
+AddScript(TabAL, "Best Silent Aim", "Best Silent Aim", "https://raw.githubusercontent.com/shakar60/best-silentaim/main/script")
+AddScript(TabAL, "Skidded Aura X", "Skidded Aura X", "https://raw.githubusercontent.com/k0nkx/Aura-x-skid-ez-remake-by-k0nkx/main/Sigma")
+AddScript(TabDH, "Anti Lock + Aim Viewer", "Anti Lock + Aim Viewer", "https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3")
+AddScript(TabDH, "Sky Anti Lock", "Sky Anti Lock (Z To Toggle)", "https://raw.githubusercontent.com/AvianProjects/Dahood/main/AntilockerV2")
+AddScript(TabAL, "Ruby Lock Gui", "Ruby Lock Gui", "https://api.luarmor.net/files/v3/loaders/2c49f13d52789471d283583f05ee91df.lua")
+AddScript(TabAL, "Blads Lock Gui", "Blads Lock Gui", "https://raw.githubusercontent.com/shakar60/blads-lock/main/script")
+AddScript(TabAL, "Frost Gui", "Frost Gui", "https://raw.githubusercontent.com/shakar60/frost-gui/main/script")
+AddScript(TabAL, "Blazing Lock Gui", "Blazing Lock Gui", "https://pastebin.com/raw/d75VfZK1")
+AddScript(TabAL, "Astral Lock Gui", "Astral Lock Gui", "https://raw.githubusercontent.com/shakar60/astral/main/lock")
+AddScript(TabAL, "Fearless Lock Gui", "Fearless Lock Gui", "https://raw.githubusercontent.com/shakar60/fearless/main/lock")
+AddScript(Tab2, "Any Tool Script (Do /e key (the key you want) to use)", "Any Tool Script", "https://raw.githubusercontent.com/r1FH/Modified-Mobile-Q-Tool/main/Modified%20Mobile%20Q%20Tool.lua")
+AddScript(Tab3, "Usercreation (Chat Bypasser)", "UserCreation (Chat Bypasser)", "https://raw.githubusercontent.com/1price/usercreation/main/UserCreation.lua")
+AddScript(TabDH, "AzureModded Gui", "AzureModded Gui", "https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded")
+AddScript(TabDH, "Cracked SwagMode", "Cracked SwagMode", "https://raw.githubusercontent.com/ttwizz/Roblox/master/SwagModeCracked.lua")
+AddScript(TabDH, "Vascal AntiLock", "Vascal AntiLock", "https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-antilock-button")
+AddScript(TabDH, "Vascal Speed Button", "Vascal Speed Button", "https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-speed-tool")
+AddScript(TabAL, "Vascal Circle Dot Lock", "Vascal Circle Dot Lock", "https://raw.githubusercontent.com/Gwaporoblox/Sub-to-vascal/main/Vascal-Circle-DotXd")
+AddScript(Tab3, "XORAS Cframe/TpWalk", "XORAS Cframe/TpWalk", "https://raw.githubusercontent.com/TheRealXORA/Roblox/032418166a40fd7a610fd7a17a2f8ade0da3c734/Tpwalk%20V4%20%5B%20BETA%20%5D.lua")
+AddScript(TabAL, "HellBounds Camlock", "HellBounds Camlock", "https://raw.githubusercontent.com/Hellbound-alt/Hellbound-camlock-op/main/Op")
+AddScript(TabDH, "RightClick Button", "RightClick Button", "https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/RightClick")
+AddScript(TabAL, "Ballware V3 Camlock Gui", "Ballware V3 Camlock Gui", "https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/BallwareV3")
+AddScript(TabAL, "Ryzzchip Circle Camlock", "Ryzzchip Circle Camlock", "https://raw.githubusercontent.com/Ryzzchips/SubtoRyzzchips/main/obf_i3ibnq2A9BZlYl131iIo339M8zDq0l3f7INJ9KJrr4qMyl4K80f29vZ458J6Sr91.lua")
+AddScript(TabAL, "Pluh.Lua", "Pluh.Lua", "https://raw.githubusercontent.com/acsun124/pluh-s-properties/main/v1-official.txt")
+AddScript(TabAL, "Undetected Silent Aim", "Undetected Silent Aim", "https://raw.githubusercontent.com/shakar60/undetected-silent/main/aim")
+AddScript(Tab2, "Player Radar", "Player Radar", "https://raw.githubusercontent.com/shakar60/player-radar/main/script")
+AddScript(Tab2, "Free Camera", "Free Camera", "https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script")
+AddScript(Tab3, "Boombox Script Gui", "Boombox Script Gui", "https://raw.githubusercontent.com/shakar60/Boombox-Script-Gui/main/Script")
+AddScript(Tab3, "Doors FFJ Hub", "Doors FFJ Hub", "https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua")
+AddScript(Tab3, "Car DealerShip Tycoon Gui", "Car DealerShip Tycoon Gui", "https://raw.githubusercontent.com/Marco8642/science/main/car%20dealer")
+AddScript(Tab3, "Gym League Script Gui (All In One)", "Gym League Script Gui (All In One)", "https://raw.githubusercontent.com/shakar60/gym-league-script-gui/main/fr")
+AddScript(Tab3, "Close Your Eyes Script Gui", "Close Your Eyes Script Gui", "https://raw.githubusercontent.com/dqvh/dqvh/main/CloseYourEyes.lua")
+AddScript(Tab3, "Fight In A School Script Gui", "Fight In A School Script Gui", "https://raw.githubusercontent.com/themanwiththemasterplan/sawd/main/.gitignore")
+AddScript(Tab3, "Rate My Avatar Booth Blocker Gui", "Rate My Avatar Booth Blocker Gui", "https://raw.githubusercontent.com/shakar60/booth-blocker/main/script")
+AddScript(Tab3, "Rinns Hub", "Rinns Hub", "https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code")
+AddScript(Tab3, "RenxWare Untitled Tag Game Script Gui", "RenxWare Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua")
+AddScript(Tab3, "Syn.o's Untitled Tag Game Script Gui", "Syn.o's Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script")
+AddScript(TabAL, "Tief Lock Gui", "Tief Lock Gui", "https://raw.githubusercontent.com/tiefdej/this-obskid/maineheheheheu/tief%20simp%20gui")
+AddScript(TabDH, "Anti Lock Resolver Script", "Anti Lock Resolver Script", "https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver")
+AddScript(Tab2, "Universal AntiCheat Bypass Script", "Universal Anti Cheat Bypass", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
+AddScript(Tab3, "Shakars Untitled Tag Game Script Gui", "Shakars Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/shakars_utg/main/script")
+AddScript(Tab3, "Gazer Fe Animation Hub (Ipad/Pc Recommended)", "Gazer Fe Animation Hub (Ipad/Pc Recommended)", "https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G")
+AddScript(Tab3, "Build A Bridge Simulator Script", "Build A Bridge Simulator Script", "https://raw.githubusercontent.com/ProjectpopCat/ywxoscripts/main/nuhuh.lua")
+addScript(Tab3, "Pet Simulator 99 Zap Hub (Key Sys)", "Pet Simulator 99 Zap Hub (Key Sys)", 'https://zaphub.xyz/Exec')
+addScript(Tab3, "Evade D8rk Hub", "Evade D8rk Hub", "https://scriptblox.com/raw/Evade-D8rk-Hub-V2-12956")
+addScript(Tab3, "Fe Dance Gui", "Fe Dance Gui", "https://pastebin.com/raw/RmD3qNp7")
+addScript(Tab3, "Dungeon Quest NS Hub", "Dungeon Quest NS Hub", "https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon")
+addScript(Tab3, "Fe Kill All Gui", "Fe Kill All Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui")
+addScript(Tab3, "Redz Pet Simulator 99 Script", "Redz Pet Simulator 99 Script", "https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua")
+addScript(Tab3, "Afem - Free Dance Menu", "Afem - Free Dance Menu", "https://yarhm.goteamst.com/scr?channel=afem")
+addScript(Tab3, "Universal Shakara Hub Kavo Version", "Universal Shakara Hub Kavo Version", "https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected")
+addScript(Tab3, "Infinix", "Infinix", "https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua")
+addScript(Tab3, "Rochips Panel", "Rochips Panel", "https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel")
+addScript(TabAL, "Polos Camlock", "Polos Camlock", "https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock")
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
