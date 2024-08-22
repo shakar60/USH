@@ -68,7 +68,7 @@ local function createImageLabel(name, assetId, position)
 end
 
 local leftImage = createImageLabel("LeftImage", "122114769311265", UDim2.new(0.05, 0, 0.5, -100))
-local rightImage = createImageLabel("RightImage", "18989869285", UDim2.new(0.95, -200, 0.5, -100))
+local rightImage = createImageLabel("RightImage", "18989682136", UDim2.new(0.95, -200, 0.5, -100))
 
 -- Rainbow Effect
 local function applyRainbowEffect(label)
