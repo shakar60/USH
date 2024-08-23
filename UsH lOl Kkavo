@@ -298,18 +298,18 @@ end
 local ToggleGui = createToggleGui()
 
 -- Show initial notification when the script starts
-showNotification("Info", "Type /e killtoggle To Kill The Toggle, Type /e toggle To Bring The Toggle Back")
+showNotification("Info", "Type /e hidetoggle To Hide The Toggle, Type /e showtoggle To Show The Toggle")
 
 -- Function to handle the chat commands
 local function onChatMessage(message)
-    if message == "/e killtoggle" then
+    if message == "/e hidetoggle" then
         -- Kill the toggle and show notification
         if ToggleGui then
             ToggleGui:Destroy()
             ToggleGui = nil
-            showNotification("Info", "Toggle Killed")
+            showNotification("Info", "Toggle Hided")
         end
-    elseif message == "/e toggle" then
+    elseif message == "/e showtoggle" then
         -- Recreate the toggle button if it's not already active
         if not ToggleGui then
             ToggleGui = createToggleGui()
