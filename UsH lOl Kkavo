@@ -1014,9 +1014,9 @@ Tab3Section:NewButton("Hellbounds Camlock", "Hellbounds Camlock", function()
     print("Script Executed")
 end)
 
-local Tab3Section = Tab3:NewSection("Ballware V3 Camlock")
-Tab3Section:NewButton("Ballware V3 Camlock", "Ballware V3 Camlock", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/BallwareV3"))()
+local Tab3Section = Tab3:NewSection("Ballware V4 Camlock")
+Tab3Section:NewButton("Ballware V4 Camlock", "Ballware V4 Camlock", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/FinallyV4"))()
     print("Script Executed")
 end)
 
