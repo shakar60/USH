@@ -1,234 +1,133 @@
------------------------------------------------------------------
+-- Game Checker
 
-local player = game.Players.LocalPlayer
-local screenGui = Instance.new("ScreenGui")
-local frame = Instance.new("Frame")
-local titleLabel = Instance.new("TextLabel")
-local textLabel = Instance.new("TextLabel")
-local icon = Instance.new("ImageLabel")
-local sound = Instance.new("Sound")
-local countdownLabel = Instance.new("TextLabel")
-local closeButton = Instance.new("TextButton")
+local desiredGameId = 14044547200
 
-screenGui.Parent = player.PlayerGui
+if game.PlaceId == desiredGameId then
 
-frame.Size = UDim2.new(0, 300, 0, 200)
-frame.Position = UDim2.new(0.5, -150, 0.5, -100)
-frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-frame.BackgroundTransparency = 0.5
-frame.BorderSizePixel = 0
-frame.ClipsDescendants = true
-frame.Parent = screenGui
+-- Loading Screen
 
-local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(0, 12)
-corner.Parent = frame
+    -- Services
+    local Players = game:GetService("Players")
+    local TweenService = game:GetService("TweenService")
 
-titleLabel.Size = UDim2.new(1, 0, 0, 40)
-titleLabel.Position = UDim2.new(0, 0, 0, 0)
-titleLabel.BackgroundTransparency = 1
-titleLabel.Text = "WARNING"
-titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-titleLabel.TextStrokeTransparency = 0.5
-titleLabel.TextSize = 24
-titleLabel.Font = Enum.Font.Arcade
-titleLabel.Parent = frame
+    -- Settings
+    local settings = {
+        guiDuration = 3,
+        mainText = "Shakars Untitled Tag Game",
+        loadingText = "Shakars Untitled Tag Game",
+        loadedText = "Shakars Untitled Tag Game Loaded",
+        creditsText = "Credits To sh4k4r6o For Making The Loading Gui.",
+        countdownTextEnabled = true,
+        countdownTextDuration = 3,
+        mainTextDuration = 1,
+        loadingTextDuration = 1,
+        loadedTextDuration = 1,
+        creditsTextDuration = 1,
+        font = Enum.Font.Arcade
+    }
 
-textLabel.Size = UDim2.new(1, -20, 0, 120)
-textLabel.Position = UDim2.new(0, 10, 0.3, 0)
-textLabel.BackgroundTransparency = 1
-textLabel.Text = "IF YOU ARE NOT IN THE GAME UNTITLED TAG GAME RECODE, PLEASE JOIN IT THEN EXECUTE THE SCRIPT."
-textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-textLabel.TextStrokeTransparency = 0.5
-textLabel.TextSize = 16
-textLabel.Font = Enum.Font.Arcade
-textLabel.TextWrapped = true
-textLabel.TextYAlignment = Enum.TextYAlignment.Top
-textLabel.Parent = frame
+    -- Create ScreenGui and BlurEffect
+    local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+    local screenGui = Instance.new("ScreenGui", playerGui)
+    screenGui.Name = "BlurGui"
 
-icon.Size = UDim2.new(0, 50, 0, 50)
-icon.Position = UDim2.new(0, 10, 0, 10)
-icon.BackgroundTransparency = 1
-icon.Image = "rbxassetid://126238954171023"
-icon.Parent = frame
+    local blurEffect = Instance.new("BlurEffect", game:GetService("Lighting"))
+    blurEffect.Name = "BlurEffect"
+    blurEffect.Size = 0
 
-countdownLabel.Size = UDim2.new(1, -20, 0, 30)
-countdownLabel.Position = UDim2.new(0, 10, 1, -40)
-countdownLabel.BackgroundTransparency = 1
-countdownLabel.Text = "Notification Destroying In: 8"
-countdownLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-countdownLabel.TextStrokeTransparency = 0.5
-countdownLabel.TextSize = 16
-countdownLabel.Font = Enum.Font.Arcade
-countdownLabel.TextXAlignment = Enum.TextXAlignment.Center
-countdownLabel.Parent = frame
-
-closeButton.Size = UDim2.new(0, 40, 0, 40)
-closeButton.Position = UDim2.new(1, -15, 0, 10)
-closeButton.AnchorPoint = Vector2.new(1, 0)
-closeButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-closeButton.BackgroundTransparency = 0.6
-closeButton.BorderSizePixel = 0
-closeButton.Text = "X"
-closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-closeButton.TextSize = 24
-closeButton.TextStrokeTransparency = 0.5
-closeButton.Font = Enum.Font.Arcade
-closeButton.Parent = frame
-
-local buttonCorner = Instance.new("UICorner")
-buttonCorner.CornerRadius = UDim.new(0, 8)
-buttonCorner.Parent = closeButton
-
-closeButton.MouseButton1Click:Connect(function()
-    sound:Stop()
-    screenGui:Destroy()
-end)
-
-sound.SoundId = "rbxassetid://2018312818"
-sound.Parent = player.PlayerGui
-sound:Play()
-
-local duration = 8
-for i = duration, 1, -1 do
-    countdownLabel.Text = "Notification Destroying In: " .. i
-    wait(1)
-end
-
-sound:Stop()
-screenGui:Destroy()
-
-----------------------------------------------------------------------------------------------------------------------
-
-local specificPlaceId = 14044547200 -- Replace PlaceId with the game you want
-if game.PlaceId == specificPlaceId then
-
-----------------------------------------------------------------------------------------------------------------------
-
--- loading screen
-
--- Services
-local Players = game:GetService("Players")
-local TweenService = game:GetService("TweenService")
-
--- Settings
-local settings = {
-    guiDuration = 3,
-    mainText = "Universal Shakars Hub Key System",
-    loadingText = "Universal Shakars Hub Key System Loading",
-    loadedText = "Universal Shakars Hub Key System Loaded",
-    creditsText = "Credits To sh4k4r6o For Making The Loading Gui.",
-    countdownTextEnabled = true,
-    countdownTextDuration = 3,
-    mainTextDuration = 1,
-    loadingTextDuration = 1,
-    loadedTextDuration = 1,
-    creditsTextDuration = 1,
-    font = Enum.Font.Arcade
-}
-
--- Create ScreenGui and BlurEffect
-local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
-local screenGui = Instance.new("ScreenGui", playerGui)
-screenGui.Name = "BlurGui"
-
-local blurEffect = Instance.new("BlurEffect", game:GetService("Lighting"))
-blurEffect.Name = "BlurEffect"
-blurEffect.Size = 0
-
--- Create Labels
-local function createLabel(name, text, position, size, textSize, visible)
-    local label = Instance.new("TextLabel", screenGui)
-    label.Name = name
-    label.BackgroundTransparency = 1
-    label.Position = position
-    label.Size = size
-    label.Font = settings.font
-    label.Text = text
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
-    label.TextScaled = true
-    label.TextStrokeTransparency = 0.8
-    label.TextSize = textSize
-    label.Visible = visible
-    return label
-end
-
-local textLabel = createLabel("TextLabel", settings.mainText, UDim2.new(0.5, -200, 0.5, -50), UDim2.new(0, 400, 0, 100), 40, true)
-local creditsLabel = createLabel("CreditsLabel", settings.creditsText, UDim2.new(0.5, -200, 0.5, 60), UDim2.new(0, 400, 0, 50), 8, true)
-local countdownLabel = createLabel("CountdownLabel", "", UDim2.new(0.5, -200, 0.5, -100), UDim2.new(0, 400, 0, 50), 20, false)
-
--- Create Image Labels
-local function createImageLabel(name, assetId, position)
-    local imageLabel = Instance.new("ImageLabel", screenGui)
-    imageLabel.Name = name
-    imageLabel.BackgroundTransparency = 1
-    imageLabel.Position = position
-    imageLabel.Size = UDim2.new(0, 200, 0, 200)
-    imageLabel.Image = "rbxassetid://" .. assetId
-    imageLabel.ScaleType = Enum.ScaleType.Fit
-    imageLabel.Visible = true
-    local corner = Instance.new("UICorner", imageLabel)
-    corner.CornerRadius = UDim.new(0.1, 0)
-    return imageLabel
-end
-
-local leftImage = createImageLabel("LeftImage", "122114769311265", UDim2.new(0.05, 0, 0.5, -100))
-local rightImage = createImageLabel("RightImage", "18989682136", UDim2.new(0.95, -200, 0.5, -100))
-
--- Rainbow Effect
-local function applyRainbowEffect(label)
-    local UIStroke = Instance.new("UIStroke", label)
-    UIStroke.Thickness = 2
-    UIStroke.Transparency = 0.5
-    spawn(function()
-        local hue = 0
-        while label and label.Parent do
-            hue = (hue + 1) % 360
-            local color = Color3.fromHSV(hue / 360, 1, 1)
-            UIStroke.Color = color
-            label.TextColor3 = color
-            wait(0.01)
-        end
-    end)
-end
-
-applyRainbowEffect(textLabel)
-applyRainbowEffect(creditsLabel)
-applyRainbowEffect(countdownLabel)
-
--- Tween Blur Effect
-TweenService:Create(blurEffect, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = 20}):Play()
-
--- Countdown Update
-local function updateCountdown()
-    if not settings.countdownTextEnabled then return end
-    countdownLabel.Visible = true
-    for timeLeft = settings.countdownTextDuration, 0, -1 do
-        countdownLabel.Text = "Please wait " .. timeLeft .. " seconds"
-        wait(1)
+    -- Create Labels
+    local function createLabel(name, text, position, size, textSize, visible)
+        local label = Instance.new("TextLabel", screenGui)
+        label.Name = name
+        label.BackgroundTransparency = 1
+        label.Position = position
+        label.Size = size
+        label.Font = settings.font
+        label.Text = text
+        label.TextColor3 = Color3.fromRGB(255, 255, 255)
+        label.TextScaled = true
+        label.TextStrokeTransparency = 0.8
+        label.TextSize = textSize
+        label.Visible = visible
+        return label
     end
-    countdownLabel.Text = "Please wait 0 seconds"
-    wait(1)
-    countdownLabel.Visible = false
-end
 
--- Show Text
-local function showText(label, text, duration)
-    label.Text = text
-    wait(duration)
-end
+    local textLabel = createLabel("TextLabel", settings.mainText, UDim2.new(0.5, -200, 0.5, -50), UDim2.new(0, 400, 0, 100), 40, true)
+    local creditsLabel = createLabel("CreditsLabel", settings.creditsText, UDim2.new(0.5, -200, 0.5, 60), UDim2.new(0, 400, 0, 50), 8, true)
+    local countdownLabel = createLabel("CountdownLabel", "", UDim2.new(0.5, -200, 0.5, -100), UDim2.new(0, 400, 0, 50), 20, false)
 
-showText(textLabel, settings.mainText, settings.mainTextDuration)
-showText(textLabel, settings.loadingText, settings.loadingTextDuration)
-updateCountdown()
-showText(textLabel, settings.loadedText, settings.loadedTextDuration)
-wait(settings.creditsTextDuration)
+    -- Create Image Labels
+    local function createImageLabel(name, assetId, position)
+        local imageLabel = Instance.new("ImageLabel", screenGui)
+        imageLabel.Name = name
+        imageLabel.BackgroundTransparency = 1
+        imageLabel.Position = position
+        imageLabel.Size = UDim2.new(0, 200, 0, 200)
+        imageLabel.Image = "rbxassetid://" .. assetId
+        imageLabel.ScaleType = Enum.ScaleType.Fit
+        imageLabel.Visible = true
+        local corner = Instance.new("UICorner", imageLabel)
+        corner.CornerRadius = UDim.new(0.1, 0)
+        return imageLabel
+    end
 
--- Cleanup
-screenGui:Destroy()
-blurEffect:Destroy()
+    local leftImage = createImageLabel("LeftImage", "122114769311265", UDim2.new(0.05, 0, 0.5, -100))
+    local rightImage = createImageLabel("RightImage", "18989682136", UDim2.new(0.95, -200, 0.5, -100))
 
-------------------------------------------------------------------
+    -- Rainbow Effect
+    local function applyRainbowEffect(label)
+        local UIStroke = Instance.new("UIStroke", label)
+        UIStroke.Thickness = 2
+        UIStroke.Transparency = 0.5
+        spawn(function()
+            local hue = 0
+            while label and label.Parent do
+                hue = (hue + 1) % 360
+                local color = Color3.fromHSV(hue / 360, 1, 1)
+                UIStroke.Color = color
+                label.TextColor3 = color
+                wait(0.01)
+            end
+        end)
+    end
+
+    applyRainbowEffect(textLabel)
+    applyRainbowEffect(creditsLabel)
+    applyRainbowEffect(countdownLabel)
+
+    -- Tween Blur Effect
+    TweenService:Create(blurEffect, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = 20}):Play()
+
+    -- Countdown Update
+    local function updateCountdown()
+        if not settings.countdownTextEnabled then return end
+        countdownLabel.Visible = true
+        for timeLeft = settings.countdownTextDuration, 0, -1 do
+            countdownLabel.Text = "Please wait " .. timeLeft .. " seconds"
+            wait(1)
+        end
+        countdownLabel.Text = "Please wait 0 seconds"
+        wait(1)
+        countdownLabel.Visible = false
+    end
+
+    -- Show Text
+    local function showText(label, text, duration)
+        label.Text = text
+        wait(duration)
+    end
+
+    showText(textLabel, settings.mainText, settings.mainTextDuration)
+    showText(textLabel, settings.loadingText, settings.loadingTextDuration)
+    updateCountdown()
+    showText(textLabel, settings.loadedText, settings.loadedTextDuration)
+    wait(settings.creditsTextDuration)
+
+    -- Cleanup
+    screenGui:Destroy()
+    blurEffect:Destroy()
+
+-- Untitled Tag Game Script
 
     -- Window & Library
     local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/thanhdat4461/GUI-Library/main/Orion%20Library.lua",true))()
@@ -243,21 +142,17 @@ blurEffect:Destroy()
         ConfigFolder = "shakar"
     })
 
------------------------------------------------------------------
+    local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'),true))()
 
-  local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'),true))()
-
-NotificationLoad:NewNotification({
-    ["Mode"] = "Custom", -- Leave like this
-    ["Title"] = "Shakars UTG Script Loaded", -- Title of notification
-    ["Description"] = "Welcome User, UTG Is An Untitled Tag Game Based Script Also This Script Is Made By sh4k4r6o On Discord.", -- Description of notification
-    ["Notification_Image"] = "rbxassetid://18989848883", -- Side image of notification
-    ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound when notification open
-    ["Timeout"] = 10, -- Timer how long notification lasts
-    ["Audio"] = true -- Sound when notifications open
-})
-
------------------------------------------------------------------
+    NotificationLoad:NewNotification({
+        ["Mode"] = "Custom",
+        ["Title"] = "Shakars UTG Script Loaded",
+        ["Description"] = "Welcome User, UTG Is An Untitled Tag Game Based Script Also This Script Is Made By sh4k4r6o On Discord.",
+        ["Notification_Image"] = "rbxassetid://18989848883",
+        ["Notification_Sound"] = "rbxassetid://5153734608",
+        ["Timeout"] = 10,
+        ["Audio"] = true
+    })
 
     -- Tabs
     local Tab1 = Window:MakeTab({
@@ -284,18 +179,12 @@ NotificationLoad:NewNotification({
         PremiumOnly = false
     })
 
------------------------------------------------------------------
-
-  -- Contents
-
+    -- Contents
     Tab1:AddLabel("Tab Home:")
     Tab3:AddLabel("Reach/Hitbox Expander:")
     Tab4:AddLabel("Miscs:")
 
------------------------------------------------------------------
-
     -- Join Discord
-
     Tab1:AddSection({
         Name = "Join Shakars Discord Server"
     })
@@ -308,167 +197,82 @@ NotificationLoad:NewNotification({
         end
     })
 
------------------------------------------------------------------
+    Tab1:AddSection({
+        Name = "Destroy Shakars UTG"
+    })
 
-Tab1:AddSection({
-    Name = "Destroy Shakars UTG"
-})
+    Tab1:AddButton({
+        Name = "Destroy Shakars UTG",
+        Callback = function()
+            local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
 
-Tab1:AddButton({
-    Name = "Destroy Shakars UTG",
-    Callback = function()
-        -- Load the notification library
-        local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
+            NotificationLoad:NewNotification({
+                ["Mode"] = "Custom",
+                ["Title"] = "Shakars UTG Destroyed",
+                ["Description"] = "You Have Successfully Destroyed Shakars UTG Script.",
+                ["Notification_Image"] = "rbxassetid://18989848883",
+                ["Notification_Sound"] = "rbxassetid://5153734608",
+                ["Timeout"] = 10,
+                ["Audio"] = true
+            })
 
-        NotificationLoad:NewNotification({
-            ["Mode"] = "Custom", -- Keep this as "Custom"
-            ["Title"] = "Shakars UTG Destroyed", -- Title of the notification
-            ["Description"] = "You Have Successfully Destroyed Shakars UTG Script.", -- Notification description
-            ["Notification_Image"] = "rbxassetid://18989848883", -- Side image of the notification
-            ["Notification_Sound"] = "rbxassetid://5153734608", -- Sound played when the notification is displayed
-            ["Timeout"] = 10, -- Duration of the notification
-            ["Audio"] = true -- Play sound when the notification is displayed
-        })
-
-        OrionLib:Destroy()
-    end    
-})
-
-------------------------------------------------------------------
+            OrionLib:Destroy()
+        end    
+    })
 
     -- Credits
     Tab1:AddSection({
         Name = "Credits:"
     })
 
-    Tab1:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord", "Shakar's Discord,Owner Of The hub")
-    Tab1:AddParagraph("I Dont Own Any Scripts In The Hub.", "Must Know")
-    Tab1:AddParagraph("The Used Ui Library is Orion Ui Library", "Ui Library")
-    Tab1:AddParagraph("Please Credit Me (sh4kar60-sh4k4r6o) When Showcasing The Script Hub", "Credits")
+    Tab1:AddParagraph("Created By sh4kar60-sh4k4r6o On Discord", "Shakar's Discord,Owner Of The hub And Our Community Developer Is Sh4k4r6o.")
 
------------------------------------------------------------------
+    Tab1:AddParagraph("Library By Sh4kar6o", "Shakar's Hub And Support")
 
-    -- Reach/Hitbox Expander Scripts
-    local function addHitboxExpanders()
-        local function addButton(name, url)
-            Tab3:AddButton({
-                Name = name,
-                Callback = function()
-                    loadstring(game:HttpGet(url))()
-                    print("Script Executed")
-                end
-            })
+    -- Rejoin & Refresh
+    Tab1:AddSection({
+        Name = "Rejoin/Refresh"
+    })
+
+    Tab1:AddButton({
+        Name = "Rejoin",
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            if player then
+                player:Kick("Rejoining...")
+                wait(5)
+                game:GetService("TeleportService"):Teleport(game.PlaceId, player)
+            end
         end
+    })
 
------------------------------------------------------------------
-
-        Tab3:AddSection({ Name = "Op Hitbox Expander Script Gui" })
-        addButton("Op Hitbox Expander Script Gui", 'https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/HitboxExpander.lua')
-
-        Tab3:AddSection({ Name = "Hitbox Expander Script Gui V2" })
-        addButton("Hitbox Expander Script Gui V2", 'https://pastebin.com/raw/JgtddWA3')
-
-        Tab3:AddSection({ Name = "Hitbox Expander Script Gui V3" })
-        addButton("Hitbox Expander Script Gui V3", 'https://raw.githubusercontent.com/louismich4el/ItsLouisPlayz-Scripts/main/Hitbox%20Expander.lua')
-
-        Tab3:AddSection({ Name = "Teen Titans Hitbox Expander Script" })
-        addButton("Teen Titans Hitbox Expander Script", 'https://raw.githubusercontent.com/shakar60/hit/main/box')
-    end
-
-    addHitboxExpanders()
-
-  -----------------------------------------------------------------
-
-    -- Misc Scripts
-    local function addMiscScripts()
-        local function addButton(name, url)
-            Tab4:AddButton({
-                Name = name,
-                Callback = function()
-                    loadstring(game:HttpGet(url))()
-                    print("Script Executed")
-                end
-            })
+    Tab1:AddButton({
+        Name = "Refresh",
+        Callback = function()
+            local player = game.Players.LocalPlayer
+            if player then
+                player:Kick("Refreshing...")
+                wait(5)
+                game:GetService("TeleportService"):Teleport(game.PlaceId, player)
+            end
         end
+    })
 
------------------------------------------------------------------
-
-        Tab4:AddSection({ Name = "Inf Jump Script" })
-        addButton("Inf Jump Script", "https://raw.githubusercontent.com/shakar60/infjump/main/script")
-
-
-        Tab4:AddSection({ Name = "FullBright Script" })
-        addButton("Fullbright Script", "https://raw.githubusercontent.com/shakar60/fullbright/main/scripts")
-
-
-        Tab4:AddSection({ Name = "No Fog Script" })
-        addButton("No Fog Script", "https://raw.githubusercontent.com/shakar60/no-fog/main/script")
-
-
-        Tab4:AddSection({ Name = "LightTuxs Esp Script Gui" })
-        addButton("LightTuxs Esp Script Gui", "https://raw.githubusercontent.com/cool83birdcarfly02six/UNIVERSALESPLTX/main/README.md")
-
-
-        Tab4:AddSection({ Name = "Universal Anticheat Bypass Script" })
-        addButton("Universal Anticheat Bypass Script", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
-
-        Tab4:AddParagraph("Other Untitled Tag Game Scripts","Other Peoples UTG Script.")
-
-        Tab4:AddSection({ Name = "RenxWare Untitled Tag Game Script Gui" })
-        addButton("Renxware Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/Zer0ids/Qwerty/main/UntitledTag/NewScript.lua")
-
-        Tab4:AddSection({ Name = "Syn.o's Untitled Tag Game Script Gui" })
-        addButton("Syn.o's Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script")
-    end
-
-    addMiscScripts()
-
-  -----------------------------------------------------------------
-
-    -- Player Info
-    Tab2:AddSection({ Name = "Player Username:" })
-    Tab2:AddParagraph("UserName", "UserName: " .. game.Players.LocalPlayer.Name)
-
-    Tab2:AddSection({ Name = "Player DisplayName:" })
-    Tab2:AddParagraph("DisplayName", "DisplayName: " .. game.Players.LocalPlayer.DisplayName)
-
-    Tab2:AddSection({ Name = "Player UserID:" })
-    Tab2:AddParagraph("User ID", "User ID: " .. game.Players.LocalPlayer.UserId)
-
-    Tab2:AddSection({ Name = "Player Account Age:" })
-    Tab2:AddParagraph("Account Age", game.Players.LocalPlayer and string.format("%.1f days", game.Players.LocalPlayer.AccountAge) or "Unknown")
-
-    Tab2:AddSection({ Name = "Map:" })
-
-    local mapParagraph
-
-    local function updateMapName()
-        local placeId = game.PlaceId
-        local placeInfo = game:GetService("MarketplaceService"):GetProductInfo(placeId)
-        local mapName = placeInfo.Name or "Unknown Map"
-
-        -- If the paragraph does not exist, create it
-        if not mapParagraph then
-            mapParagraph = Tab2:AddParagraph("Map", "Map: " .. mapName)
-        else
-            -- Otherwise, update the existing paragraph text
-            mapParagraph:SetText("Map: " .. mapName)
-        end
-    end
-
-    -- Initial call to set the map name
-    updateMapName()
-
-    -- Update map name when a new player joins
-    game:GetService("Players").PlayerAdded:Connect(function()
-        updateMapName()
-    end)
-
-    Tab2:AddSection({ Name = "Map ID:" })
-    local mapID = game.PlaceId
-    Tab2:AddParagraph("Map ID", "Map ID: " .. mapID)
 else
-    print("This Script Doesnt Work In The Game You Are In Please Join The GameId 14044547200 Or The GameName Untitled Tag Game Recode.")
-end
+    
+-- Notification
 
------------------------------------------------------------------
+    local player = game.Players.LocalPlayer
+
+    local NotificationLoad = loadstring(game:HttpGet(('https://raw.githubusercontent.com/treeofplant/Notif/main/library.lua'), true))()
+
+    NotificationLoad:NewNotification({
+        ["Mode"] = "Custom",
+        ["Title"] = "Wrong Game",
+        ["Description"] = "You are not in the correct game. Please join Untitled Tag Game to use this script.",
+        ["Notification_Image"] = "rbxassetid://18989848883",
+        ["Notification_Sound"] = "rbxassetid://5153734608",
+        ["Timeout"] = 10,
+        ["Audio"] = true
+    })
+end
