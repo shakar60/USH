@@ -1745,5 +1745,10 @@ addScript(Tab3, "Universal Shakara Hub Kavo Version", "Universal Shakara Hub Kav
 addScript(Tab3, "Infinix", "Infinix", "https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua")
 addScript(Tab3, "Rochips Panel", "Rochips Panel", "https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel")
 addScript(TabAL, "Polos Camlock", "Polos Camlock", "https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock")
+addScript(Tab3, "Jailbreak ImMusic Auto Rob", "Jailbreak ImMusic Auto Rob", "https://raw.githubusercontent.com/SnipeHype200/i-music/main/beta.lua")
+addScript(Tab3, "Jailbreak ImMusic Auto Arrest", "Jailbreak ImMusic Auto Arrest", "https://raw.githubusercontent.com/SnipeHype200/i-music/main/autoarrest")
+addScript(Tab3, "Jailbreak ProjectAuto Auto Rob", "Jailbreak ProjectAuto Auto Rob", "http://scripts.projectauto.xyz/AutoRobV5")
+addScript(Tab3, "Jailbreak Universal Auto Farm", "Jailbreak Universal Auto Farm", "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular")
 OrionLib:Init()
+
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
