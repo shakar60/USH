@@ -1749,6 +1749,7 @@ addScript(Tab3, "Jailbreak ImMusic Auto Rob", "Jailbreak ImMusic Auto Rob", "htt
 addScript(Tab3, "Jailbreak ImMusic Auto Arrest", "Jailbreak ImMusic Auto Arrest", "https://raw.githubusercontent.com/SnipeHype200/i-music/main/autoarrest")
 addScript(Tab3, "Jailbreak ProjectAuto Auto Rob", "Jailbreak ProjectAuto Auto Rob", "http://scripts.projectauto.xyz/AutoRobV5")
 addScript(Tab3, "Jailbreak Universal Auto Farm", "Jailbreak Universal Auto Farm", "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular")
-OrionLib:Init()
+addScript(Tab2, "Fe Telekinesis Tool", "Fe Telekinesis Tool", "https://raw.githubusercontent.com/shakar60/scripts/main/fe%20telekinesis")
 
+OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
