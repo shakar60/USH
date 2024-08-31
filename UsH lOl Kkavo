@@ -896,6 +896,12 @@ Tab1Section:NewButton("No Fog Script", "No Fog Script", function()
     print("Script Executed")
 end)
 
+local Tab1Section = Tab1:NewSection("Fe Telekinesis Tool ")
+Tab1Section:NewButton("Fe Telekinesis Tool", "Fe Telekinesis Tool", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/fe%20telekinesis",true))()
+    print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
 
 -- aimlocks
