@@ -1497,4 +1497,10 @@ Tab2Section:NewButton("Fe Chat Draw", "Fe Chat Draw", function()
     print("Script Executed")
 end)
 
+local Tab2Section = Tab2:NewSection("Kawaii Chat Bypasser")
+Tab2Section:NewButton("Kawaii Chat Bypasser", "Kawaii Chat Bypasser", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-BYPASS/main/kawaii-bypass",true))()
+    print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
