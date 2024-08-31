@@ -1749,6 +1749,7 @@ addScript(Tab3, "Jailbreak ImMusic Auto Rob", "Jailbreak ImMusic Auto Rob", "htt
 addScript(Tab3, "Jailbreak ImMusic Auto Arrest", "Jailbreak ImMusic Auto Arrest", "https://raw.githubusercontent.com/SnipeHype200/i-music/main/autoarrest")
 addScript(Tab3, "Jailbreak ProjectAuto Auto Rob", "Jailbreak ProjectAuto Auto Rob", "http://scripts.projectauto.xyz/AutoRobV5")
 addScript(Tab3, "Jailbreak Universal Auto Farm", "Jailbreak Universal Auto Farm", "https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular")
+addScript(Tab3, "Fe Chat Draw", "Fe Chat Draw", "https://pastebin.com/raw/q6WWVCKC")
 addScript(Tab2, "Fe Telekinesis Tool", "Fe Telekinesis Tool", "https://raw.githubusercontent.com/shakar60/scripts/main/fe%20telekinesis")
 
 OrionLib:Init()
