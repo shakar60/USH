@@ -1467,30 +1467,6 @@ Tab2Section:NewButton("Infinix", "Infinix", function()
     print("Script Executed")
 end)
 
-local Tab2Section = Tab2:NewSection("Jailbreak IMusic Auto Rob")
-Tab2Section:NewButton("Jailbreak IMusic Auto Rob", "Jailbreak IMusic Auto Rob", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SnipeHype200/i-music/main/beta.lua"))()
-    print("Script Executed")
-end)
-
-local Tab2Section = Tab2:NewSection("Jailbreak IMusic Auto Arrest")
-Tab2Section:NewButton("Jailbreak IMusic Auto Arrest", "Jailbreak IMusic Auto Arrest", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/SnipeHype200/i-music/main/autoarrest"))();
-    print("Script Executed")
-end)
-
-local Tab2Section = Tab2:NewSection("Jailbreak ProjectAuto Auto Rob")
-Tab2Section:NewButton("Jailbreak ProjectAuto Auto Rob", "Jailbreak ProjectAuto Auto Rob", function()
-        loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV5'))()
-    print("Script Executed")
-end)
-
-local Tab2Section = Tab2:NewSection("Jailbreak Universal Auto Farm")
-Tab2Section:NewButton("Jailbreak Universal Auto Farm", "Jailbreak Universal Auto Farm", function()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/BlitzIsKing/UniversalFarm/main/Loader/Regular'))()
-    print("Script Executed")
-end)
-
 local Tab2Section = Tab2:NewSection("Fe Chat Draw")
 Tab2Section:NewButton("Fe Chat Draw", "Fe Chat Draw", function()
         loadstring(game:HttpGet('https://pastebin.com/raw/q6WWVCKC'))()
