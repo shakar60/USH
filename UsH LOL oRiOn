@@ -1306,7 +1306,7 @@ Name = "Perm Shiftlock"
 Tab2:AddButton({
 Name = "Perm ShiftLock",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/PermShiftLock/main/S",true))()
+loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/shiftlock?raw=true"))()
 print("Script Executed")
 end 
 })
