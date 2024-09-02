@@ -1479,4 +1479,10 @@ Tab2Section:NewButton("Kawaii Chat Bypasser", "Kawaii Chat Bypasser", function()
     print("Script Executed")
 end)
 
+local Tab2Section = Tab2:NewSection("Kawaii Blackhole")
+Tab2Section:NewButton("Kawaii Blackhole", "Kawaii Blackhole", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-BLACK-HOLE/main/kawaii-black-hole.lua",true))()
+    print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
