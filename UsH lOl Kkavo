@@ -616,6 +616,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main
 print("Script Executed")
 end)
 
+Tab6Section = Tab6:NewSection("Macro Button")
+Tab6Section:NewButton("Macro Button","Macro Button", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/macro%20button",true))()
+print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
 
 -- blox fruit
