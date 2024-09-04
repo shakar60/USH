@@ -1744,12 +1744,13 @@ addScript(Tab3, "Afem - Free Dance Menu", "Afem - Free Dance Menu", "https://yar
 addScript(Tab3, "Universal Shakara Hub Kavo Version", "Universal Shakara Hub Kavo Version", "https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected")
 addScript(Tab3, "Infinix", "Infinix", "https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua")
 addScript(Tab3, "Rochips Panel", "Rochips Panel", "https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel")
-addScript(TabAL, "Polos Camlock", "Polos Camlock", "https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock")
+addScript(TabAL, "Polos Skidded Camlock", "Polos Skidded Camlock", "https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock")
 addScript(Tab3, "Fe Chat Draw", "Fe Chat Draw", "https://pastebin.com/raw/q6WWVCKC")
 addScript(Tab2, "Fe Telekinesis Tool", "Fe Telekinesis Tool", "https://raw.githubusercontent.com/shakar60/scripts/main/fe%20telekinesis")
 addScript(Tab3, "Kawaii Chat Bypasser", "Kawaii Chat Bypasser", "https://raw.githubusercontent.com/hellohellohell012321/KAWAII-BYPASS/main/kawaii-bypass")
 addScript(Tab3, "Kawaii Blackhole", "Kawaii Blackhole", "https://raw.githubusercontent.com/hellohellohell012321/KAWAII-BLACK-HOLE/main/kawaii-black-hole.lua")
 addScript(TabDH, "Macro Button", "Macro Button", "https://raw.githubusercontent.com/shakar60/scripts/main/macro%20button")
+addScript(TabAL, "FrostByte V2", "FrostByte V2", "https://raw.githubusercontent.com/Totocoems/Frostbyte-leaked/main/Frostbyte%20leaked")
 
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
