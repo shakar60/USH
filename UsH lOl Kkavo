@@ -1056,9 +1056,15 @@ Tab3Section:NewButton("Tiefs Camlock", "Tiefs Camlock", function()
     print("Script Executed")
 end)
 
-local Tab3Section = Tab3:NewSection("Polos Camlock")
-Tab3Section:NewButton("Polos Camlock", "Polos Camlock", function()
+local Tab3Section = Tab3:NewSection("Polos Skidded Camlock")
+Tab3Section:NewButton("Polos Skidded Camlock", "Polos Skidded Camlock", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock",true))()
+print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("FrostByte V2")
+Tab3Section:NewButton("FrostByte V2", "FrostByte V2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Totocoems/Frostbyte-leaked/main/Frostbyte%20leaked"))()
 print("Script Executed")
 end)
 
