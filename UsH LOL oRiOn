@@ -1737,6 +1737,7 @@ AddScript(Tab3, "Build A Bridge Simulator Script", "Build A Bridge Simulator Scr
 addScript(Tab3, "Pet Simulator 99 Zap Hub (Key Sys)", "Pet Simulator 99 Zap Hub (Key Sys)", 'https://zaphub.xyz/Exec')
 addScript(Tab3, "Evade D8rk Hub", "Evade D8rk Hub", "https://scriptblox.com/raw/Evade-D8rk-Hub-V2-12956")
 addScript(Tab3, "Fe Dance Gui", "Fe Dance Gui", "https://pastebin.com/raw/1p6xnBN")
+addScript(Tab3, "Fe Kill All Gui", "Fe Kill All Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui")
 addScript(Tab3, "Dungeon Quest NS Hub", "Dungeon Quest NS Hub", "https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon")
 addScript(Tab3, "Redz Pet Simulator 99 Script", "Redz Pet Simulator 99 Script", "https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua")
 addScript(Tab3, "Afem - Free Dance Menu", "Afem - Free Dance Menu", "https://yarhm.goteamst.com/scr?channel=afem")
