@@ -1455,12 +1455,6 @@ Tab2Section:NewButton("Dungeon Quest NS Hub", "Dungeon Quest NS HUB", function()
     print("Script Executed")
 end)
 
-local Tab2Section = Tab2:NewSection("Fe Kill All Gui")
-Tab2Section:NewButton("Fe Kill All Gui", "Fe Kill All Gui", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui",true))()
-    print("Script Executed")
-end)
-
 local Tab2Section = Tab2:NewSection("Redz Pet Simulator 99 Script Hub")
 Tab2Section:NewButton("Redz Pet Simulator 99 Script Hub", "Redz Pet Simulator 99 Script Hub", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
