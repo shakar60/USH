@@ -1449,6 +1449,12 @@ Tab2Section:NewButton("Fe Dance Gui", "Fe Dance Gui", function()
     print("Script Executed")
 end)
 
+local Tab2Section = Tab2:NewSection("Fe Kill All")
+Tab2Section:NewButton("Fe Kill All Gui", "Fe Kill All Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui",true))()
+    print("Script Executed")
+end)
+
 local Tab2Section = Tab2:NewSection("Dungeon Quest NS Hub")
 Tab2Section:NewButton("Dungeon Quest NS Hub", "Dungeon Quest NS HUB", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon"))()
