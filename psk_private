@@ -1126,15 +1126,8 @@ local function createToggleGui()
     UIStroke.Parent = Toggle
     UIStroke.Thickness = 3 -- Adjust thickness of the outline
     UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-
-    -- Set up TextStroke for subtle text outline
-    TextStroke.Parent = Toggle
-    TextStroke.Thickness = 0.3 -- Subtle thickness of the text stroke
-    TextStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
-    TextStroke.Color = Color3.fromRGB(0, 0, 0) -- Black text stroke for subtle effect
-
-    -- Function to create a rainbow effect for the UIStroke and text color
     local function RainbowEffect()
+
         local hue = 0
         while ToggleGui and ToggleGui.Parent do
             hue = (hue + 1) % 360
@@ -1144,11 +1137,10 @@ local function createToggleGui()
         end
     end
 
-    -- Start the rainbow effect
     spawn(RainbowEffect)]]
 
     Toggle.MouseButton1Click:Connect(function()
-        -- Simulate pressing RightShift
+
         local VirtualInputManager = game:GetService("VirtualInputManager")
         VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.RightShift, false, game)
         VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.RightShift, false, game)
