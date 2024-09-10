@@ -294,7 +294,7 @@ TabHome:AddParagraph("Map ID", "Map ID: " .. game.PlaceId)
 
 ------------------------------------------------------------------
 
--- walkspeed n shii
+-- sliders and textboxes
 
 local function addSlider(name, min, max, default, increment, valueName, callback)
     TabPlayer:AddSection({Name = name})
@@ -346,6 +346,15 @@ local function onFOVChange(Value)
     print("FOV:", Value)
 end
 
+local function onMaxZoomChange(Value)
+    -- Adjust FOV to not exceed max zoom level
+    local currentFOV = workspace.CurrentCamera.FieldOfView
+    if currentFOV > Value then
+        workspace.CurrentCamera.FieldOfView = Value
+    end
+    print("Max Zoom:", Value)
+end
+
 local function onGravityChange(Value)
     if workspace.Gravity ~= Value then
         workspace.Gravity = Value
@@ -383,6 +392,15 @@ local function onFOVTextbox(Value)
     print("Set FOV:", Value)
 end
 
+local function onMaxZoomTextbox(Value)
+    local newValue = tonumber(Value) or 120
+    local currentFOV = workspace.CurrentCamera.FieldOfView
+    if currentFOV > newValue then
+        workspace.CurrentCamera.FieldOfView = newValue
+    end
+    print("Set Max Zoom:", Value)
+end
+
 local function onGravityTextbox(Value)
     local newValue = tonumber(Value) or workspace.Gravity
     if workspace.Gravity ~= newValue then
@@ -397,16 +415,19 @@ local currentWalkSpeed = humanoid and humanoid.WalkSpeed or 16
 local currentJumpPower = humanoid and humanoid:GetAttribute("JumpPower") or humanoid.JumpPower or 50
 local currentFOV = workspace.CurrentCamera.FieldOfView
 local currentGravity = workspace.Gravity
+local maxZoom = 120  -- Default max zoom value (which is the same as FOV in this context)
 
 addSlider("WalkSpeed", 16, 500, currentWalkSpeed, 1, "WalkSpeed", onWalkSpeedChange)
 addSlider("JumpPower", 50, 500, currentJumpPower, 1, "JumpPower", onJumpPowerChange)
 addSlider("FOV", 0, 120, currentFOV, 1, "FOV", onFOVChange)
+addSlider("Max Zoom", 0, 120, maxZoom, 1, "Max Zoom", onMaxZoomChange)
 addSlider("Gravity", 0, 500, currentGravity, 1, "Gravity", onGravityChange)
 
-addTextbox("Set WalkSpeed", "Click Here To Set WalkSpeed", onWalkSpeedTextbox)
-addTextbox("Set JumpPower", "Click Here To Set JumpPower", onJumpPowerTextbox)
-addTextbox("Set FOV", "Click Here To Set FOV", onFOVTextbox)
-addTextbox("Set Gravity", "Click Here To Set Gravity", onGravityTextbox)
+addTextbox("Set WalkSpeed", "", onWalkSpeedTextbox)
+addTextbox("Set JumpPower", "", onJumpPowerTextbox)
+addTextbox("Set FOV", "", onFOVTextbox)
+addTextbox("Set Max Zoom", "", onMaxZoomTextbox)
+addTextbox("Set Gravity", "", onGravityTextbox)
 
 ------------------------------------------------------------------
 --Scripts
