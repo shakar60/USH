@@ -1,8 +1,8 @@
 -- Game Checker
 
-local desiredGameId = 14044547200
+local untitledtaggame = 14044547200
 
-if game.PlaceId == desiredGameId then
+if game.PlaceId == untitledtaggame then
 
 -- Loading Screen
 
@@ -163,7 +163,7 @@ if game.PlaceId == desiredGameId then
 
     local Tab2 = Window:MakeTab({
         Name = "Player Info",
-        Icon = "rbxassetid://18987171925",
+        Icon = "rbxassetid://79916226133415",
         PremiumOnly = false
     })
 
