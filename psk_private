@@ -1122,7 +1122,7 @@ local function createToggleGui()
     UICorner.CornerRadius = UDim.new(0, 20) -- Adjust radius to make corners rounded
     UICorner.Parent = Toggle
 
-    -- Set up UIStroke for RGB outline
+    --[[ Set up UIStroke for RGB outline
     UIStroke.Parent = Toggle
     UIStroke.Thickness = 3 -- Adjust thickness of the outline
     UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
@@ -1145,7 +1145,7 @@ local function createToggleGui()
     end
 
     -- Start the rainbow effect
-    spawn(RainbowEffect)
+    spawn(RainbowEffect)]]
 
     Toggle.MouseButton1Click:Connect(function()
         -- Simulate pressing RightShift
