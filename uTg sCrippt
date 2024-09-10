@@ -1,8 +1,8 @@
 -- Game Checker
 
-local untitledtaggame = 14044547200
+local gameid = 14044547200
 
-if game.PlaceId == untitledtaggame then
+if game.PlaceId == gameid then
 
 -- Loading Screen
 
