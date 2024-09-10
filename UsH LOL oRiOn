@@ -435,7 +435,7 @@ TabHome:AddParagraph("Map ID", "Map ID: " .. game.PlaceId)
 
 ------------------------------------------------------------------
 
---[[ walkspeed n shii
+-- sliders and textboxes
 
 local function addSlider(name, min, max, default, increment, valueName, callback)
     TabPlayer:AddSection({Name = name})
@@ -544,146 +544,10 @@ addSlider("JumpPower", 50, 500, currentJumpPower, 1, "JumpPower", onJumpPowerCha
 addSlider("FOV", 0, 120, currentFOV, 1, "FOV", onFOVChange)
 addSlider("Gravity", 0, 500, currentGravity, 1, "Gravity", onGravityChange)
 
-addTextbox("Set WalkSpeed", "Click Here To Set WalkSpeed", onWalkSpeedTextbox)
-addTextbox("Set JumpPower", "Click Here To Set JumpPower", onJumpPowerTextbox)
-addTextbox("Set FOV", "Click Here To Set FOV", onFOVTextbox)
-addTextbox("Set Gravity", "Click Here To Set Gravity", onGravityTextbox)]]
-
--- walkspeed n shii
-
-local function addSlider(name, min, max, default, increment, valueName, callback)
-    TabPlayer:AddSection({Name = name})
-    TabPlayer:AddSlider({
-        Name = name,
-        Min = min,
-        Max = max,
-        Default = default,
-        Color = Color3.fromRGB(255, 255, 255),
-        Increment = increment,
-        ValueName = valueName,
-        Callback = callback
-    })
-end
-
-local function addTextbox(name, default, callback)
-    TabPlayer:AddSection({Name = name})
-    TabPlayer:AddTextbox({
-        Name = name,
-        Default = default,
-        TextDisappear = true,
-        Callback = callback
-    })
-end
-
--- Callback functions
-local function onWalkSpeedChange(Value)
-    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid and humanoid.WalkSpeed ~= Value then
-        humanoid.WalkSpeed = Value
-    end
-    print("WalkSpeed:", Value)
-end
-
-local function onJumpPowerChange(Value)
-    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        humanoid:SetAttribute("JumpPower", Value) -- Store JumpPower as an attribute
-        humanoid.UseJumpPower = true
-        humanoid.JumpPower = Value
-    end
-    print("JumpPower:", Value)
-end
-
-local function onFOVChange(Value)
-    if workspace.CurrentCamera.FieldOfView ~= Value then
-        workspace.CurrentCamera.FieldOfView = Value
-    end
-    print("FOV:", Value)
-end
-
-local function onMaxZoomChange(Value)
-    -- Adjust FOV to not exceed max zoom level
-    local currentFOV = workspace.CurrentCamera.FieldOfView
-    if currentFOV > Value then
-        workspace.CurrentCamera.FieldOfView = Value
-    end
-    print("Max Zoom:", Value)
-end
-
-local function onGravityChange(Value)
-    if workspace.Gravity ~= Value then
-        workspace.Gravity = Value
-    end
-    print("Gravity:", Value)
-end
-
-local function onWalkSpeedTextbox(Value)
-    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        local newValue = tonumber(Value) or humanoid.WalkSpeed
-        if humanoid.WalkSpeed ~= newValue then
-            humanoid.WalkSpeed = newValue
-        end
-    end
-    print("Set WalkSpeed:", Value)
-end
-
-local function onJumpPowerTextbox(Value)
-    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        local newValue = tonumber(Value) or humanoid:GetAttribute("JumpPower") or humanoid.JumpPower
-        humanoid:SetAttribute("JumpPower", newValue) -- Store JumpPower as an attribute
-        humanoid.UseJumpPower = true
-        humanoid.JumpPower = newValue
-    end
-    print("Set JumpPower:", Value)
-end
-
-local function onFOVTextbox(Value)
-    local newValue = tonumber(Value) or workspace.CurrentCamera.FieldOfView
-    if workspace.CurrentCamera.FieldOfView ~= newValue then
-        workspace.CurrentCamera.FieldOfView = newValue
-    end
-    print("Set FOV:", Value)
-end
-
-local function onMaxZoomTextbox(Value)
-    local newValue = tonumber(Value) or 120
-    local currentFOV = workspace.CurrentCamera.FieldOfView
-    if currentFOV > newValue then
-        workspace.CurrentCamera.FieldOfView = newValue
-    end
-    print("Set Max Zoom:", Value)
-end
-
-local function onGravityTextbox(Value)
-    local newValue = tonumber(Value) or workspace.Gravity
-    if workspace.Gravity ~= newValue then
-        workspace.Gravity = newValue
-    end
-    print("Set Gravity:", Value)
-end
-
--- Get current values to set as default for sliders
-local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
-local currentWalkSpeed = humanoid and humanoid.WalkSpeed or 16
-local currentJumpPower = humanoid and humanoid:GetAttribute("JumpPower") or humanoid.JumpPower or 50
-local currentFOV = workspace.CurrentCamera.FieldOfView
-local currentGravity = workspace.Gravity
-local maxZoom = 120  -- Default max zoom value (which is the same as FOV in this context)
-
-addSlider("WalkSpeed", 16, 500, currentWalkSpeed, 1, "WalkSpeed", onWalkSpeedChange)
-addSlider("JumpPower", 50, 500, currentJumpPower, 1, "JumpPower", onJumpPowerChange)
-addSlider("FOV", 0, 120, currentFOV, 1, "FOV", onFOVChange)
-addSlider("Max Zoom", 0, 120, maxZoom, 1, "Max Zoom", onMaxZoomChange)
-addSlider("Gravity", 0, 500, currentGravity, 1, "Gravity", onGravityChange)
-
-addTextbox("Set WalkSpeed", "Click Here To Set WalkSpeed", onWalkSpeedTextbox)
-addTextbox("Set JumpPower", "Click Here To Set JumpPower", onJumpPowerTextbox)
-addTextbox("Set FOV", "Click Here To Set FOV", onFOVTextbox)
-addTextbox("Set Max Zoom", "Click Here To Set Max Zoom", onMaxZoomTextbox)
-addTextbox("Set Gravity", "Click Here To Set Gravity", onGravityTextbox)
-
+addTextbox("Set WalkSpeed", "", onWalkSpeedTextbox)
+addTextbox("Set JumpPower", "", onJumpPowerTextbox)
+addTextbox("Set FOV", "", onFOVTextbox)
+addTextbox("Set Gravity", "", onGravityTextbox)
 
 ------------------------------------------------------------------
 --Scripts
