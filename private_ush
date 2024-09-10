@@ -353,26 +353,6 @@ local function onGravityChange(Value)
     print("Gravity:", Value)
 end
 
-local function onZoomLimitChange(Value)
-    local camera = workspace.CurrentCamera
-    -- Update the maximum zoom limit
-    camera:SetAttribute("MaxZoom", Value)
-    print("Max Zoom Limit:", Value)
-end
-
-local function adjustCameraZoom(zoomLevel)
-    local camera = workspace.CurrentCamera
-    local maxZoom = camera:GetAttribute("MaxZoom") or 100 -- Default to 100 if not set
-
-    -- Prevent zoom level from exceeding maxZoom
-    zoomLevel = math.clamp(zoomLevel, 0, maxZoom)
-
-    -- Update the camera's position based on zoom level
-    -- Assuming you want to zoom by adjusting the camera's position relative to its target
-    local targetPosition = camera.CFrame.Position + camera.CFrame.LookVector * zoomLevel
-    camera.CFrame = CFrame.new(targetPosition, camera.CFrame.Position + camera.CFrame.LookVector)
-end
-
 local function onWalkSpeedTextbox(Value)
     local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
     if humanoid then
@@ -411,33 +391,22 @@ local function onGravityTextbox(Value)
     print("Set Gravity:", Value)
 end
 
-local function onZoomLimitTextbox(Value)
-    local newValue = tonumber(Value) or workspace.CurrentCamera:GetAttribute("MaxZoom") or 100
-    if workspace.CurrentCamera:GetAttribute("MaxZoom") ~= newValue then
-        workspace.CurrentCamera:SetAttribute("MaxZoom", newValue)
-    end
-    print("Set Max Zoom Limit:", Value)
-end
-
 -- Get current values to set as default for sliders
 local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
 local currentWalkSpeed = humanoid and humanoid.WalkSpeed or 16
 local currentJumpPower = humanoid and humanoid:GetAttribute("JumpPower") or humanoid.JumpPower or 50
 local currentFOV = workspace.CurrentCamera.FieldOfView
 local currentGravity = workspace.Gravity
-local currentMaxZoom = workspace.CurrentCamera:GetAttribute("MaxZoom") or 100 -- Default zoom limit
 
 addSlider("WalkSpeed", 16, 500, currentWalkSpeed, 1, "WalkSpeed", onWalkSpeedChange)
 addSlider("JumpPower", 50, 500, currentJumpPower, 1, "JumpPower", onJumpPowerChange)
-addSlider("Field Of View", 0, 120, currentFOV, 1, "FOV", onFOVChange)
+addSlider("FOV", 0, 120, currentFOV, 1, "FOV", onFOVChange)
 addSlider("Gravity", 0, 500, currentGravity, 1, "Gravity", onGravityChange)
-addSlider("Max Zoom", 0, 500, currentMaxZoom, 1, "Max Zoom", onZoomLimitChange)
 
 addTextbox("Set WalkSpeed", "", onWalkSpeedTextbox)
 addTextbox("Set JumpPower", "", onJumpPowerTextbox)
-addTextbox("Set Field Of View", "", onFOVTextbox)
+addTextbox("Set FOV", "", onFOVTextbox)
 addTextbox("Set Gravity", "", onGravityTextbox)
-addTextbox("Set Max Zoom", "", onZoomLimitTextbox)
 
 ------------------------------------------------------------------
 --Scripts
