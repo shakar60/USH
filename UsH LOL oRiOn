@@ -190,7 +190,7 @@ PremiumOnly = false
 
 local TabPlayer = Window:MakeTab({
 Name = "Player",
-Icon = "rbxassetid://18987171925",
+Icon = "rbxassetid://79916226133415",
 PremiumOnly = false
 })
 
