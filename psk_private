@@ -86,7 +86,7 @@ end)
 local Prediction = 0.206015
 local XPrediction = 0.176073
 local YPrediction = 0.167092
-local Smoothness = 0.073
+local Smoothness = 0
 local JumpOffset = 0.6 -- Default value for Jump Offset
 local FallOffset = 0.6 -- Default value for Fall Offset
 local SelectedPart = "UpperTorso"  -- Default to Head
@@ -109,7 +109,7 @@ PoloSection:AddTextbox("Vertical Prediction", tostring(YPrediction), function(St
 end)
 
 PoloSection:AddTextbox("Smoothness", tostring(Smoothness), function(State)
-    Smoothness = tonumber(State) or 0.073
+    Smoothness = tonumber(State) or 0
 end)
 
 PoloSection:AddTextbox("Jump Offset", tostring(JumpOffset), function(State)
