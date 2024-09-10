@@ -108,18 +108,6 @@ PoloSection:AddTextbox("Vertical Prediction", tostring(YPrediction), function(St
     YPrediction = tonumber(State) or 0.167092
 end)
 
-PoloSection:AddTextbox("Smoothness", tostring(Smoothness), function(State)
-    Smoothness = tonumber(State) or 0
-end)
-
-PoloSection:AddTextbox("Jump Offset", tostring(JumpOffset), function(State)
-    JumpOffset = tonumber(State) or 0.6
-end)
-
-PoloSection:AddTextbox("Fall Offset", tostring(FallOffset), function(State)
-    FallOffset = tonumber(State) or 0.6
-end)
-
 PoloSection:AddTextbox("Camlock Key", tostring(CamlockKey.Name), function(State)
     local firstChar = State:sub(1, 1):upper()  -- Only consider the first character and convert to uppercase
     local keyCode = Enum.KeyCode[firstChar]
