@@ -230,7 +230,7 @@ PoloSection:AddTextbox("Vertical Prediction", tostring(YPrediction), function(St
     YPrediction = tonumber(State) or 0.167092
 end)
 
---[[PoloSection:AddTextbox("Smoothness", tostring(Smoothness), function(State)
+PoloSection:AddTextbox("Smoothness", tostring(Smoothness), function(State)
     Smoothness = tonumber(State) or 0.073
 end)
 
@@ -240,7 +240,7 @@ end)
 
 PoloSection:AddTextbox("Fall Offset", tostring(FallOffset), function(State)
     FallOffset = tonumber(State) or 0.6
-end)]]
+end)
 
 PoloSection:AddTextbox("Camlock Key", tostring(CamlockKey.Name), function(State)
     local firstChar = State:sub(1, 1):upper()  -- Only consider the first character and convert to uppercase
@@ -756,6 +756,11 @@ MiscSection:AddButton("Macro Button V2", function()
     print("script executed")
 end)
 
+MiscSection:AddButton("Shiftlock Button", function()
+    loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/shiftlock?raw=true"))()
+print("script executed")
+end)
+
 MiscSection:AddButton("Kirbsware Anti Lock", function()
         loadstring(game:HttpGet('https://raw.githubusercontent.com/wenny69420/KirbswareScripts/main/MobileV3'))()
     print("script executed")
@@ -1127,7 +1132,8 @@ local function createToggleGui()
     UICorner.CornerRadius = UDim.new(0, 20) -- Adjust radius to make corners rounded
     UICorner.Parent = Toggle
 
-    --[[ Set up UIStroke for RGB outline
+    --Set up UIStroke for RGB outline
+
     UIStroke.Parent = Toggle
     UIStroke.Thickness = 3 -- Adjust thickness of the outline
     UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
@@ -1142,7 +1148,7 @@ local function createToggleGui()
         end
     end
 
-    spawn(RainbowEffect)]]
+    spawn(RainbowEffect)
 
     Toggle.MouseButton1Click:Connect(function()
 
