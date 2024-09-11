@@ -168,41 +168,48 @@ function RemoveNotifications()
     -- Implement logic to remove notifications if supported by the library
 end
 
-local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
-
+local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
-local scriptEnabled = false
 local connection
+local updateInterval = 1 / 15 -- Update every 1/15th of a second
+local lastUpdate = tick()
 
-local function applyResolver()
-    local playerList = Players:GetPlayers()
-    
-    for _, Target in ipairs(playerList) do
-        if Target ~= localPlayer and Target.Character and Target.Character:FindFirstChild("Humanoid") then
-            local humanoid = Target.Character.Humanoid
-            local moveDirection = humanoid.MoveDirection * 16
+local partData = {}
 
-            for _, Part in ipairs(Target.Character:GetDescendants()) do
-                if Part:IsA("BasePart") then
-                    Part.Velocity = moveDirection
-                    Part.AssemblyLinearVelocity = moveDirection
+local function onHeartbeat()
+    local currentTime = tick()
+    if currentTime - lastUpdate < updateInterval then
+        return
+    end
+    lastUpdate = currentTime
+
+    for _, Target in pairs(Players:GetPlayers()) do
+        if Target ~= localPlayer and Target.Character then
+            local humanoid = Target.Character:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                local moveDirection = humanoid.MoveDirection * 16
+                for _, Part in pairs(Target.Character:GetDescendants()) do
+                    if Part:IsA("BasePart") then
+                        local partId = Part:GetFullName()
+                        if not partData[partId] then
+                            partData[partId] = {Velocity = Part.Velocity, AssemblyLinearVelocity = Part.AssemblyLinearVelocity}
+                        end
+                        if Part.Velocity ~= moveDirection or Part.AssemblyLinearVelocity ~= moveDirection then
+                            Part.Velocity = moveDirection
+                            Part.AssemblyLinearVelocity = moveDirection
+                            partData[partId] = {Velocity = moveDirection, AssemblyLinearVelocity = moveDirection}
+                        end
+                    end
                 end
             end
         end
     end
 end
 
-local function onHeartbeat()
-    if scriptEnabled then
-        applyResolver()
-    end
-end
-
 local function toggleResolver(enabled)
-    scriptEnabled = enabled
-    if scriptEnabled then
+    if enabled then
         if not connection then
             connection = RunService.Heartbeat:Connect(onHeartbeat)
         end
@@ -214,16 +221,9 @@ local function toggleResolver(enabled)
     end
 end
 
-local PoloSection = {}
-function PoloSection:AddToggle(name, initialValue, callback)
-    local value = initialValue
-    callback(value)
-end
-
 PoloSection:AddToggle("Resolver", false, function(value)
     toggleResolver(value)
 end)
-
 
 -- Settings
 local Prediction = 0.206015
