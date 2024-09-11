@@ -173,9 +173,10 @@ local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
 local connection
-local updateInterval = 1 / 30 -- Update every 1/30th of a second
-
+local updateInterval = 1 / 15 -- Update every 1/15th of a second
 local lastUpdate = tick()
+
+local partData = {}
 
 local function onHeartbeat()
     local currentTime = tick()
@@ -183,7 +184,7 @@ local function onHeartbeat()
         return
     end
     lastUpdate = currentTime
-    
+
     for _, Target in pairs(Players:GetPlayers()) do
         if Target ~= localPlayer and Target.Character then
             local humanoid = Target.Character:FindFirstChildOfClass("Humanoid")
@@ -191,10 +192,14 @@ local function onHeartbeat()
                 local moveDirection = humanoid.MoveDirection * 16
                 for _, Part in pairs(Target.Character:GetDescendants()) do
                     if Part:IsA("BasePart") then
-                        -- Only update if needed
+                        local partId = Part:GetFullName()
+                        if not partData[partId] then
+                            partData[partId] = {Velocity = Part.Velocity, AssemblyLinearVelocity = Part.AssemblyLinearVelocity}
+                        end
                         if Part.Velocity ~= moveDirection or Part.AssemblyLinearVelocity ~= moveDirection then
                             Part.Velocity = moveDirection
                             Part.AssemblyLinearVelocity = moveDirection
+                            partData[partId] = {Velocity = moveDirection, AssemblyLinearVelocity = moveDirection}
                         end
                     end
                 end
@@ -219,7 +224,6 @@ end
 PoloSection:AddToggle("Resolver", false, function(value)
     toggleResolver(value)
 end)
-
 
 -- Settings
 local Prediction = 0.206015
