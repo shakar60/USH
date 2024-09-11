@@ -1242,7 +1242,7 @@ game:GetService("Players").LocalPlayer.Chatted:Connect(function(message)
 onCommand(message)
 end)
 
--- Notifications
+--[[ Notifications
 
 NotificationLoad:NewNotification({
 ["Mode"] = "Custom",
@@ -1296,4 +1296,4 @@ NotificationLoad:NewNotification({
 ["Notification_Sound"] = "rbxassetid://5153734608",
 ["Timeout"] = 15,
 ["Audio"] = false
-})
+})]]
