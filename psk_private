@@ -1,6 +1,6 @@
---anticheat bypasser
+--[[anticheat bypasser
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script",true))()]]
 
 --execution logs
 
