@@ -173,36 +173,53 @@ local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
 local connection
+local updateInterval = 1 / 30 -- Update every 1/30th of a second
+
+local lastUpdate = tick()
 
 local function onHeartbeat()
-for _, Target in pairs(Players:GetPlayers()) do
-    if Target ~= localPlayer and Target.Character then
-        for _, Part in pairs(Target.Character:GetDescendants()) do
-            if Part:IsA("BasePart") then
-                Part.Velocity = Target.Character.Humanoid.MoveDirection * 16
-                Part.AssemblyLinearVelocity = Target.Character.Humanoid.MoveDirection * 16
+    local currentTime = tick()
+    if currentTime - lastUpdate < updateInterval then
+        return
+    end
+    lastUpdate = currentTime
+    
+    for _, Target in pairs(Players:GetPlayers()) do
+        if Target ~= localPlayer and Target.Character then
+            local humanoid = Target.Character:FindFirstChildOfClass("Humanoid")
+            if humanoid then
+                local moveDirection = humanoid.MoveDirection * 16
+                for _, Part in pairs(Target.Character:GetDescendants()) do
+                    if Part:IsA("BasePart") then
+                        -- Only update if needed
+                        if Part.Velocity ~= moveDirection or Part.AssemblyLinearVelocity ~= moveDirection then
+                            Part.Velocity = moveDirection
+                            Part.AssemblyLinearVelocity = moveDirection
+                        end
+                    end
+                end
             end
         end
     end
 end
-end
 
 local function toggleResolver(enabled)
-if enabled then
-    if not connection then
-        connection = RunService.Heartbeat:Connect(onHeartbeat)
+    if enabled then
+        if not connection then
+            connection = RunService.Heartbeat:Connect(onHeartbeat)
+        end
+    else
+        if connection then
+            connection:Disconnect()
+            connection = nil
+        end
     end
-else
-    if connection then
-        connection:Disconnect()
-        connection = nil
-    end
-end
 end
 
 PoloSection:AddToggle("Resolver", false, function(value)
-toggleResolver(value)
+    toggleResolver(value)
 end)
+
 
 -- Settings
 local Prediction = 0.206015
