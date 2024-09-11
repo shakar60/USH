@@ -1179,9 +1179,15 @@ Tab2Section:NewButton("Yarhms Script Hub", "Yarhms Script Hub", function()
     print("Script Executed")
 end)
 
-local Tab2Section = Tab2:NewSection("MaxHubs Combat Warrior Script")
-Tab2Section:NewButton("MaxHubs Combat Warrior Script", "Max Hubs Combat Warrior Script", function()
+local Tab2Section = Tab2:NewSection("Combat Warriors Max Hub")
+Tab2Section:NewButton("Combat Warriors Max Hub", "Combat Warrior Max Hub", function()
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/1d4db6a1b04aaeccf046f7c63fbad31a.lua"))()
+    print("Script Executed")
+end)
+
+local Tab2Section = Tab2:NewSection("Combat Warriors Stratos Hub")
+Tab2Section:NewButton("Combat Warriors Stratos Hub", "Combat Warriors Stratos Hub", function()
+        loadstring(game:HttpGet("https://pastefy.app/50B4Z9UK/raw"))()
     print("Script Executed")
 end)
 
