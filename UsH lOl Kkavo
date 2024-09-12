@@ -1515,4 +1515,10 @@ Tab2Section:NewButton("NanoAuto Bypasser", "NanoAuto Bypasser", function()
     print("Script Executed")
 end)
 
+local Tab2Section = Tab2:NewSection("Doors Neuron (Key Sys)")
+Tab2Section:NewButton("Doors Neuron (Key Sys)", "Doors Neuron (Key Sys)", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/Python/main/Main.lua"))();
+    print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
