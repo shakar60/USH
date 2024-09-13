@@ -1521,4 +1521,10 @@ Tab2Section:NewButton("Doors Neuron (Key Sys)", "Doors Neuron (Key Sys)", functi
     print("Script Executed")
 end)
 
+local Tab2Section = Tab2:NewSection("Ms And Fps Status Gui")
+Tab2Section:NewButton("Ms And Fps Status Gui", "Ms And Fps Status Gui", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/Protected%20Performance%20Status",true))()
+    print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
