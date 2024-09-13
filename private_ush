@@ -1,7 +1,3 @@
--- whitelister
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/blacklist",true))()
-
 ------------------------------------------------------------------
 
 -- Window & Library
