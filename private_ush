@@ -1,8 +1,9 @@
 ------------------------------------------------------------------
 
-local whitelist = {"shakar60", "nuba_gar", "shakarkarim60","assj_y2k","sh4k4k4k4r60","cj_qwpaw"}
+-- List of whitelisted players
+local whitelist = {"shakar60", "nuba_gar", "shakarkarim60", "assj_y2k", "sh4k4k4k4r60", "cj_qwpaw"}
 
--- Function to check if a player is whitelisted
+-- Function to check if the player is whitelisted
 local function isWhitelisted(player)
     for _, whitelistedPlayer in pairs(whitelist) do
         if player.Name == whitelistedPlayer then
@@ -12,14 +13,16 @@ local function isWhitelisted(player)
     return false
 end
 
--- Kick players who are not whitelisted
-for _, player in pairs(game.Players:GetPlayers()) do
-    if not isWhitelisted(player) then
-        player:Kick("You are not whitelisted from USH!")
-    end
+-- Get the current player
+local Player = game.Players.LocalPlayer
+
+-- Check if the current player is whitelisted; if not, kick them
+if not isWhitelisted(Player) then
+    Player:Kick("You are not whitelisted from USH!")
+    return -- Stop executing the script
 end
 
--- Listen for new players joining
+-- Listen for new players joining and kick those who are not whitelisted
 game.Players.PlayerAdded:Connect(function(player)
     if not isWhitelisted(player) then
         player:Kick("You are not whitelisted from USH!")
