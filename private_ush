@@ -1,4 +1,145 @@
+--[[---------------------------------------------------------------
+
+--BlackList
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/blacklist",true))()
+
+--Game Blacklister
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/game%20blacklister",true))()
+
 ------------------------------------------------------------------
+
+--Execution Logs
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/main/execution%20logs",true))()
+
+------------------------------------------------------------------
+
+-- loading screen
+
+-- Services
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+
+-- Settings
+local settings = {
+    guiDuration = 3,
+    mainText = "Universal Shakars Hub",
+    loadingText = "Universal Shakars Hub Loading",
+    loadedText = "Universal Shakars Hub Loaded",
+    creditsText = "Credits To sh4k4r6o For Making The Loading Gui.",
+    countdownTextEnabled = true,
+    countdownTextDuration = 3,
+    mainTextDuration = 1,
+    loadingTextDuration = 1,
+    loadedTextDuration = 1,
+    creditsTextDuration = 1,
+    font = Enum.Font.Arcade
+}
+
+-- Create ScreenGui and BlurEffect
+local playerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui", playerGui)
+screenGui.Name = "BlurGui"
+
+local blurEffect = Instance.new("BlurEffect", game:GetService("Lighting"))
+blurEffect.Name = "BlurEffect"
+blurEffect.Size = 0
+
+-- Create Labels
+local function createLabel(name, text, position, size, textSize, visible)
+    local label = Instance.new("TextLabel", screenGui)
+    label.Name = name
+    label.BackgroundTransparency = 1
+    label.Position = position
+    label.Size = size
+    label.Font = settings.font
+    label.Text = text
+    label.TextColor3 = Color3.fromRGB(255, 255, 255)
+    label.TextScaled = true
+    label.TextStrokeTransparency = 0.8
+    label.TextSize = textSize
+    label.Visible = visible
+    return label
+end
+
+local textLabel = createLabel("TextLabel", settings.mainText, UDim2.new(0.5, -200, 0.5, -50), UDim2.new(0, 400, 0, 100), 40, true)
+local creditsLabel = createLabel("CreditsLabel", settings.creditsText, UDim2.new(0.5, -200, 0.5, 60), UDim2.new(0, 400, 0, 50), 8, true)
+local countdownLabel = createLabel("CountdownLabel", "", UDim2.new(0.5, -200, 0.5, -100), UDim2.new(0, 400, 0, 50), 20, false)
+
+-- Create Image Labels
+local function createImageLabel(name, assetId, position)
+    local imageLabel = Instance.new("ImageLabel", screenGui)
+    imageLabel.Name = name
+    imageLabel.BackgroundTransparency = 1
+    imageLabel.Position = position
+    imageLabel.Size = UDim2.new(0, 200, 0, 200)
+    imageLabel.Image = "rbxassetid://" .. assetId
+    imageLabel.ScaleType = Enum.ScaleType.Fit
+    imageLabel.Visible = true
+    local corner = Instance.new("UICorner", imageLabel)
+    corner.CornerRadius = UDim.new(0.1, 0)
+    return imageLabel
+end
+
+local leftImage = createImageLabel("LeftImage", "122114769311265", UDim2.new(0.05, 0, 0.5, -100))
+local rightImage = createImageLabel("RightImage", "18989682136", UDim2.new(0.95, -200, 0.5, -100))
+
+-- Rainbow Effect
+local function applyRainbowEffect(label)
+    local UIStroke = Instance.new("UIStroke", label)
+    UIStroke.Thickness = 2
+    UIStroke.Transparency = 0.5
+    spawn(function()
+        local hue = 0
+        while label and label.Parent do
+            hue = (hue + 1) % 360
+            local color = Color3.fromHSV(hue / 360, 1, 1)
+            UIStroke.Color = color
+            label.TextColor3 = color
+            wait(0.01)
+        end
+    end)
+end
+
+applyRainbowEffect(textLabel)
+applyRainbowEffect(creditsLabel)
+applyRainbowEffect(countdownLabel)
+
+-- Tween Blur Effect
+TweenService:Create(blurEffect, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = 20}):Play()
+
+-- Countdown Update
+local function updateCountdown()
+    if not settings.countdownTextEnabled then return end
+    countdownLabel.Visible = true
+    for timeLeft = settings.countdownTextDuration, 0, -1 do
+        countdownLabel.Text = "Please wait " .. timeLeft .. " seconds"
+        wait(1)
+    end
+    countdownLabel.Text = "Please wait 0 seconds"
+    wait(1)
+    countdownLabel.Visible = false
+end
+
+-- Show Text
+local function showText(label, text, duration)
+    label.Text = text
+    wait(duration)
+end
+
+showText(textLabel, settings.mainText, settings.mainTextDuration)
+showText(textLabel, settings.loadingText, settings.loadingTextDuration)
+updateCountdown()
+showText(textLabel, settings.loadedText, settings.loadedTextDuration)
+wait(settings.creditsTextDuration)
+
+-- Cleanup
+screenGui:Destroy()
+blurEffect:Destroy()
+
+------------------------------------------------------------------]]
 
 -- Window & Library
 
@@ -1601,20 +1742,22 @@ AddScript(Tab3, "RenxWare Untitled Tag Game Script Gui", "RenxWare Untitled Tag 
 AddScript(Tab3, "Syn.o's Untitled Tag Game Script Gui", "Syn.o's Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/taggamebysyno/main/script")
 AddScript(TabAL, "Tief Lock Gui", "Tief Lock Gui", "https://raw.githubusercontent.com/tiefdej/this-obskid/maineheheheheu/tief%20simp%20gui")
 AddScript(TabDH, "Anti Lock Resolver Script", "Anti Lock Resolver Script", "https://raw.githubusercontent.com/shakar60/scripts/main/antilock%20resolver")
-AddScript(Tab2, "Universal AntiCheat Bypass Script", "Universal Anti Cheat Bypass", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
+AddScript(Tab2, "Universal AntiCheat Bypass Script", "Universal Anti Cheat Bypass Script", "https://raw.githubusercontent.com/shakar60/universal-anticheat-bypass/main/script")
+AddScript(Tab2, "Full BrightScript", "Full Bright Script", "https://raw.githubusercontent.com/shakar60/fullbright/main/scripts")
+AddScript(Tab2, "No Fog Script", "No Fog", "https://raw.githubusercontent.com/shakar60/no-fog/main/script")
 AddScript(Tab3, "Shakars Untitled Tag Game Script Gui", "Shakars Untitled Tag Game Script Gui", "https://raw.githubusercontent.com/shakar60/shakars_utg/main/script")
 AddScript(Tab3, "Gazer Fe Animation Hub (Ipad/Pc Recommended)", "Gazer Fe Animation Hub (Ipad/Pc Recommended)", "https://raw.githubusercontent.com/Gazer-Ha/Animated/main/G")
 AddScript(Tab3, "Build A Bridge Simulator Script", "Build A Bridge Simulator Script", "https://raw.githubusercontent.com/ProjectpopCat/ywxoscripts/main/nuhuh.lua")
 addScript(Tab3, "Pet Simulator 99 Zap Hub (Key Sys)", "Pet Simulator 99 Zap Hub (Key Sys)", 'https://zaphub.xyz/Exec')
 addScript(Tab3, "Evade D8rk Hub", "Evade D8rk Hub", "https://scriptblox.com/raw/Evade-D8rk-Hub-V2-12956")
 addScript(Tab3, "Fe Dance Gui", "Fe Dance Gui", "https://pastebin.com/raw/1p6xnBN")
-addScript(Tab3, "Dungeon Quest NS Hub", "Dungeon Quest NS Hub", "https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon")
 addScript(Tab3, "Fe Kill All Gui", "Fe Kill All Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/Fe%20Kill%20All%20Gui")
+addScript(Tab3, "Dungeon Quest NS Hub", "Dungeon Quest NS Hub", "https://raw.githubusercontent.com/OhhMyGehlee/Best/main/Dungeon")
 addScript(Tab3, "Redz Pet Simulator 99 Script", "Redz Pet Simulator 99 Script", "https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua")
 addScript(Tab3, "Afem - Free Dance Menu", "Afem - Free Dance Menu", "https://yarhm.goteamst.com/scr?channel=afem")
 addScript(Tab3, "Universal Shakara Hub Kavo Version", "Universal Shakara Hub Kavo Version", "https://raw.githubusercontent.com/shakar60/USH/main/USH%20Kavo%20Protected")
 addScript(Tab3, "Infinix", "Infinix", "https://github.com/Hosvile/InfiniX/releases/latest/download/main.lua")
-addScript(Tab3, "Rochips Panel", "Rochips Panel", "https://raw.githubusercontent.com/shakar60/scripts/main/rochips%20panel")
+addScript(Tab3, "Rochips Panel", "Rochips Panel", "https://raw.githubusercontent.com/randomstring0/Qwerty/main/qwerty4")
 addScript(TabAL, "Polos Skidded Camlock", "Polos Skidded Camlock", "https://raw.githubusercontent.com/shakar60/scripts/main/protected%20polos%20camlock")
 addScript(Tab3, "Fe Chat Draw", "Fe Chat Draw", "https://pastebin.com/raw/q6WWVCKC")
 addScript(Tab2, "Fe Telekinesis Tool", "Fe Telekinesis Tool", "https://raw.githubusercontent.com/shakar60/scripts/main/fe%20telekinesis")
@@ -1623,6 +1766,8 @@ addScript(Tab3, "Kawaii Blackhole", "Kawaii Blackhole", "https://raw.githubuserc
 addScript(TabDH, "Macro Button", "Macro Button", "https://raw.githubusercontent.com/shakar60/scripts/main/macro%20button")
 addScript(TabAL, "FrostByte V2", "FrostByte V2", "https://raw.githubusercontent.com/Totocoems/Frostbyte-leaked/main/Frostbyte%20leaked")
 addScript(Tab3, "NanoAuto Bypasser", "NanoAuto Bypasser", "https://raw.githubusercontent.com/Yeeeter30/NanoAuto/main/NanoAuto.lua")
+addScript(Tab3, "Doors Neuron (Key Sys)", "Doors Neuron (Key Sys)", "https://raw.githubusercontent.com/Yumiara/Python/main/Main.lua")
+addScript(Tab3, "Ms And Fps Gui", "Ms And Fps Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/Protected%20Performance%20Status")
 
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
