@@ -1,5 +1,33 @@
 ------------------------------------------------------------------
 
+local whitelist = {"shakar60", "nuba_gar", "shakarkarim60","assj_y2k","sh4k4k4k4r60","cj_qwpaw"}
+
+-- Function to check if a player is whitelisted
+local function isWhitelisted(player)
+    for _, whitelistedPlayer in pairs(whitelist) do
+        if player.Name == whitelistedPlayer then
+            return true
+        end
+    end
+    return false
+end
+
+-- Kick players who are not whitelisted
+for _, player in pairs(game.Players:GetPlayers()) do
+    if not isWhitelisted(player) then
+        player:Kick("You are not whitelisted from USH!")
+    end
+end
+
+-- Listen for new players joining
+game.Players.PlayerAdded:Connect(function(player)
+    if not isWhitelisted(player) then
+        player:Kick("You are not whitelisted from USH!")
+    end
+end)
+
+------------------------------------------------------------------
+
 -- Window & Library
 
 local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/thanhdat4461/GUI-Library/main/Orion%20Library.lua",true))()
