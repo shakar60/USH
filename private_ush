@@ -1,24 +1,3 @@
--- List of whitelisted players
-local whitelist = {"shakar60", "nuba_gar", "shakarkarim60", "assj_y2k", "sh4k4k4k4r60", "cj_qwpaw"}
-
--- Function to check if the player is whitelisted
-local function isWhitelisted(player)
-    for _, whitelistedPlayer in pairs(whitelist) do
-        if player.Name == whitelistedPlayer then
-            return true
-        end
-    end
-    return false
-end
-
--- Get the current player
-local Player = game.Players.LocalPlayer
-
--- Check if the current player is whitelisted; if not, kick them
-if not isWhitelisted(Player) then
-    Player:Kick("You are not whitelisted from USH!")
-    return -- Stop executing the script
-
 ------------------------------------------------------------------
 
 -- Window & Library
@@ -1647,12 +1626,3 @@ addScript(Tab3, "NanoAuto Bypasser", "NanoAuto Bypasser", "https://raw.githubuse
 
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
-
-end
-
--- Listen for new players joining and kick those who are not whitelisted
-game.Players.PlayerAdded:Connect(function(player)
-    if not isWhitelisted(player) then
-        player:Kick("You are not whitelisted from USH!")
-    end
-end)
