@@ -1,0 +1,21 @@
+local whitelist = {
+    "shakar60",
+    "assj_y2k", 
+}
+
+local function isWhitelisted(player)
+    for _, name in ipairs(whitelist) do
+        if player.Name == name then
+            return true
+        end
+    end
+    return false
+end
+
+local player = game.Players.LocalPlayer
+
+if isWhitelisted(player) then   
+(replace me with ur script) 
+else
+    player:Kick("You are not whitelisted.")
+end
