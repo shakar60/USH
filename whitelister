@@ -15,7 +15,7 @@ end
 local player = game.Players.LocalPlayer
 
 if isWhitelisted(player) then   
-(replace me with ur script) 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/USH/refs/heads/main/psk_private",true))()
 else
-    player:Kick("You are not whitelisted.")
+    player:Kick("You are not whitelisted from paid polos skidded camlock.")
 end
