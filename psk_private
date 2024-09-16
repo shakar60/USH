@@ -767,6 +767,17 @@ MiscSection:AddToggle("Auto Reload", true, function(state)
     AutoReload = state
 end)
 
+-- Variables
+local IsA = game.IsA
+local newindex = nil
+local noJumpCooldownEnabled = false  -- Toggle state variable
+
+-- Toggle function with debugging
+local function toggleNoJumpCooldown(value)
+    noJumpCooldownEnabled = value
+    print("No Jump Cooldown Enabled:", noJumpCooldownEnabled)
+end
+
 MiscSection:AddToggle("Rainbow Character", false, function(value)
     toggleRainbowCharacter(value)
 end)
