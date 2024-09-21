@@ -1770,20 +1770,7 @@ addScript(Tab3, "NanoAuto Bypasser", "NanoAuto Bypasser", "https://raw.githubuse
 addScript(Tab3, "Doors Neuron (Key Sys)", "Doors Neuron (Key Sys)", "https://raw.githubusercontent.com/Yumiara/Python/main/Main.lua")
 addScript(Tab3, "Ms And Fps Gui", "Ms And Fps Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/Protected%20Performance%20Status")
 addScript(TabDH, "The Best Tool", "The Best Tool", "https://raw.githubusercontent.com/shakar60/scripts/main/best%20tool")
-
-local TabALSection = TabAL:AddSection({
-Name = "Suicide.lol"
-})
-
-Tab3:AddButton({
-Name = "Suicide.lol",
-Callback = function()
-getgenv().Loader = "Killbot"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BagasDribble/LuarmorK/main/Main%20Loader"))()
-print("Script Executed")
-end 
-})
-
+addScript(TabAL, "Suicide.lol", "Suicide.lol", "https://raw.githubusercontent.com/shakar60/scripts/refs/heads/main/Suicide.lol")
 addScript(TabAL, "Blazed Remake", "Blazed Remake", "https://rentry.org/blazed-remake/raw")
 
 OrionLib:Init()
