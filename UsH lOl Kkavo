@@ -1074,6 +1074,20 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Totocoems/Frostbyte-l
 print("Script Executed")
 end)
 
+local Tab3Section = Tab3:NewSection("Suicide.lol")
+Tab3Section:NewButton("Suicide.lol", "Suicide.lol", function()
+getgenv().Loader = "Killbot"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BagasDribble/LuarmorK/main/Main%20Loader"))()
+print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Blazed Remake")
+Tab3Section:NewButton("Blazed Remake", "Blazed Remake", function()
+getgenv().Loader = "Killbot"
+loadstring(game:HttpGet("https://rentry.org/blazed-remake/raw"))()
+print("Script Executed")
+end)
+
 ----------------------------------------------------------------------------------------------------------------------
 
 -- guis/hubs
