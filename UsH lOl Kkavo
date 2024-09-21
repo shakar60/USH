@@ -1028,7 +1028,7 @@ end)
 
 local Tab3Section = Tab3:NewSection("Hellbounds Camlock")
 Tab3Section:NewButton("Hellbounds Camlock", "Hellbounds Camlock", function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Hellbound-alt/Hellbound-camlock-op/main/Op"))();
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodborn997/Helhound-ontop/main/Hellbound%20on%20yop"))()
     print("Script Executed")
 end)
 
