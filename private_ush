@@ -741,7 +741,7 @@ Name = "Flash Back Script"
 Tab2:AddButton({
 Name = "Flash Back Script",
 Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/cgWLwdN9", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/L"))()
 print("Script Executed")
 end 
 })
