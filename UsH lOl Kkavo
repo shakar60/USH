@@ -1076,8 +1076,7 @@ end)
 
 local Tab3Section = Tab3:NewSection("Suicide.lol")
 Tab3Section:NewButton("Suicide.lol", "Suicide.lol", function()
-getgenv().Loader = "Killbot"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BagasDribble/LuarmorK/main/Main%20Loader"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/refs/heads/main/Suicide.lol",true))()
 print("Script Executed")
 end)
 
