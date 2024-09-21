@@ -1771,5 +1771,20 @@ addScript(Tab3, "Doors Neuron (Key Sys)", "Doors Neuron (Key Sys)", "https://raw
 addScript(Tab3, "Ms And Fps Gui", "Ms And Fps Gui", "https://raw.githubusercontent.com/shakar60/scripts/main/Protected%20Performance%20Status")
 addScript(TabDH, "The Best Tool", "The Best Tool", "https://raw.githubusercontent.com/shakar60/scripts/main/best%20tool")
 
+local TabALSection = TabAL:AddSection({
+Name = "Suicide.lol"
+})
+
+Tab3:AddButton({
+Name = "Suicide.lol",
+Callback = function()
+getgenv().Loader = "Killbot"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BagasDribble/LuarmorK/main/Main%20Loader"))()
+print("Script Executed")
+end 
+})
+
+addScript(TabAL, "Blazed Remake", "Blazed Remake", "https://rentry.org/blazed-remake/raw")
+
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
