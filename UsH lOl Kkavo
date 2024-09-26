@@ -1088,8 +1088,13 @@ end)
 
 local Tab3Section = Tab3:NewSection("Blazed Remake")
 Tab3Section:NewButton("Blazed Remake", "Blazed Remake", function()
-getgenv().Loader = "Killbot"
 loadstring(game:HttpGet("https://rentry.org/blazed-remake/raw"))()
+print("Script Executed")
+end)
+
+local Tab3Section = Tab3:NewSection("Azure V4 Mobile")
+Tab3Section:NewButton("Azure V4 Mobile", "Azure V4 Mobile", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shakar60/scripts/refs/heads/main/azurev4.lua",true))()
 print("Script Executed")
 end)
 
