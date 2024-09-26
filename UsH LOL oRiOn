@@ -1773,6 +1773,7 @@ addScript(TabDH, "The Best Tool", "The Best Tool", "https://raw.githubuserconten
 addScript(TabAL, "Suicide.lol", "Suicide.lol", "https://raw.githubusercontent.com/shakar60/scripts/refs/heads/main/Suicide.lol")
 addScript(TabAL, "Blazed Remake", "Blazed Remake", "https://rentry.org/blazed-remake/raw")
 addScript(TabDH, "Macro Button V2", "Macro Button V2", "https://raw.githubusercontent.com/DHBCommunity/DHBOfficialScript/main/MacroBalli")
+addScript(TabAL, "Azure V4 Mobile", "Azure V4 Mobile", "https://raw.githubusercontent.com/shakar60/scripts/refs/heads/main/azurev4.lua")
 
 OrionLib:Init()
 --[[Tab Info: TabHome is the home tab,TabPlayer is the player tab,Tab2 is main scripts tab,Tab3 is guis/hubs tab,TabAdmin is the admin cmds tab,TabAL is aimlocks tab,TabDH is dh based script hubs or stuff,TabBF is blox fruits based stuff tab,TabHitbox is ]hitbox expanders tab,Tab6 is other scripts tab,TabK is keystrokes tab,TabCredits is the credits tab.]]
